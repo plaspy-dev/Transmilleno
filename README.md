@@ -3,30 +3,30 @@
 
 ## English
 
-Web application for registering buses, stations and routes in an administration panel
+Route finder for Java ME phones that uses an onboard catalogue of stops and connections
 
 > [!WARNING]
 > **Status: Archived.** Dated editions with local verification steps.
 
 ### Overview
 
-Web application for registering buses, stations and routes in an administration panel.
+Route finder for Java ME phones that uses an onboard catalogue of stops and connections.
 
 ### Features
 
-- Maintain buses, stations and routes through the password-protected PHP administration screens.
+- Select stops on a Java ME phone and calculate available connections from the bundled catalogue.
 
 ### Requirements
 
-Python 3.12.4 runs the build script. The web build uses Docker with PHP 5.6 and Node.js for syntax checks. The old administration demonstration uses a disposable MySQL 5.7 service.
+Python 3.12.4 runs the build script. Add MicroEmulator 2.0.4 to the folder passed to `--external` for Java ME.
 
 ### Getting started
 
-Run `python demo/compilar.py --output <new-folder>` from this checkout. The script builds the editions present in the tree.
+Run `python demo/compilar.py --output <new-folder> --jdk8 <jdk8> --external <external-jars>` from this checkout. The script builds the editions present in the tree.
 
 ### Usage
 
-Open the PHP administration form in the local disposable web server.
+Open the app, pick the origin zone and stop, choose a destination and read the routes in the results list.
 
 ### Project structure
 
@@ -34,11 +34,11 @@ Folders in this edition include `demo/`, `transmilenio/`.
 
 ### Verification
 
-Built on 20 November 2026 on Windows 10.0.26300 from the source edition dated 2005-06-18. The archived form opens but the original 2005 session is lost before the administration panel.
+Built on 20 November 2026 on Windows 10.0.26300 from the source edition dated 2008-07-18. The original Java ME route model returned an itinerary between fictional stops. The MIDlet interface remains to be fully exercised.
 
 ### History
 
-The source edition keeps its original date of 2005-06-18.
+The source edition keeps its original date of 2008-07-18.
 
 ### Support
 
@@ -56,30 +56,30 @@ See the [MIT license](LICENSE) and the notices on the dependencies.
 
 ## Español
 
-Aplicación web para registrar buses, estaciones y recorridos en un panel de administración
+Consulta de rutas para teléfonos Java ME con un catálogo local de paradas y conexiones
 
 > [!WARNING]
 > **Estado: Archivado.** Ediciones por fecha con pasos de prueba local.
 
 ### Descripción general
 
-Aplicación web para registrar buses, estaciones y recorridos en un panel de administración.
+Consulta de rutas para teléfonos Java ME con un catálogo local de paradas y conexiones.
 
 ### Funciones
 
-- Gestiona buses, estaciones y rutas desde las pantallas de administración PHP con ingreso de usuario.
+- Selecciona paradas en un teléfono Java ME y calcula las conexiones disponibles en el catálogo.
 
 ### Requisitos
 
-Python 3.12.4 ejecuta el script de compilación. La compilación web comprueba sintaxis con Docker, PHP 5.6 y Node.js. La demostración de administración usa MySQL 5.7 desechable.
+Python 3.12.4 ejecuta el script de compilación. Para Java ME, coloca MicroEmulator 2.0.4 en la carpeta indicada en `--external`.
 
 ### Cómo empezar
 
-Ejecuta `python demo/compilar.py --output <new-folder>` desde esta copia. El script compila las ediciones que están en el árbol.
+Ejecuta `python demo/compilar.py --output <new-folder> --jdk8 <jdk8> --external <external-jars>` desde esta copia. El script compila las ediciones que están en el árbol.
 
 ### Uso
 
-Abre el formulario de administración PHP en el servidor local desechable.
+Abre la aplicación, elige la zona y parada de origen, selecciona el destino y consulta la lista de recorridos.
 
 ### Estructura del proyecto
 
@@ -87,11 +87,11 @@ Las carpetas de esta edición incluyen `demo/`, `transmilenio/`.
 
 ### Verificación
 
-Compilado el 20 de noviembre de 2026 en Windows 10.0.26300 desde la edición del 2005-06-18. Abre el formulario archivado. La sesión de 2005 se pierde antes de entrar al panel.
+Compilado el 20 de noviembre de 2026 en Windows 10.0.26300 desde la edición del 2008-07-18. El modelo Java ME original devolvió un recorrido entre paradas ficticias. Queda por probar la interfaz completa del MIDlet.
 
 ### Historial
 
-La edición conserva su fecha original del 2005-06-18.
+La edición conserva su fecha original del 2008-07-18.
 
 ### Soporte
 
