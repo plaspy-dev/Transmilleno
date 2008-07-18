@@ -8,7 +8,15 @@ Aplicación histórica para consultar recorridos del transporte público y horar
 
 ### Esta revisión
 
-**2005-06-18 · Recuperar el portal PHP de rutas y turnos.** Incorpora una edición web con páginas para rutas, turnos y materiales de ayuda. Estos archivos permiten ubicar la primera variante documentada antes de explorar las ediciones móviles.
+**2008-07-18 · Incorporar el catálogo de rutas en Java.** Sustituye el árbol web de la copia anterior por un cliente Java y clases que registran rutas y estaciones. El usuario puede consultar zonas y recorridos desde una interfaz que usa su propio catálogo.
+
+### Cómo explorar el código
+
+El archivo combina Java y Android. Usa un JDK para explorar las utilidades de consola. Para las variantes móviles, revisa los manifiestos y dependencias del Android SDK de cada versión.
+
+- [transmilenio/src/transmilenio/Ruta.java](transmilenio/src/transmilenio/Ruta.java)
+- [transmilenio/src/transmilenio/Rutas.java](transmilenio/src/transmilenio/Rutas.java)
+- [transmilenio/src/transmilenio/transmilenio.java](transmilenio/src/transmilenio/transmilenio.java)
 
 ## English
 
@@ -16,4 +24,12 @@ A historical application for looking up public transport routes and schedules. T
 
 ### This revision
 
-**2005-06-18 · Recover the PHP routes and shifts portal.** Recover a web edition with pages for routes, shifts, and help. These files identify the first documented variant before the later mobile editions.
+**2008-07-18 · Add a Java route catalog.** Replace the previous copy's web tree with a Java client and classes that register routes and stations. Users can browse zones and routes through an interface backed by its own catalog.
+
+### How to explore the source
+
+The archive combines Java and Android. Use a JDK to explore the console utilities. For the mobile variants, check the manifest and Android SDK dependencies of each version.
+
+- [transmilenio/src/transmilenio/Ruta.java](transmilenio/src/transmilenio/Ruta.java)
+- [transmilenio/src/transmilenio/Rutas.java](transmilenio/src/transmilenio/Rutas.java)
+- [transmilenio/src/transmilenio/transmilenio.java](transmilenio/src/transmilenio/transmilenio.java)
