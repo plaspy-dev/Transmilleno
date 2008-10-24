@@ -1,6 +1,10 @@
 import javax.microedition.lcdui.*;
 import javax.microedition.midlet.*;
 import java.util.Vector;
+import java.io.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
 
 public class transmilenio extends MIDlet implements CommandListener {
 
@@ -9,10 +13,14 @@ public class transmilenio extends MIDlet implements CommandListener {
     // a menu with items
     List menu_zonas = null; // main menu
     List menu_paradas= null;
+    Image img=null;
     private Form screen;
+    int    m_nRutas=0;
         
     String      m_szZonaUbicacion;
     String      m_szZonaDestino;
+    String      m_szIDDestino;
+    String      m_szIDUbicacion;
     String      m_szUbicacion;
     String      m_szDestino;
     int 	m_nZona;
@@ -22,6 +30,7 @@ public class transmilenio extends MIDlet implements CommandListener {
     // command
     static final Command backCommand = new Command("Atras", Command.BACK, 0);
     static final Command exitCommand = new Command("Salir", Command.STOP, 2);
+    static final Command rutasCommand = new Command("Rutas", Command.BACK, 1);
 
     // constructor.
     public transmilenio() {
@@ -29,6 +38,8 @@ public class transmilenio extends MIDlet implements CommandListener {
     	m_szZonaUbicacion="";
         m_szZonaDestino="";
         m_szUbicacion="";
+        m_szIDUbicacion="";
+        m_szIDDestino="";
         m_szDestino="";
     	m_nZona=0;
     	m_nPosicion=0;
@@ -38,15 +49,17 @@ public class transmilenio extends MIDlet implements CommandListener {
     public void startApp() throws MIDletStateChangeException {
 
       display = Display.getDisplay(this);
+      // GetProgress();
       GetZonas();
     }
     
     public void GetZonas() {
        
+      m_nRutas=0;
       if(m_nPosicion==0) {
-         menu_zonas = new List("zona origen", Choice.IMPLICIT);   
+         menu_zonas = new List("Zona origen", Choice.IMPLICIT);   
       } else {
-         menu_zonas = new List("zona destino", Choice.IMPLICIT);
+         menu_zonas = new List("Zona destino", Choice.IMPLICIT);
       }
       menu_zonas.append("A - Caracas", null);
       menu_zonas.append("B - AutoNorte", null);
@@ -58,9 +71,10 @@ public class transmilenio extends MIDlet implements CommandListener {
       menu_zonas.append("H - Caracas Sur", null);
       menu_zonas.append("J - Eje Ambiental", null);
       
-      menu_zonas.addCommand(exitCommand);
       if(m_nPosicion!=0)
         menu_zonas.addCommand(backCommand);
+      else menu_zonas.addCommand(rutasCommand);
+      menu_zonas.addCommand(exitCommand);
       menu_zonas.setCommandListener(this);
       display.setCurrent(menu_zonas);
     }
@@ -71,18 +85,63 @@ public class transmilenio extends MIDlet implements CommandListener {
     public void destroyApp(boolean unconditional) {
       notifyDestroyed();
     }
+    
+    public String GetDosDigitos(int numero) {
+        
+        String resultado= Integer.toString(numero);
+        if(numero<10) 
+            resultado= "0" + resultado;
+        return resultado;
+    }
 
-    public void GetResultado() {
+    public Gauge GetProgress() {
+        
+       display = Display.getDisplay(this);
+       screen = new Form("Obteniendo Rutas");
+
+       Calendar t= Calendar.getInstance();
+       t.setTimeZone(TimeZone.getTimeZone("GMT-05:00"));
+       String cadena= Integer.toString(t.get(Calendar.YEAR));
+       cadena+="/" + GetDosDigitos(t.get(Calendar.MONTH));
+       cadena+="/" + GetDosDigitos(t.get(Calendar.DAY_OF_MONTH));
+       cadena+=" " + GetDosDigitos(t.get(Calendar.HOUR));
+       cadena+=":" + GetDosDigitos(t.get(Calendar.MINUTE));
+       cadena+=":" + GetDosDigitos(t.get(Calendar.SECOND));
+       if(t.get(Calendar.AM_PM)==1) {
+           cadena+=" PM";
+       } else {
+           cadena+=" AM";
+       }
+       screen.append(new StringItem(cadena, ""));
+       if(img==null) {
+           try {
+               img= Image.createImage("/logo.png");
+           } catch (IOException e) {
+               e=null;
+           }
+       }
+       screen.append(new ImageItem("", img, ImageItem.LAYOUT_DEFAULT, "SDG"));
+       Gauge gauge= new Gauge("", false, 100, 0);
+       screen.append(gauge);
+       screen.addCommand(exitCommand);
+       screen.setCommandListener(this);
+       display.setCurrent(screen);
+       return gauge;
+    }
+    
+    public void GetResultados(Gauge gauge) {
         
         if(m_pRutas==null)
             m_pRutas=new Rutas();
-        
-       display = Display.getDisplay(this);
+       gauge.setLabel("Buscando rutas");
        screen = new Form("Desde " + m_szUbicacion + " Hasta " + m_szDestino);
        Vector rutas= m_pRutas.GetRuta(m_szUbicacion, m_szDestino);
+       gauge.setLabel("Agregando rutas");
        if(rutas.size()>0) {
            StringItem mensaje;
            for(int i=0; i<rutas.size(); i++) {
+               
+                gauge.setValue((i+1)*100/rutas.size());
                 Ruta ruta= (Ruta)rutas.elementAt(i);
                 if(ruta.GetParadas()==1)
                     mensaje = new StringItem(ruta.GetNombre(),ruta.GetDescripcion() + "\n" + ruta.GetParadas() + " Parada.");
@@ -92,10 +151,18 @@ public class transmilenio extends MIDlet implements CommandListener {
        } else {
            screen.append(new StringItem("No se encontraron rutas",""));
        }
+       screen.append(new StringItem("\nDesarrollado por SDG", ""));
+       screen.append(new StringItem("https://service.example.invalid", ""));
        screen.addCommand(backCommand);
        screen.addCommand(exitCommand);
        screen.setCommandListener(this);
        display.setCurrent(screen);
+    }
+    
+    public void GetResultado() {
+        
+        // GetProgress();
+        new Hilo(this, GetProgress());
     }
     
     public void GetZonaA() {
@@ -248,15 +315,120 @@ public class transmilenio extends MIDlet implements CommandListener {
     public void GetZonaJ() {
     	
         menu_paradas.append("Museo del oro", null);
+        menu_paradas.append("Las Aguas", null);
+    }
+    
+    public void GetRuta(String szRuta) {
+        
+        display = Display.getDisplay(this);
+        screen = new Form("Ruta " + szRuta);
+        if(m_pRutas==null)
+            m_pRutas=new Rutas();
+        Vector rutas= m_pRutas.GetRutas();
+        for(int i=0; i<rutas.size(); i++) {
+            Ruta ruta= (Ruta)rutas.elementAt(i);
+            if(ruta.GetNombre().equals(szRuta)) {
+                
+                Vector estaciones = ruta.GetEstaciones();
+                screen.append(new StringItem(ruta.GetDescripcion(),"\n"));
+                for(int j=0; j<estaciones.size(); j++) {
+                    screen.append(new StringItem(estaciones.elementAt(j).toString(),""));
+                }
+                break;
+            }
+        }
+        screen.append(new StringItem("\nDesarrollado por SDG", ""));
+        screen.append(new StringItem("https://service.example.invalid", ""));
+       
+        screen.addCommand(exitCommand);
+        screen.addCommand(backCommand);
+    	screen.setCommandListener(this);
+        display.setCurrent(screen);
+    }
+    
+    public void GetRutas(int zona) {
+        display = Display.getDisplay(this);
+        char letra=' ';
+        switch(zona) {
+    	  	case 0:
+    	  		letra='A';
+    	  		break;
+    	  	case 1:
+    	  		letra='B';
+    	  		break;
+    	  	case 2:
+    	  		letra='C';
+    	  		break;
+    	  	case 3:
+    	  		letra='D';
+    	  		break;
+    	  	case 4:
+    	  		letra='E';
+    	  		break;
+    	  	case 5:
+    	  		letra='F';
+    	  		break;
+    	  	case 6:
+    	  		letra='G';
+    	  		break;
+    	  	case 7:
+    	  		letra='H';
+    	  		break;
+    	  	case 8:
+    	  		letra='J';
+    	  		break;
+    	  }
+        menu_paradas = new List("Seleccione su ruta", Choice.IMPLICIT);
+        
+        if(m_pRutas==null)
+            m_pRutas=new Rutas();
+        
+        Vector resultado= new Vector();
+        Vector rutas= m_pRutas.GetRutas();
+        for(int i=0; i<rutas.size(); i++) {
+            Ruta ruta= (Ruta)rutas.elementAt(i);
+            if(ruta.GetNombre().charAt(0)==letra) {
+                resultado.addElement(ruta);
+            }
+        }
+        // ordenamos las rutas
+        for(int i=resultado.size()-1; i>0; i--) {
+            for(int j=0;j<i; j++) {
+                Ruta ruta=(Ruta)resultado.elementAt(j+1);
+                Ruta ruta2= (Ruta)resultado.elementAt(j);
+                if(ruta2.GetNombre().compareTo(ruta.GetNombre())>0) {
+                    Ruta temp= ruta2;
+                    resultado.setElementAt(ruta, j);
+                    resultado.setElementAt(temp, j+1);
+                }
+            }
+        }
+        
+        // los agregamos
+        for(int i=0; i<resultado.size(); i++) {
+           Ruta ruta= (Ruta)resultado.elementAt(i);
+           menu_paradas.append(ruta.GetNombre(), null); 
+        }
+        
+        menu_paradas.addCommand(exitCommand);
+        menu_paradas.addCommand(backCommand);
+    	menu_paradas.setCommandListener(this);
+        display.setCurrent(menu_paradas);
     }
     
     public void GetZona() {
         
         display = Display.getDisplay(this);
         if(m_nPosicion==1) {
-            menu_paradas = new List("su ubicacion", Choice.IMPLICIT);
+            menu_paradas = new List("Su ubicacion", Choice.IMPLICIT);
+            m_szIDUbicacion= "";
+            if(m_nZona>0) 
+                m_szIDUbicacion=Integer.toString(m_nZona);
         } else {
-            menu_paradas = new List("su destino", Choice.IMPLICIT); 
+            menu_paradas = new List("Su destino", Choice.IMPLICIT); 
+            m_szIDDestino="";
+            if(m_nZona>0) 
+                m_szIDDestino=Integer.toString(m_nZona);
         }
         switch(m_nZona) {
     	  	case 0:
@@ -298,13 +470,30 @@ public class transmilenio extends MIDlet implements CommandListener {
       String label = c.getLabel();
       if (label.equals("Salir")) {
          destroyApp(true);
+      } else if(label.equals("Rutas")) {
+          m_nRutas=1;
+          List down = (List)display.getCurrent();
+          m_nZona= down.getSelectedIndex();
+          GetRutas(m_nZona);
       } else if (label.equals("Atras")) {
-          m_nPosicion--;
-          if(m_nPosicion==0 || m_nPosicion==2) {
-              GetZonas();
+          if(m_nRutas>0) {
+              m_nRutas--;
+              if(m_nRutas==1)
+                GetRutas(m_nZona);
+              else if(m_nRutas==0)
+                  GetZonas();
           } else {
-              GetZona();
+              m_nPosicion--;
+              if(m_nPosicion==0 || m_nPosicion==2) {
+                  GetZonas();
+              } else {
+                  GetZona();
+              }
           }
+      } else if(m_nRutas==1) {
+          m_nRutas++;
+          List down = (List)display.getCurrent();
+          GetRuta(down.getString(down.getSelectedIndex()));
       } else if(m_nPosicion==0) { // seleccion zona ubicacion
     	  m_nPosicion++;
     	  List down = (List)display.getCurrent();
@@ -321,11 +510,30 @@ public class transmilenio extends MIDlet implements CommandListener {
     	  m_nPosicion++;
           List down = (List)display.getCurrent();
     	  m_szUbicacion= down.getString(down.getSelectedIndex());
+          int index= down.getSelectedIndex()+1;
+          if(index>9)
+            m_szIDUbicacion+= Integer.toString(index);
+          else m_szIDUbicacion+= "0" + Integer.toString(index);
+          if(m_szIDUbicacion.equals("518")) {
+              m_szIDUbicacion="13";
+          } else if(m_szIDUbicacion.equals("515")) {
+              m_szIDUbicacion="613";
+          }
           GetZonas();
       } else if(m_nPosicion==3) { // seleccion destino
           m_nPosicion++;
           List down = (List)display.getCurrent();
     	  m_szDestino= down.getString(down.getSelectedIndex());
+          
+          int index= down.getSelectedIndex()+1;
+          if(index>9)
+            m_szIDDestino+= Integer.toString(index);
+          else m_szIDDestino+= "0" + Integer.toString(index);
+          if(m_szIDDestino.equals("518")) {
+              m_szIDDestino="13";
+          } else if(m_szIDDestino.equals("515")) {
+              m_szIDDestino="613";
+          }
           GetResultado();
       }
   }

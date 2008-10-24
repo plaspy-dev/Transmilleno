@@ -8,15 +8,16 @@ Aplicación histórica para consultar recorridos del transporte público y horar
 
 ### Esta revisión
 
-**2008-07-18 · Incorporar el catálogo de rutas en Java.** Sustituye el árbol web de la copia anterior por un cliente Java y clases que registran rutas y estaciones. El usuario puede consultar zonas y recorridos desde una interfaz que usa su propio catálogo.
+**2008-10-24 · Mostrar horarios junto con los recorridos.** Añade clases de horarios y un hilo de trabajo, y actualiza las entradas de rutas. La interfaz puede relacionar el recorrido con la información que indica cuándo está disponible.
 
 ### Cómo explorar el código
 
 El archivo combina Java y Android. Usa un JDK para explorar las utilidades de consola. Para las variantes móviles, revisa los manifiestos y dependencias del Android SDK de cada versión.
 
+- [transmilenio/src/transmilenio/Hilo.java](transmilenio/src/transmilenio/Hilo.java)
+- [transmilenio/src/transmilenio/Horarios.java](transmilenio/src/transmilenio/Horarios.java)
 - [transmilenio/src/transmilenio/Ruta.java](transmilenio/src/transmilenio/Ruta.java)
 - [transmilenio/src/transmilenio/Rutas.java](transmilenio/src/transmilenio/Rutas.java)
-- [transmilenio/src/transmilenio/transmilenio.java](transmilenio/src/transmilenio/transmilenio.java)
 
 ## English
 
@@ -24,12 +25,13 @@ A historical application for looking up public transport routes and schedules. T
 
 ### This revision
 
-**2008-07-18 · Add a Java route catalog.** Replace the previous copy's web tree with a Java client and classes that register routes and stations. Users can browse zones and routes through an interface backed by its own catalog.
+**2008-10-24 · Show timetables alongside routes.** Add timetable classes and a worker thread, and update route entries. The interface can relate a route to the information about when it operates.
 
 ### How to explore the source
 
 The archive combines Java and Android. Use a JDK to explore the console utilities. For the mobile variants, check the manifest and Android SDK dependencies of each version.
 
+- [transmilenio/src/transmilenio/Hilo.java](transmilenio/src/transmilenio/Hilo.java)
+- [transmilenio/src/transmilenio/Horarios.java](transmilenio/src/transmilenio/Horarios.java)
 - [transmilenio/src/transmilenio/Ruta.java](transmilenio/src/transmilenio/Ruta.java)
 - [transmilenio/src/transmilenio/Rutas.java](transmilenio/src/transmilenio/Rutas.java)
-- [transmilenio/src/transmilenio/transmilenio.java](transmilenio/src/transmilenio/transmilenio.java)
