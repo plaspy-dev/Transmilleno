@@ -8,7 +8,7 @@ Aplicación histórica para consultar recorridos del transporte público y horar
 
 ### Esta revisión
 
-**2008-10-24 · Mostrar horarios junto con los recorridos.** Añade clases de horarios y un hilo de trabajo, y actualiza las entradas de rutas. La interfaz puede relacionar el recorrido con la información que indica cuándo está disponible.
+**2008-11-07 · Consultar extremos y paradas de un recorrido.** Actualiza cómo se guardan el origen y el destino y cómo el cliente reúne las paradas de la ruta elegida. El usuario puede seguir el recorrido entre sus extremos desde la ficha.
 
 ### Cómo explorar el código
 
@@ -25,7 +25,7 @@ A historical application for looking up public transport routes and schedules. T
 
 ### This revision
 
-**2008-10-24 · Show timetables alongside routes.** Add timetable classes and a worker thread, and update route entries. The interface can relate a route to the information about when it operates.
+**2008-11-07 · Show route endpoints and stops.** Update how origins and destinations are stored and how the client collects stops for the selected route. Users can follow the service between its endpoints from the route details.
 
 ### How to explore the source
 
