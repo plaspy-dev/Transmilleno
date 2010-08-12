@@ -115,7 +115,7 @@ public class transmilenio extends MIDlet implements CommandListener {
        } else {
            cadena+=" AM";
        }*/
-       screen.append(new StringItem("Actualizado el 07/11/2008", ""));
+       screen.append(new StringItem("Actualizado el 12/08/2010", ""));
        if(img==null) {
            try {
                img= Image.createImage("/logo.png");

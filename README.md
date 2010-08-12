@@ -8,16 +8,16 @@ Aplicación histórica para consultar recorridos del transporte público y horar
 
 ### Esta revisión
 
-**2008-11-07 · Consultar extremos y paradas de un recorrido.** Actualiza cómo se guardan el origen y el destino y cómo el cliente reúne las paradas de la ruta elegida. El usuario puede seguir el recorrido entre sus extremos desde la ficha.
+**2010-08-12 · Reorganizar las fuentes Java y su catálogo.** Mueve las clases de horarios, rutas e interfaz a la carpeta de la edición Java y actualiza el conjunto de recorridos. Esto concentra el cliente y el catálogo que usa en la misma estructura.
 
 ### Cómo explorar el código
 
 El archivo combina Java y Android. Usa un JDK para explorar las utilidades de consola. Para las variantes móviles, revisa los manifiestos y dependencias del Android SDK de cada versión.
 
-- [transmilenio/src/transmilenio/Hilo.java](transmilenio/src/transmilenio/Hilo.java)
-- [transmilenio/src/transmilenio/Horarios.java](transmilenio/src/transmilenio/Horarios.java)
-- [transmilenio/src/transmilenio/Ruta.java](transmilenio/src/transmilenio/Ruta.java)
-- [transmilenio/src/transmilenio/Rutas.java](transmilenio/src/transmilenio/Rutas.java)
+- [transmilleno/src/transmilenio/Hilo.java](transmilleno/src/transmilenio/Hilo.java)
+- [transmilleno/src/transmilenio/Horarios.java](transmilleno/src/transmilenio/Horarios.java)
+- [transmilleno/src/transmilenio/Ruta.java](transmilleno/src/transmilenio/Ruta.java)
+- [transmilleno/src/transmilenio/Rutas.java](transmilleno/src/transmilenio/Rutas.java)
 
 ## English
 
@@ -25,13 +25,13 @@ A historical application for looking up public transport routes and schedules. T
 
 ### This revision
 
-**2008-11-07 · Show route endpoints and stops.** Update how origins and destinations are stored and how the client collects stops for the selected route. Users can follow the service between its endpoints from the route details.
+**2010-08-12 · Reorganize Java sources and the route catalog.** Move timetable, route, and interface classes into the Java edition's folder and update the route set. This puts the client and its catalog in the same structure.
 
 ### How to explore the source
 
 The archive combines Java and Android. Use a JDK to explore the console utilities. For the mobile variants, check the manifest and Android SDK dependencies of each version.
 
-- [transmilenio/src/transmilenio/Hilo.java](transmilenio/src/transmilenio/Hilo.java)
-- [transmilenio/src/transmilenio/Horarios.java](transmilenio/src/transmilenio/Horarios.java)
-- [transmilenio/src/transmilenio/Ruta.java](transmilenio/src/transmilenio/Ruta.java)
-- [transmilenio/src/transmilenio/Rutas.java](transmilenio/src/transmilenio/Rutas.java)
+- [transmilleno/src/transmilenio/Hilo.java](transmilleno/src/transmilenio/Hilo.java)
+- [transmilleno/src/transmilenio/Horarios.java](transmilleno/src/transmilenio/Horarios.java)
+- [transmilleno/src/transmilenio/Ruta.java](transmilleno/src/transmilenio/Ruta.java)
+- [transmilleno/src/transmilenio/Rutas.java](transmilleno/src/transmilenio/Rutas.java)
