@@ -115,7 +115,7 @@ public class transmilenio extends MIDlet implements CommandListener {
        } else {
            cadena+=" AM";
        }*/
-       screen.append(new StringItem("Actualizado el 07/11/2008", ""));
+       screen.append(new StringItem("Actualizado el 12/08/2010", ""));
        if(img==null) {
            try {
                img= Image.createImage("/logo.png");
@@ -192,39 +192,39 @@ public class transmilenio extends MIDlet implements CommandListener {
     
     public void GetZonaA() {
     	
-    	menu_paradas.append("Demo Parada 018", null);
     	menu_paradas.append("Demo Parada 019", null);
-    	menu_paradas.append("Demo Parada 037", null);
     	menu_paradas.append("Demo Parada 020", null);
+    	menu_paradas.append("Demo Parada 038", null);
     	menu_paradas.append("Demo Parada 021", null);
     	menu_paradas.append("Demo Parada 022", null);
-    	menu_paradas.append("Demo Parada 043", null);
+    	menu_paradas.append("Demo Parada 023", null);
     	menu_paradas.append("Demo Parada 044", null);
     	menu_paradas.append("Demo Parada 045", null);
     	menu_paradas.append("Demo Parada 046", null);
-    	menu_paradas.append("Demo Parada 038", null);
     	menu_paradas.append("Demo Parada 047", null);
-    	menu_paradas.append("Demo Parada 030", null);
     	menu_paradas.append("Demo Parada 039", null);
+    	menu_paradas.append("Demo Parada 048", null);
+    	menu_paradas.append("Demo Parada 032", null);
+    	menu_paradas.append("Demo Parada 040", null);
     }
   
     public void GetZonaB() {
     	
     	menu_paradas.append("Demo Parada 001", null);
     	menu_paradas.append("Demo Parada 002", null);
-    	menu_paradas.append("Demo Parada 035", null);
+    	menu_paradas.append("Demo Parada 037", null);
     	menu_paradas.append("Demo Parada 003", null);
     	menu_paradas.append("Demo Parada 004", null);
-    	menu_paradas.append("Demo Parada 036", null);
-    	menu_paradas.append("Demo Parada 005", null);
-    	menu_paradas.append("Demo Parada 028", null);
     	menu_paradas.append("Demo Parada 029", null);
+    	menu_paradas.append("Demo Parada 005", null);
+    	menu_paradas.append("Demo Parada 030", null);
+    	menu_paradas.append("Demo Parada 031", null);
     	menu_paradas.append("Demo Parada 006", null);
-    	menu_paradas.append("Demo Parada 050", null);
     	menu_paradas.append("Demo Parada 007", null);
     	menu_paradas.append("Demo Parada 008", null);
     	menu_paradas.append("Demo Parada 009", null);
-    	menu_paradas.append("Demo Parada 017", null);
+    	menu_paradas.append("Demo Parada 010", null);
+    	menu_paradas.append("Demo Parada 018", null);
     }
     
     public void GetZonaC() {
@@ -247,92 +247,92 @@ public class transmilenio extends MIDlet implements CommandListener {
     
     public void GetZonaD() {
         
-    	menu_paradas.append("Demo Parada 016", null);
+    	menu_paradas.append("Demo Parada 017", null);
     	menu_paradas.append("Demo Parada 106", null);
-    	menu_paradas.append("Demo Parada 015", null);
-    	menu_paradas.append("Demo Parada 107", null);
+    	menu_paradas.append("Demo Parada 016", null);
+    	menu_paradas.append("Demo Parada 100", null);
+    	menu_paradas.append("Demo Parada 014", null);
     	menu_paradas.append("Demo Parada 013", null);
-    	menu_paradas.append("Demo Parada 012", null);
-    	menu_paradas.append("Demo Parada 105", null);
+    	menu_paradas.append("Demo Parada 104", null);
+    	menu_paradas.append("Demo Parada 101", null);
     	menu_paradas.append("Demo Parada 102", null);
     	menu_paradas.append("Demo Parada 103", null);
-    	menu_paradas.append("Demo Parada 104", null);
+    	menu_paradas.append("Demo Parada 012", null);
     	menu_paradas.append("Demo Parada 011", null);
-    	menu_paradas.append("Demo Parada 010", null);
     	menu_paradas.append("Demo Parada 066", null);
     	menu_paradas.append("Demo Parada 091", null);
     }
     
     public void GetZonaE() {
     	
-    	menu_paradas.append("Demo Parada 077", null);
-    	menu_paradas.append("Demo Parada 078", null);
-    	menu_paradas.append("Demo Parada 098", null);
     	menu_paradas.append("Demo Parada 079", null);
+    	menu_paradas.append("Demo Parada 080", null);
+    	menu_paradas.append("Demo Parada 098", null);
+    	menu_paradas.append("Demo Parada 081", null);
     	menu_paradas.append("Demo Parada 099", null);
     	menu_paradas.append("Demo Parada 067", null);
     	menu_paradas.append("Demo Parada 068", null);
-    	menu_paradas.append("Demo Parada 080", null);
+    	menu_paradas.append("Demo Parada 082", null);
     	menu_paradas.append("Demo Parada 069", null);
     	menu_paradas.append("Demo Parada 070", null);
     }
     
     public void GetZonaF() {
         
-    	menu_paradas.append("Demo Parada 064", null);
-    	menu_paradas.append("Demo Parada 110", null);
+    	menu_paradas.append("Demo Parada 105", null);
+    	menu_paradas.append("Demo Parada 109", null);
     	menu_paradas.append("Demo Parada 063", null);
     	menu_paradas.append("Demo Parada 062", null);
     	menu_paradas.append("Demo Parada 061", null);
     	menu_paradas.append("Demo Parada 096", null);
-    	menu_paradas.append("Demo Parada 111", null);
+    	menu_paradas.append("Demo Parada 110", null);
     	menu_paradas.append("Demo Parada 065", null);
     	menu_paradas.append("Demo Parada 060", null);
     	menu_paradas.append("Demo Parada 095", null);
+    	menu_paradas.append("Demo Parada 113", null);
     	menu_paradas.append("Demo Parada 114", null);
-    	menu_paradas.append("Demo Parada 115", null);
-    	menu_paradas.append("Demo Parada 112", null);
+    	menu_paradas.append("Demo Parada 111", null);
     	menu_paradas.append("Demo Parada 059", null);
     	menu_paradas.append("Demo Parada 071", null);
-    	menu_paradas.append("Demo Parada 113", null);
-    	menu_paradas.append("Demo Parada 116", null);
-    	menu_paradas.append("Demo Parada 030", null);
+    	menu_paradas.append("Demo Parada 112", null);
+    	menu_paradas.append("Demo Parada 115", null);
+    	menu_paradas.append("Demo Parada 032", null);
     }
     
     public void GetZonaG() {
     	
     	menu_paradas.append("Demo Parada 075", null);
-    	menu_paradas.append("Demo Parada 084", null);
-    	menu_paradas.append("Demo Parada 083", null);
-    	menu_paradas.append("Demo Parada 109", null);
+    	menu_paradas.append("Demo Parada 078", null);
+    	menu_paradas.append("Demo Parada 077", null);
+    	menu_paradas.append("Demo Parada 108", null);
     	menu_paradas.append("Demo Parada 074", null);
     	menu_paradas.append("Demo Parada 073", null);
     	menu_paradas.append("Demo Parada 076", null);
-    	menu_paradas.append("Demo Parada 101", null);
-    	menu_paradas.append("Demo Parada 100", null);
+    	menu_paradas.append("Demo Parada 117", null);
+    	menu_paradas.append("Demo Parada 116", null);
     	menu_paradas.append("Demo Parada 072", null);
-    	menu_paradas.append("Demo Parada 082", null);
-    	menu_paradas.append("Demo Parada 081", null);
+    	menu_paradas.append("Demo Parada 084", null);
+    	menu_paradas.append("Demo Parada 083", null);
     	menu_paradas.append("Demo Parada 071", null);
     }
     
     public void GetZonaH() {
 
-        menu_paradas.append("Demo Parada 027", null);
+        menu_paradas.append("Demo Parada 028", null);
+    	menu_paradas.append("Demo Parada 027", null);
     	menu_paradas.append("Demo Parada 026", null);
     	menu_paradas.append("Demo Parada 025", null);
-    	menu_paradas.append("Demo Parada 024", null);
-    	menu_paradas.append("Demo Parada 042", null);
-    	menu_paradas.append("Demo Parada 108", null);
+    	menu_paradas.append("Demo Parada 043", null);
+    	menu_paradas.append("Demo Parada 107", null);
     	menu_paradas.append("Demo Parada 088", null);
-    	menu_paradas.append("Demo Parada 023", null);
-    	menu_paradas.append("Demo Parada 034", null);
+    	menu_paradas.append("Demo Parada 024", null);
+    	menu_paradas.append("Demo Parada 036", null);
+    	menu_paradas.append("Demo Parada 042", null);
     	menu_paradas.append("Demo Parada 041", null);
-    	menu_paradas.append("Demo Parada 040", null);
+    	menu_paradas.append("Demo Parada 035", null);
+    	menu_paradas.append("Demo Parada 050", null);
+    	menu_paradas.append("Demo Parada 034", null);
     	menu_paradas.append("Demo Parada 033", null);
-    	menu_paradas.append("Demo Parada 049", null);
-    	menu_paradas.append("Demo Parada 032", null);
-    	menu_paradas.append("Demo Parada 031", null);
     	menu_paradas.append("Demo Parada 092", null);
     	
     }

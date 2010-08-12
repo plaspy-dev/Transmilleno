@@ -30,15 +30,15 @@ Open the app, pick the origin zone and stop, choose a destination and read the r
 
 ### Project structure
 
-Folders in this edition include `demo/`, `transmilenio/`.
+Folders in this edition include `demo/`, `transmilleno/`.
 
 ### Verification
 
-Built on 20 November 2026 on Windows 10.0.26300 from the source edition dated 2008-11-07. The original Java ME route model returned an itinerary between fictional stops. The MIDlet interface remains to be fully exercised.
+Built on 20 November 2026 on Windows 10.0.26300 from the source edition dated 2010-08-12. The original Java ME route model returned an itinerary between fictional stops. The MIDlet interface remains to be fully exercised.
 
 ### History
 
-The source edition keeps its original date of 2008-11-07.
+The source edition keeps its original date of 2010-08-12.
 
 ### Support
 
@@ -83,15 +83,15 @@ Abre la aplicación, elige la zona y parada de origen, selecciona el destino y c
 
 ### Estructura del proyecto
 
-Las carpetas de esta edición incluyen `demo/`, `transmilenio/`.
+Las carpetas de esta edición incluyen `demo/`, `transmilleno/`.
 
 ### Verificación
 
-Compilado el 20 de noviembre de 2026 en Windows 10.0.26300 desde la edición del 2008-11-07. El modelo Java ME original devolvió un recorrido entre paradas ficticias. Queda por probar la interfaz completa del MIDlet.
+Compilado el 20 de noviembre de 2026 en Windows 10.0.26300 desde la edición del 2010-08-12. El modelo Java ME original devolvió un recorrido entre paradas ficticias. Queda por probar la interfaz completa del MIDlet.
 
 ### Historial
 
-La edición conserva su fecha original del 2008-11-07.
+La edición conserva su fecha original del 2010-08-12.
 
 ### Soporte
 
