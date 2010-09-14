@@ -14,7 +14,18 @@ public class Rutas {
     public Vector GetRutas() {
         return m_vRutas;
     }
-    
+
+    public Ruta GetRuta(String szRuta) {
+
+        for(int i=0; i<m_vRutas.size(); i++) {
+            Ruta ruta= (Ruta)m_vRutas.elementAt(i);
+            if(ruta.GetNombre().equals(szRuta)) {
+                return ruta;
+            }
+        }
+        return null;
+    }
+
     public Vector GetRuta(String ubicacion, String destino) {
 
         Vector resultado= new Vector();
@@ -53,7 +64,7 @@ public class Rutas {
                     if(rdestino.m_nDestino>-1) { // pasa por el destino 
                         String estacion= ruta.GetInterseccion(rdestino);
                         if(estacion.length()!=0) {
-                            rdestino= new Ruta(ruta.GetNombre() + "- " + estacion + " -" + rdestino.GetNombre(), ruta.GetNombre() + ": " + ruta.GetDescripcion() + "\n" +rdestino.GetNombre() + ": " + rdestino.GetDescripcion(), false);
+                            rdestino= new Ruta(ruta.GetNombre() + "-" + estacion + "-" + rdestino.GetNombre(), ruta.GetNombre() + ": " + ruta.GetDescripcion() + "\n" +rdestino.GetNombre() + ": " + rdestino.GetDescripcion(), false);
                             rdestino.m_nParadas= ruta.m_nParadas;
                             resultado.addElement(rdestino);
                         }

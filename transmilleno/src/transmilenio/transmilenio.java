@@ -29,6 +29,8 @@ public class transmilenio extends MIDlet implements CommandListener {
     int 	m_nPosicion;
     Rutas       m_pRutas;
     boolean     m_bResultados=false;
+    Vector      m_vRutas;
+    Vector      m_vTransbordos;
     
     // command
     static final Command backCommand = new Command("Atras", Command.BACK, 0);
@@ -47,6 +49,8 @@ public class transmilenio extends MIDlet implements CommandListener {
     	m_nZona=0;
     	m_nPosicion=0;
         m_pRutas= null;
+        m_vRutas=null;
+        m_vTransbordos=null;
     }
 
     public void startApp() throws MIDletStateChangeException {
@@ -132,49 +136,53 @@ public class transmilenio extends MIDlet implements CommandListener {
        return gauge;
     }
     
-    public void GetResultados(Gauge gauge) {
-        
-       if(m_pRutas==null)
-            m_pRutas=new Rutas();
-       gauge.setLabel("Buscando rutas");
-       menu_resultados = new List("Desde " + m_szUbicacion + " Hasta " + m_szDestino, Choice.IMPLICIT);
-       Vector rutas= m_pRutas.GetRutaID(m_nIDUbicacion, m_nIDDestino);
-       gauge.setLabel("Buscando transbordos");
-       Vector transbordos= m_pRutas.GetTransbordos();
-       
-       
-       gauge.setLabel("Agregando rutas");
-       if(rutas.size()>0 || transbordos.size()>0) {
-           
-           int resultados=10-rutas.size();
-           for(int i=0; i<rutas.size(); i++) {
-               
-                gauge.setValue((i+1)*100/rutas.size());
-                Ruta ruta= (Ruta)rutas.elementAt(i);
-                if(ruta.GetParadas()==1) 
+    public void PutDescripcion(List lista, String descripcion) {
+
+        int pos=0;
+        while((pos= descripcion.indexOf("\n"))!=-1){
+            lista.append(descripcion.substring(0, pos), null);
+            descripcion= descripcion.substring(pos+1);
+        }
+        lista.append(descripcion, null);
+    }
+
+    public void ShowResultados(Gauge gauge) {
+
+        if(gauge==null) 
+            menu_resultados = new List("Desde " + m_szUbicacion + " Hasta " + m_szDestino, Choice.IMPLICIT);
+
+        if(m_vRutas.size()>0 || m_vTransbordos.size()>0) {
+
+           int resultados=10-m_vRutas.size();
+           for(int i=0; i<m_vRutas.size(); i++) {
+
+                if(gauge!=null)
+                    gauge.setValue((i+1)*100/m_vRutas.size());
+                Ruta ruta= (Ruta)m_vRutas.elementAt(i);
+                if(ruta.GetParadas()==1)
                     menu_resultados.append(ruta.GetNombre() + " "+ ruta.GetParadas() + " Parada.", null);
                 else menu_resultados.append(ruta.GetNombre() + " "+ ruta.GetParadas() + " Paradas.", null);
-                menu_resultados.append(ruta.GetDescripcion(), null);
+                PutDescripcion(menu_resultados, ruta.GetDescripcion());
                 menu_resultados.append("", null);
            }
-           for(int i=0; i<transbordos.size(); i++) {
-            
+           for(int i=0; i<m_vTransbordos.size(); i++) {
+
                 if(resultados<0)
                    break;
                 resultados--;
-                gauge.setValue((i+1)*100/transbordos.size());
-                Ruta ruta= (Ruta)transbordos.elementAt(i);
-                if(ruta.GetParadas()==1) 
+                if(gauge!=null)
+                    gauge.setValue((i+1)*100/m_vTransbordos.size());
+                Ruta ruta= (Ruta)m_vTransbordos.elementAt(i);
+                if(ruta.GetParadas()==1)
                     menu_resultados.append(ruta.GetNombre() + " "+ ruta.GetParadas() + " Parada.", null);
                 else menu_resultados.append(ruta.GetNombre() + " "+ ruta.GetParadas() + " Paradas.", null);
-                menu_resultados.append(ruta.GetDescripcion(), null);
+                PutDescripcion(menu_resultados, ruta.GetDescripcion());
                 menu_resultados.append("", null);
            }
        } else {
            menu_resultados.append("No se encontraron rutas",null);
            menu_resultados.append("", null);
        }
-       
        menu_resultados.append("Desarrollado por SDG", null);
        menu_resultados.append("https://service.example.invalid", null);
        m_bResultados=true;
@@ -182,6 +190,20 @@ public class transmilenio extends MIDlet implements CommandListener {
        menu_resultados.addCommand(exitCommand);
        menu_resultados.setCommandListener(this);
        display.setCurrent(menu_resultados);
+    }
+
+    public void GetResultados(Gauge gauge) {
+        
+       if(m_pRutas==null)
+            m_pRutas=new Rutas();
+       gauge.setLabel("Buscando rutas");
+       menu_resultados = new List("Desde " + m_szUbicacion + " Hasta " + m_szDestino, Choice.IMPLICIT);
+       m_vRutas= m_pRutas.GetRutaID(m_nIDUbicacion, m_nIDDestino);
+       gauge.setLabel("Buscando transbordos");
+       m_vTransbordos= m_pRutas.GetTransbordos();
+       
+       gauge.setLabel("Agregando rutas");
+       ShowResultados(gauge);
     }
     
     public void GetResultado() {
@@ -343,24 +365,23 @@ public class transmilenio extends MIDlet implements CommandListener {
         menu_paradas.append("Las Aguas", null);
     }
     
-    public void GetRuta(String szRuta) {
-        
-        display = Display.getDisplay(this);
-        
-        menu_resultados = new List("Ruta " + szRuta, Choice.IMPLICIT);
+    public boolean GetRuta(String szRuta) {
+
         if(m_pRutas==null)
             m_pRutas=new Rutas();
-        Vector rutas= m_pRutas.GetRutas();
-        for(int i=0; i<rutas.size(); i++) {
-            Ruta ruta= (Ruta)rutas.elementAt(i);
-            if(ruta.GetNombre().equals(szRuta)) {                
-                Vector estaciones = ruta.GetEstaciones();
-                menu_resultados.append(ruta.GetDescripcion(),null);
-                menu_resultados.append("", null);
-                for(int j=0; j<estaciones.size(); j++) {
-                    menu_resultados.append(estaciones.elementAt(j).toString(),null);
-                }
-                break;
+        Ruta ruta= m_pRutas.GetRuta(szRuta);
+        if(ruta==null)
+            return false;
+
+        display = Display.getDisplay(this);
+        menu_resultados = new List("Ruta " + szRuta, Choice.IMPLICIT);
+        
+        if(ruta!=null) {
+            Vector estaciones = ruta.GetEstaciones();
+            PutDescripcion(menu_resultados, ruta.GetDescripcion());
+            menu_resultados.append("", null);
+            for(int j=0; j<estaciones.size(); j++) {
+                menu_resultados.append(estaciones.elementAt(j).toString(),null);
             }
         }
         menu_resultados.append("", null);
@@ -372,6 +393,7 @@ public class transmilenio extends MIDlet implements CommandListener {
         menu_resultados.addCommand(backCommand);
     	menu_resultados.setCommandListener(this);
         display.setCurrent(menu_resultados);
+        return true;
     }
     
     public void GetRutas(int zona) {
@@ -489,6 +511,22 @@ public class transmilenio extends MIDlet implements CommandListener {
         display.setCurrent(menu_paradas);
     }
     
+    public void GetRuta(List lista, int index) {
+
+        String texto= lista.getString(index);
+        if(texto.length()==0) {
+            return;
+        }
+        if(!GetRuta(texto.substring(0, 3))) {
+            if(!GetRuta(texto.substring(0, 2))) {
+                if(index>0)
+                   GetRuta(lista, index-1);
+                return;
+            }
+        }
+        m_nRutas=1;
+    }
+
     public void commandAction(Command c, Displayable d) {
       
       String label = c.getLabel();
@@ -500,6 +538,11 @@ public class transmilenio extends MIDlet implements CommandListener {
           m_nZona= down.getSelectedIndex();
           GetRutas(m_nZona);
       } else if (label.equals("Atras")) {
+          if(m_bResultados && m_nRutas==1) {
+              m_nRutas=0;
+              ShowResultados(null);
+              return;
+          }
           m_bResultados=false;
           if(m_nRutas>0) {
               m_nRutas--;
@@ -516,7 +559,12 @@ public class transmilenio extends MIDlet implements CommandListener {
               }
           }
       } else if(m_bResultados) {
-          
+          if(m_nRutas==1) { // ya las esta mostrando
+
+          } else {
+              List down = (List)display.getCurrent();
+              GetRuta(down, down.getSelectedIndex());
+          }
       } else if(m_nRutas==1) {
           m_nRutas++;
           List down = (List)display.getCurrent();

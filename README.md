@@ -8,7 +8,7 @@ Aplicación histórica para consultar recorridos del transporte público y horar
 
 ### Esta revisión
 
-**2010-08-12 · Reorganizar las fuentes Java y su catálogo.** Mueve las clases de horarios, rutas e interfaz a la carpeta de la edición Java y actualiza el conjunto de recorridos. Esto concentra el cliente y el catálogo que usa en la misma estructura.
+**2010-09-14 · Mostrar las descripciones de las rutas.** Añade el tratamiento de nombres y descripciones al recuperar una ruta. El usuario puede leer el detalle asociado al recorrido que eligió.
 
 ### Cómo explorar el código
 
@@ -25,7 +25,7 @@ A historical application for looking up public transport routes and schedules. T
 
 ### This revision
 
-**2010-08-12 · Reorganize Java sources and the route catalog.** Move timetable, route, and interface classes into the Java edition's folder and update the route set. This puts the client and its catalog in the same structure.
+**2010-09-14 · Show route descriptions.** Handle names and descriptions when retrieving a route. Users can read the details associated with their selected service.
 
 ### How to explore the source
 
