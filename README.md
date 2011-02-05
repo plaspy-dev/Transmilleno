@@ -8,7 +8,7 @@ Aplicación histórica para consultar recorridos del transporte público y horar
 
 ### Esta revisión
 
-**2010-09-14 · Mostrar las descripciones de las rutas.** Añade el tratamiento de nombres y descripciones al recuperar una ruta. El usuario puede leer el detalle asociado al recorrido que eligió.
+**2011-02-05 · Actualizar las estaciones y rutas del catálogo.** Revisa las entradas que crean estaciones y recorridos y ajusta el texto que muestra el cliente. Los cambios delimitan los datos de rutas que pertenecen a esta edición histórica.
 
 ### Cómo explorar el código
 
@@ -25,7 +25,7 @@ A historical application for looking up public transport routes and schedules. T
 
 ### This revision
 
-**2010-09-14 · Show route descriptions.** Handle names and descriptions when retrieving a route. Users can read the details associated with their selected service.
+**2011-02-05 · Update the station and route catalog.** Revise entries that create stations and routes and adjust the text shown by the client. This identifies the route data that belongs to this historical edition.
 
 ### How to explore the source
 

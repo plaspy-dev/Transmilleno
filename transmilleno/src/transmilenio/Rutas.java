@@ -143,7 +143,7 @@ public class Rutas {
         
         m_vRutas= new Vector();
         
-        Ruta ruta=AddRuta("D10","L-V 5:30am-10:00pm\nS 6:00am-10:00pm", true); 
+        Ruta ruta=AddRuta("D10","L-V 5:30am-10:00pm\nS 6:00am-10:00pm", true);
         ruta.SetHorarioLV(5, 22);
         ruta.SetHorarioS(5, 22);
         ruta.AddEstacion("Portal Norte", 101);
@@ -156,10 +156,9 @@ public class Rutas {
         ruta.AddEstacion("Calle 100", 112);
         ruta.AddEstacion("Virrey", 113);
         ruta.AddEstacion("Calle 85", 114);
-        ruta.AddEstacion("Carrera 47", 312);
-        ruta.AddEstacion("Carrera 53", 311);
-        ruta.AddEstacion("Carrera 77", 306);
-        ruta.AddEstacion("Granja", 305);
+        ruta.AddEstacion("Carrera 47", 311);
+        ruta.AddEstacion("Carrera 53", 310);
+        ruta.AddEstacion("Granja - Carrera 77", 305);
         ruta.AddEstacion("AV. Cali", 304);
         ruta.AddEstacion("Carrera 90", 303);
         ruta.AddEstacion("Portal de la 80", 301);
@@ -169,7 +168,7 @@ public class Rutas {
         ruta= AddRuta("B55","L-V 6:00am-8:30am",false);
         ruta.SetHorarioLV(6, 9);
         ruta.AddEstacion("Portal de la 80", 301);
-        ruta.AddEstacion("Carrera 77", 306);
+        ruta.AddEstacion("Granja - Carrera 77", 305);
         ruta.AddEstacion("Heroes", 115);
         
         ruta= AddRuta("H51","L-V 6:00am-9:00am", false); 
@@ -187,7 +186,7 @@ public class Rutas {
         ruta.AddEstacion("Molinos", 702);
         ruta.AddEstacion("Portal Usme", 701);
 
-        ruta= AddRuta("H70","L-V 5:00am-9:00am", false); 
+        ruta= AddRuta("H70","L-V 5:00am-9:00am", false);
         ruta.SetHorarioLV(4, 9);
         ruta.AddEstacion("Toberin", 102);
         ruta.AddEstacion("Calle 146", 105);
@@ -226,7 +225,7 @@ public class Rutas {
 
         AddRutaInvertida("B72", ruta, "L-S 5:30am-9:00am"); 
 
-        ruta= AddRuta("H74","L-V 9:00am-11:00pm\nS 5:00am-11:00pm", true); 
+        ruta= AddRuta("H74","L-V 9:00am-11:00pm\nS 5:00am-11:00pm", true);
         ruta.SetHorarioLV(9, 23);
         ruta.SetHorarioS(5, 23);
         ruta.AddEstacion("Portal Norte", 101);
@@ -370,7 +369,7 @@ public class Rutas {
         ruta.AddEstacion("La campina", 202);
         ruta.AddEstacion("Portal Suba", 201);
 
-        AddRutaInvertida("B50", ruta,"L-V 6:00am-8:30am\nL-V 5:00pm-7:30pm"); 
+        AddRutaInvertida("B50", ruta,"L-V 6:00am-8:30am\nL-V 5:00pm-7:30pm");
         
         ruta= AddRuta("J70","L-V 5:30am-9:00am", false); 
         ruta.SetHorarioLV(5, 9);
@@ -427,7 +426,7 @@ public class Rutas {
         ruta.AddEstacion("Banderas", 505);
         ruta.AddEstacion("Transversal 86", 504);
         ruta.AddEstacion("Biblioteca el tintal", 503);
-        ruta.AddEstacion("Portalamericas", 501);
+        ruta.AddEstacion("Portal Americas", 501);
 
         AddRutaInvertida("B14", ruta,"L-V 5:00am-9:30pm\nS 5:30am-9:30pm"); 
         
@@ -442,7 +441,7 @@ public class Rutas {
         ruta.AddEstacion("Marsella", 508);
         ruta.AddEstacion("Banderas", 505);
         ruta.AddEstacion("Biblioteca el tintal", 503);
-        ruta.AddEstacion("Portalamericas", 501);
+        ruta.AddEstacion("Portal Americas", 501);
 
         AddRutaInvertida("B52", ruta,"L-V 5:30am-8:30am"); 
         
@@ -456,7 +455,7 @@ public class Rutas {
         ruta.AddEstacion("Virrey", 113);
         ruta.AddEstacion("Calle 85", 114);
         ruta.AddEstacion("Heroes", 115);
-        ruta.AddEstacion("Escuela Militar", 313);
+        ruta.AddEstacion("Escuela Militar", 312);
         ruta.AddEstacion("El campin", 406);
         ruta.AddEstacion("U. Nacional", 407);
         ruta.AddEstacion("CAD", 409);
@@ -523,7 +522,7 @@ public class Rutas {
         ruta.AddEstacion("Niza Calle 127", 207);
         ruta.AddEstacion("Humedal Cordoba", 208);
         ruta.AddEstacion("Puente largo", 210);
-        ruta.AddEstacion("Escuela Militar", 313);
+        ruta.AddEstacion("Escuela Militar", 312);
         ruta.AddEstacion("Calle 76", 1);
         ruta.AddEstacion("Marly",6);
         ruta.AddEstacion("Calle 45", 7);
@@ -547,7 +546,7 @@ public class Rutas {
         ruta.AddEstacion("Shaio", 209);
         ruta.AddEstacion("Puente largo", 210);
         ruta.AddEstacion("San Martin", 214);
-        ruta.AddEstacion("El Polo", 314);
+        ruta.AddEstacion("El Polo", 313);
         ruta.AddEstacion("Calle 76", 1);
         ruta.AddEstacion("Calle 72",2);
         ruta.AddEstacion("Flores", 3);
@@ -613,11 +612,11 @@ public class Rutas {
         ruta= AddRuta("H20","L-V 5:30am-10:00pm\nS 6:00am-8:00pm", true); 
         ruta.AddEstacion("Portal de la 80", 301);
         ruta.AddEstacion("Avenida Cali", 304);
-        ruta.AddEstacion("Carrera 77", 306);
-        ruta.AddEstacion("Boyaca", 308);
-        ruta.AddEstacion("Ferias", 309);
-        ruta.AddEstacion("Avenida 68", 310);
-        ruta.AddEstacion("El Polo", 314);
+        ruta.AddEstacion("Granja - Carrera 77", 305);
+        ruta.AddEstacion("Boyaca", 307);
+        ruta.AddEstacion("Ferias", 308);
+        ruta.AddEstacion("Avenida 68", 309);
+        ruta.AddEstacion("El Polo", 313);
         ruta.AddEstacion("Calle 45", 7);
         ruta.AddEstacion("Profamilia", 9);
         ruta.AddEstacion("Calle 26", 10);
@@ -640,15 +639,14 @@ public class Rutas {
         ruta.AddEstacion("Profamilia", 9);
         ruta.AddEstacion("Avenida 39", 8);
         ruta.AddEstacion("Calle 45", 7);
-        ruta.AddEstacion("Minuto de Dios", 307);
+        ruta.AddEstacion("Minuto de Dios", 306);
         ruta.AddEstacion("Portal de la 80", 301);
 
         ruta= AddRuta("H50","L-V 5:30am-8:30am", false); 
         ruta.AddEstacion("Portal de la 80", 301);
         ruta.AddEstacion("Carrera 90", 303);
-        ruta.AddEstacion("Granja", 305);
-        ruta.AddEstacion("Carrera 77", 306);
-        ruta.AddEstacion("Minuto de Dios", 307);
+        ruta.AddEstacion("Granja - Carrera 77", 305);
+        ruta.AddEstacion("Minuto de Dios", 306);
         ruta.AddEstacion("Calle 76", 1);
         ruta.AddEstacion("Calle 72",2);
         ruta.AddEstacion("Calle 57",5);
@@ -670,18 +668,18 @@ public class Rutas {
         ruta.AddEstacion("Calle 63",4);
         ruta.AddEstacion("Calle 72",2);
         ruta.AddEstacion("Calle 76", 1);
-        ruta.AddEstacion("Minuto de Dios", 307);
-        ruta.AddEstacion("Carrera 77", 306);
+        ruta.AddEstacion("Minuto de Dios", 306);
+        ruta.AddEstacion("Granja - Carrera 77", 305);
         ruta.AddEstacion("Portal de la 80", 301);
         
         AddRutaInvertida("F62", ruta,"L-V 5:00pm-8:00pm");
 
         ruta= AddRuta("J24","L-V 5:30am-10:00pm\nS 5:30am-8:30pm", true); 
         ruta.AddEstacion("Portal de la 80", 301);
-        ruta.AddEstacion("Carrera 77", 306);
-        ruta.AddEstacion("Avenida 68", 310);
-        ruta.AddEstacion("Escuela Militar", 313);
-        ruta.AddEstacion("El Polo", 314);
+        ruta.AddEstacion("Granja - Carrera 77", 305);
+        ruta.AddEstacion("Avenida 68", 309);
+        ruta.AddEstacion("Escuela Militar", 312);
+        ruta.AddEstacion("El Polo", 313);
         ruta.AddEstacion("Avenida 39", 8);
         ruta.AddEstacion("Calle 22", 11);
         ruta.AddEstacion("Avenida Jimenez", 13);
@@ -694,7 +692,7 @@ public class Rutas {
         ruta.AddEstacion("Portal de la 80", 301);
         ruta.AddEstacion("Quirigua", 302);
         ruta.AddEstacion("Avenida Cali", 304);
-        ruta.AddEstacion("Carrera 77", 306);
+        ruta.AddEstacion("Granja - Carrera 77", 305);
         ruta.AddEstacion("Calle 76", 1);
         ruta.AddEstacion("Calle 72",2);
         ruta.AddEstacion("Flores", 3);
@@ -713,10 +711,10 @@ public class Rutas {
         
         ruta= AddRuta("G22","L-S 5:00am-9:00am\nL-S 4:00pm-7:30pm", false); 
         ruta.AddEstacion("Portal de la 80", 301);
-        ruta.AddEstacion("Carrera 77", 306);
-        ruta.AddEstacion("Minuto de Dios", 307);
-        ruta.AddEstacion("Avenida 68", 310);
-        ruta.AddEstacion("Carrera 47", 312);
+        ruta.AddEstacion("Granja - Carrera 77", 305);
+        ruta.AddEstacion("Minuto de Dios", 306);
+        ruta.AddEstacion("Avenida 68", 309);
+        ruta.AddEstacion("Carrera 47", 311);
         ruta.AddEstacion("NQS Calle 75", 402);
         ruta.AddEstacion("Avenida Chile", 403);
         ruta.AddEstacion("U. Nacional", 407);
@@ -732,10 +730,10 @@ public class Rutas {
         
         ruta= AddRuta("E26","L-S 9:00am-4:00pm\nL-S 7:30pm-11:00pm", true); 
         ruta.AddEstacion("Portal de la 80", 301);
-        ruta.AddEstacion("Carrera 77", 306);
-        ruta.AddEstacion("Minuto de Dios", 307);
-        ruta.AddEstacion("Avenida 68", 310);
-        ruta.AddEstacion("Carrera 47", 312);
+        ruta.AddEstacion("Granja - Carrera 77", 305);
+        ruta.AddEstacion("Minuto de Dios", 306);
+        ruta.AddEstacion("Avenida 68", 309);
+        ruta.AddEstacion("Carrera 47", 311);
         ruta.AddEstacion("NQS Calle 75", 402);
         ruta.AddEstacion("Avenida Chile", 403);
         ruta.AddEstacion("U. Nacional", 407);
@@ -744,7 +742,7 @@ public class Rutas {
         AddRutaInvertida("D26", ruta,"L-S 9:30am-4:30pm\nL-S 8:00pm-11:00pm"); 
         
         ruta= AddRuta("J23","L-S 5:00am-11:00pm", true); 
-        ruta.AddEstacion("Portalamericas", 501);
+        ruta.AddEstacion("Portal Americas", 501);
         ruta.AddEstacion("Patio Bonito", 502);
         ruta.AddEstacion("Banderas", 505);
         ruta.AddEstacion("Mundo Aventura", 507);
@@ -758,7 +756,7 @@ public class Rutas {
         AddRutaInvertida("F23", ruta,"L-S 5:00am-11:00pm"); 
         
         ruta= AddRuta("F70","L-V 5:30am-9:00am\nL-V 4:30pm-8:00pm", false); 
-        ruta.AddEstacion("Portalamericas", 501);
+        ruta.AddEstacion("Portal Americas", 501);
         ruta.AddEstacion("Biblioteca el tintal", 503);
         ruta.AddEstacion("Banderas", 505);
         ruta.AddEstacion("Pradera", 509);
@@ -777,11 +775,11 @@ public class Rutas {
         ruta.AddEstacion("Alcala", 107);
         ruta.AddEstacion("Calle 100", 112);
         ruta.AddEstacion("Heroes", 115);
-        ruta.AddEstacion("Carrera 53", 311);
-        ruta.AddEstacion("Avenida 68", 310);
-        ruta.AddEstacion("Ferias", 309);
-        ruta.AddEstacion("Minuto de Dios", 307);
-        ruta.AddEstacion("Carrera 77", 306);
+        ruta.AddEstacion("Carrera 53", 310);
+        ruta.AddEstacion("Avenida 68", 309);
+        ruta.AddEstacion("Ferias", 308);
+        ruta.AddEstacion("Minuto de Dios", 306);
+        ruta.AddEstacion("Granja - Carrera 77", 305);
         ruta.AddEstacion("Portal de la 80", 301);
 
         AddRutaInvertida("B94", ruta,"D-F 7:00am-8:00pm"); 
@@ -864,7 +862,7 @@ public class Rutas {
         ruta.AddEstacion("Shaio", 209);
         ruta.AddEstacion("Puente largo", 210);
         ruta.AddEstacion("Suba Calle 95", 212);
-        ruta.AddEstacion("Escuela Militar", 313);
+        ruta.AddEstacion("Escuela Militar", 312);
         ruta.AddEstacion("Calle 76", 1);
         ruta.AddEstacion("Calle 72",2);
         ruta.AddEstacion("Flores", 3);
@@ -879,7 +877,7 @@ public class Rutas {
         ruta.AddEstacion("Pradera", 509);
         ruta.AddEstacion("Banderas", 505);
         ruta.AddEstacion("Biblioteca el tintal", 503);
-        ruta.AddEstacion("Portalamericas", 501);
+        ruta.AddEstacion("Portal Americas", 501);
 
         AddRutaInvertida("C91", ruta,"D-F 6:00am-10:00pm"); 
         
@@ -887,8 +885,8 @@ public class Rutas {
         ruta.AddEstacion("Portal de la 80", 301);
         ruta.AddEstacion("Quirigua", 710);
         ruta.AddEstacion("AV. Cali", 304);
-        ruta.AddEstacion("Carrera 77", 306);
-        ruta.AddEstacion("Escuela Militar", 313);
+        ruta.AddEstacion("Granja - Carrera 77", 305);
+        ruta.AddEstacion("Escuela Militar", 312);
         ruta.AddEstacion("Calle 76", 1);
         ruta.AddEstacion("Calle 72",2);
         ruta.AddEstacion("Calle 63",4);
@@ -911,7 +909,7 @@ public class Rutas {
     	ruta.AddEstacion("Niza Calle 127", 207);
     	ruta.AddEstacion("Humedal Cordoba", 208);
     	ruta.AddEstacion("Puente largo", 210);
-    	ruta.AddEstacion("Escuela Militar", 313);
+    	ruta.AddEstacion("Escuela Militar", 312);
         ruta.AddEstacion("Calle 76", 1);
         ruta.AddEstacion("Marly",6);
     	ruta.AddEstacion("Calle 45", 7);
@@ -919,7 +917,7 @@ public class Rutas {
     	ruta.AddEstacion("Calle 22", 11);
     	ruta.AddEstacion("Calle 19", 12);
     	
-    	ruta= AddRuta("A70", "6:30am-8:30am", false);        
+    	ruta= AddRuta("A70", "6:30am-8:30am", false);  
     	ruta.AddEstacion("Toberin", 102);
     	ruta.AddEstacion("Calle 146", 105);
     	ruta.AddEstacion("Calle 142", 106);
@@ -972,7 +970,7 @@ public class Rutas {
         ruta.AddEstacion("Zona Industrial", 513);
         ruta.AddEstacion("Banderas", 505);
         ruta.AddEstacion("Biblioteca el tintal", 503);
-        ruta.AddEstacion("Portalamericas", 501);
+        ruta.AddEstacion("Portal Americas", 501);
         
         AddRutaInvertida("B28", ruta, "L-V 5:30am-8:30am\nL-V 5:00pm-8:00pm");
         
@@ -980,7 +978,6 @@ public class Rutas {
         ruta.AddEstacion("Portal Usme", 701);
         ruta.AddEstacion("Molinos", 702);
         ruta.AddEstacion("Portal Tunal", 705);
-        ruta.AddEstacion("Portal Sur", 601);
         ruta.AddEstacion("Sevillana", 604);
         ruta.AddEstacion("General Santander", 607);
         ruta.AddEstacion("SENA", 610);
@@ -1013,10 +1010,10 @@ public class Rutas {
     	ruta.AddEstacion("Marly",6);
     	ruta.AddEstacion("Profamilia", 9);
     	ruta.AddEstacion("Calle 26", 10);
-		ruta.AddEstacion("Banderas", 505);
+	ruta.AddEstacion("Banderas", 505);
         ruta.AddEstacion("Biblioteca el tintal", 503);
         ruta.AddEstacion("Patio Bonito", 502);
-        ruta.AddEstacion("Portalamericas", 501);
+        ruta.AddEstacion("Portal Americas", 501);
         
         AddRutaInvertida("C29", ruta, "L-V 5:30am-8:30am\nL-V 5:00pm-8:30pm");
         
@@ -1074,9 +1071,8 @@ public class Rutas {
        	ruta= AddRuta("A50", "L-V 6:30am-8:30am", false);
        	ruta.AddEstacion("Portal de la 80", 301);
     	ruta.AddEstacion("Carrera 90", 303);
-    	ruta.AddEstacion("Granja", 305);
-    	ruta.AddEstacion("Carrera 77", 306);
-    	ruta.AddEstacion("Minuto de Dios", 307);
+    	ruta.AddEstacion("Granja - Carrera 77", 305);
+    	ruta.AddEstacion("Minuto de Dios", 306);
         ruta.AddEstacion("Calle 76", 1);
     	ruta.AddEstacion("Calle 72",2);
     	
@@ -1103,7 +1099,7 @@ public class Rutas {
         
     	AddRutaInvertida("C96", ruta, "D-F 7:00am-9:00pm");
         
-        ruta= AddRuta("F1", "Todos los dias", true);
+        ruta= AddRuta("F1", "Todos los dias", true); 
         
         ruta.AddEstacion("Portal Norte", 101);
     	ruta.AddEstacion("Toberin", 102);
@@ -1149,9 +1145,9 @@ public class Rutas {
         ruta.AddEstacion("Transversal 86", 504);
         ruta.AddEstacion("Biblioteca el tintal", 503);
         ruta.AddEstacion("Patio Bonito", 502);
-        ruta.AddEstacion("Portalamericas", 501);
+        ruta.AddEstacion("Portal Americas", 501);
 
-        AddRutaInvertida("B1", ruta);
+        AddRutaInvertida("B1", ruta); 
         
         ruta= AddRuta("G5", "Todos los dias", true);
         ruta.AddEstacion("Portal Norte", 101);
@@ -1169,8 +1165,8 @@ public class Rutas {
         ruta.AddEstacion("Virrey", 113);
         ruta.AddEstacion("Calle 85", 114);
         ruta.AddEstacion("Heroes", 115);
-        ruta.AddEstacion("El Polo", 314);
-        ruta.AddEstacion("Escuela Militar", 313);
+        ruta.AddEstacion("El Polo", 313);
+        ruta.AddEstacion("Escuela Militar", 312);
     	ruta.AddEstacion("NQS Calle 75", 402);
     	ruta.AddEstacion("Avenida Chile", 403);
     	ruta.AddEstacion("Simon Bolivar", 404);
@@ -1201,16 +1197,15 @@ public class Rutas {
     	ruta.AddEstacion("Quirigua", 302);
     	ruta.AddEstacion("Carrera 90", 303);
     	ruta.AddEstacion("Avenida Cali", 304);
-    	ruta.AddEstacion("Granja", 305);
-    	ruta.AddEstacion("Carrera 77", 306);
-    	ruta.AddEstacion("Minuto de Dios", 307);
-    	ruta.AddEstacion("Boyaca", 308);
-    	ruta.AddEstacion("Ferias", 309);
-    	ruta.AddEstacion("Avenida 68", 310);
-    	ruta.AddEstacion("Carrera 53", 311);
-    	ruta.AddEstacion("Carrera 47", 312);
-    	ruta.AddEstacion("Escuela Militar", 313);
-    	ruta.AddEstacion("El Polo", 314);
+    	ruta.AddEstacion("Granja - Carrera 77", 305);
+    	ruta.AddEstacion("Minuto de Dios", 306);
+    	ruta.AddEstacion("Boyaca", 307);
+    	ruta.AddEstacion("Ferias", 308);
+    	ruta.AddEstacion("Avenida 68", 309);
+    	ruta.AddEstacion("Carrera 53", 310);
+    	ruta.AddEstacion("Carrera 47", 311);
+    	ruta.AddEstacion("Escuela Militar", 312);
+    	ruta.AddEstacion("El Polo", 313);
         ruta.AddEstacion("Calle 76", 1);
     	ruta.AddEstacion("Calle 72",2);
     	ruta.AddEstacion("Flores", 3);
@@ -1255,8 +1250,8 @@ public class Rutas {
     	ruta.AddEstacion("Suba Calle 95", 212);
     	ruta.AddEstacion("Rionegro", 213);
     	ruta.AddEstacion("San Martin", 214);
-        ruta.AddEstacion("Escuela Militar", 313);
-    	ruta.AddEstacion("El Polo", 314);
+        ruta.AddEstacion("Escuela Militar", 312);
+    	ruta.AddEstacion("El Polo", 313);
         ruta.AddEstacion("Calle 76", 1);
     	ruta.AddEstacion("Calle 72",2);
     	ruta.AddEstacion("Flores", 3);

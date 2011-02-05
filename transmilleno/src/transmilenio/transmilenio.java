@@ -273,8 +273,7 @@ public class transmilenio extends MIDlet implements CommandListener {
     	menu_paradas.append("Quirigua", null);
     	menu_paradas.append("Carrera 90", null);
     	menu_paradas.append("Avenida Cali", null);
-    	menu_paradas.append("Granja", null);
-    	menu_paradas.append("Carrera 77", null);
+    	menu_paradas.append("Granja - Carrera 77", null);
     	menu_paradas.append("Minuto de Dios", null);
     	menu_paradas.append("Boyaca", null);
     	menu_paradas.append("Ferias", null);
