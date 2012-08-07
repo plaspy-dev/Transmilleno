@@ -8,16 +8,14 @@ Aplicación histórica para consultar recorridos del transporte público y horar
 
 ### Esta revisión
 
-**2011-02-05 · Actualizar las estaciones y rutas del catálogo.** Revisa las entradas que crean estaciones y recorridos y ajusta el texto que muestra el cliente. Los cambios delimitan los datos de rutas que pertenecen a esta edición histórica.
+**2012-08-07 · Recuperar la edición para Android.** Añade el proyecto Android con manifiesto, pantalla y páginas móviles, mientras el respaldo deja fuera el cliente Java anterior. El lector puede ubicar dónde arranca la consulta móvil de rutas.
 
 ### Cómo explorar el código
 
 El archivo combina Java y Android. Usa un JDK para explorar las utilidades de consola. Para las variantes móviles, revisa los manifiestos y dependencias del Android SDK de cada versión.
 
-- [transmilleno/src/transmilenio/Hilo.java](transmilleno/src/transmilenio/Hilo.java)
-- [transmilleno/src/transmilenio/Horarios.java](transmilleno/src/transmilenio/Horarios.java)
-- [transmilleno/src/transmilenio/Ruta.java](transmilleno/src/transmilenio/Ruta.java)
-- [transmilleno/src/transmilenio/Rutas.java](transmilleno/src/transmilenio/Rutas.java)
+- [Transmilleno Free/src/sdg/transmilleno/free/TransmillenoFreeActivity.java](Transmilleno%20Free/src/sdg/transmilleno/free/TransmillenoFreeActivity.java)
+- [transmilleno/src/sdg/transmilleno/full/TransmillenoActivity.java](transmilleno/src/sdg/transmilleno/full/TransmillenoActivity.java)
 
 ## English
 
@@ -25,13 +23,11 @@ A historical application for looking up public transport routes and schedules. T
 
 ### This revision
 
-**2011-02-05 · Update the station and route catalog.** Revise entries that create stations and routes and adjust the text shown by the client. This identifies the route data that belongs to this historical edition.
+**2012-08-07 · Recover the Android edition.** Add the Android project with a manifest, screen, and mobile pages while the snapshot drops the previous Java client. Readers can locate the mobile route browser's entry point.
 
 ### How to explore the source
 
 The archive combines Java and Android. Use a JDK to explore the console utilities. For the mobile variants, check the manifest and Android SDK dependencies of each version.
 
-- [transmilleno/src/transmilenio/Hilo.java](transmilleno/src/transmilenio/Hilo.java)
-- [transmilleno/src/transmilenio/Horarios.java](transmilleno/src/transmilenio/Horarios.java)
-- [transmilleno/src/transmilenio/Ruta.java](transmilleno/src/transmilenio/Ruta.java)
-- [transmilleno/src/transmilenio/Rutas.java](transmilleno/src/transmilenio/Rutas.java)
+- [Transmilleno Free/src/sdg/transmilleno/free/TransmillenoFreeActivity.java](Transmilleno%20Free/src/sdg/transmilleno/free/TransmillenoFreeActivity.java)
+- [transmilleno/src/sdg/transmilleno/full/TransmillenoActivity.java](transmilleno/src/sdg/transmilleno/full/TransmillenoActivity.java)
