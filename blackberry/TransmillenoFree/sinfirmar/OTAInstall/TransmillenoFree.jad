@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+MIDlet-Version: 1.0.0.0
+MIDlet-Jar-Size: 518001
+RIM-COD-URL-5: TransmillenoFree-5.cod
+RIM-COD-SHA1-5: bb 30 a9 db 24 16 49 1d 09 d7 ce e7 e6 10 0c 54 f5 a4 9b 84
+RIM-COD-URL-4: TransmillenoFree-4.cod
+RIM-COD-SHA1-4: a6 d2 40 52 a2 08 44 34 d6 93 55 ef e5 db 8b ba 7e 83 c9 0e
+RIM-COD-URL-3: TransmillenoFree-3.cod
+RIM-COD-SHA1-3: 24 6f ae 41 3c 59 c7 2c 36 10 3c f4 76 88 50 85 05 3d 79 5b
+RIM-COD-URL-2: TransmillenoFree-2.cod
+MicroEdition-Configuration: CLDC-1.1
+MIDlet-Jar-URL: TransmillenoFree.jar
+RIM-COD-Module-Dependencies: net_rim_cldc,net_rim_bb_browser_field2_api,net_rim_os,net_rim_bb_web_jse_api,net_rim_networkapi,net_rim_bb_browser_field_api,net_rim_xml_org,net_rim_bbapi_push,net_rim_bbapi_browser,net_rim_xml
+RIM-COD-Size-5: 50136
+RIM-COD-SHA1-2: ec 31 79 a1 bc ad c6 e7 1c 06 1f f7 6b 21 19 11 61 23 a0 ef
+RIM-COD-URL-1: TransmillenoFree-1.cod
+RIM-COD-Size-4: 54560
+RIM-COD-SHA1-1: e2 13 77 af b7 6c 1f 82 4c 49 4a f4 38 b6 62 20 df 3c 00 e9
+RIM-COD-Size-3: 57896
+RIM-COD-Size-2: 54580
+RIM-MIDlet-Flags-1: 0
+RIM-COD-Size-1: 53840
+RIM-COD-Module-Name: TransmillenoFree
+MIDlet-Name: Transmilleno Free
+RIM-COD-Size: 64804
+RIM-COD-Creation-Time: 1344386847
+MIDlet-1: Transmilleno Free,images/icon.png,rim:foreground;WIDGET;
+RIM-COD-URL: TransmillenoFree.cod
+MIDlet-Description: Transmilleno, rutas de Transmilenio Bogotá
+RIM-COD-SHA1: f9 02 7d c7 e1 a2 85 cf 4b 75 0e 8f 00 dc b3 e9 6d ea f4 8b
+MicroEdition-Profile: MIDP-2.0
+MIDlet-Vendor: SDG
