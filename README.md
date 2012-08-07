@@ -8,7 +8,7 @@ Aplicación histórica para consultar recorridos del transporte público y horar
 
 ### Esta revisión
 
-**2012-08-07 · Separar clientes móviles, web y Java.** Agrupa las aplicaciones Android en su propia carpeta y recupera el catálogo Java y páginas web para los recorridos. Cada edición queda en una estructura que permite encontrar su código y datos de rutas.
+**2012-08-07 · Integrar las páginas de rutas en Android.** Mueve páginas y scripts de rutas a los recursos internos de Android y ajusta la actividad que los abre. Esto permite que la edición móvil use la interfaz web incluida con la aplicación.
 
 ### Cómo explorar el código
 
@@ -25,7 +25,7 @@ A historical application for looking up public transport routes and schedules. T
 
 ### This revision
 
-**2012-08-07 · Organize the mobile, web, and Java clients.** Group the Android applications in their own folder and recover the Java catalog and web route pages. Each edition has a structure that exposes its source and route data.
+**2012-08-07 · Bundle route pages with the Android client.** Move route pages and scripts into Android assets and adjust the activity that opens them. The mobile edition can use the web interface bundled with the application.
 
 ### How to explore the source
 

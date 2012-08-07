@@ -1,4 +1,5 @@
 ﻿<?php
+if(!isset($_GET['f'])) {
 $mobile_browser = '0';
 
 //$_SERVER['HTTP_USER_AGENT'] -> el agente de usuario que está accediendo a la página.
@@ -61,5 +62,6 @@ if($mobile_browser>0){
     header('Location: m.html');
 } else {
     header('Location: mapa.html');
+}
 }
 ?>

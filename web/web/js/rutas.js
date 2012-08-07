@@ -1,38 +1,5 @@
-// funciones a omitir
-//obfuscate exclude Rutas,getRuta,getRutaID,getTransbordos
-// variables a excluir 
-//obfuscate exclude getEstaciones,getDescripcion,getNombre,getParadas,getRutasArray
-//obfuscate excludeMembersOf 
 // Rutas
 // clase horarios
-
-
-// funciones de ofuscacion
-function getEstaciones(ruta) {
-	return ruta.m_vEstaciones;
-}
-function getDescripcion(ruta) {
-	return ruta.m_szDescripcion;
-}
-function getNombre(ruta) {
-	return ruta.m_szNombre;
-}
-function getParadas(ruta) {
-	return ruta.m_nParadas;
-}
-function getRutasArray(rutas) {
-	return rutas.m_vRutas;
-}
-function getTransbordos(rutas) {
-	return rutas.GetTransbordos();
-}
-function getRutaID(rutas, inicial, destino) {
-	return rutas.GetRutaID(inicial, destino);
-}
-function getRuta(rutas, szRuta) {
-	return rutas.GetRuta(szRuta);
-}
-
 function Horarios(desde, hasta) {
 	this.m_desde= desde;
     this.m_hasta= hasta;
@@ -145,7 +112,7 @@ function Rutas() {
 	
 	this.GetRutaI= function(szRuta) {
 		for(i=0; i<this.m_vRutas.length; i++) {
-            var ruta= this.m_vRutas[i];
+            ruta= this.m_vRutas[i];
             if(ruta.m_szNombre==szRuta) {
                 return ruta;
             }
