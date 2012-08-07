@@ -1,0 +1,15 @@
+/.idea/
+/.vscode/
+**/bin/
+**/obj/
+**/libs/
+**/gen/
+**/dist/
+*.class
+*.apk
+*.jar
+*.jks
+*.keystore
+*.cod
+.env
+*.sql.gz
