@@ -16,22 +16,18 @@
 			var ruta= prompt('Nombre de la ruta', '').toUpperCase();
 			if(ruta==null || ruta=="")
 				return;
-			var horario= prompt('Ingrese su horario', '').toUpperCase();
+			var horario= prompt('Ingrese su horario', '');
 			if(horario==null || horario=="")
 				return;
+			window.clipboardData.setData('Text',$("#resultado").val());
 			var transbordos= prompt('Permite Trasbordos', 'si');
 			transbordos= transbordos=="si";
 			$("#resultado").val('ruta= this.AddRuta("' + ruta +'", "' + horario +'", ' + transbordos +');');
-			retorno= prompt('Nombre de la ruta de retorno', '');
+			retorno= prompt('Nombre de la ruta de retorno', '').toUpperCase();
 			if(retorno && retorno!="") {
-				retorno=retorno.toUpperCase();
 				retorno='\nthis.AddRutaInvertida("'+ retorno + '", ruta, "' + horario + '");';
 				$("#resultado").val($("#resultado").val() + retorno);
-			} else { 
-				retorno="";
-			}
-			if(window.clipboardData)
-				window.clipboardData.setData('Text',$("#resultado").val() + "\r\n\r\n");
+			} else retorno="";
 		});
 		$("area")
 			.css("cursor", "pointer")
@@ -49,8 +45,6 @@
 				actual= actual.replace(retorno,"");
 				$("#resultado").val(actual + "\n" + nueva + retorno);
 				$("#resultado").scrollTop(99999);
-				if(window.clipboardData)
-				window.clipboardData.setData('Text',$("#resultado").val() + "\r\n\r\n");
 				return false;
 			});
 	});

@@ -34,7 +34,7 @@ Install a generated Full or Free APK on a test emulator to open its entry page. 
 
 ### Project structure
 
-Folders in this edition include `android/`, `blackberry/`, `demo/`, `java/`, `nokia/`, `vendor/`, `web/`.
+Folders in this edition include `android/`, `demo/`, `java/`, `vendor/`, `web/`.
 
 ### Verification
 
@@ -91,7 +91,7 @@ Instala un APK Full o Free en un emulador de prueba para abrir su página inicia
 
 ### Estructura del proyecto
 
-Las carpetas de esta edición incluyen `android/`, `blackberry/`, `demo/`, `java/`, `nokia/`, `vendor/`, `web/`.
+Las carpetas de esta edición incluyen `android/`, `demo/`, `java/`, `vendor/`, `web/`.
 
 ### Verificación
 

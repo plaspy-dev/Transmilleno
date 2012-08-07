@@ -1,43 +1,4 @@
-//obfuscate exclude
-//obfuscate excludeMembersOf 
-var GLOBAL_WIDTH=1232;
-var GLOBAL_HEIGHT=822;
-var GLOBAL_AREAS= new Array();
-
-function scaleArea() {   // using values stored at load, recalculate new values for the current size
-
-	var arrayAreas = document.body.getElementsByTagName("AREA");
-	for(var i = 0; i < arrayAreas.length; i++) {
-
-	   rescaleX= $("#mapa").width()/GLOBAL_WIDTH;
-	   rescaleY= $("#mapa").height()/GLOBAL_HEIGHT;
-	   sarray=GLOBAL_AREAS[i].split(",");      // convert coordinates to a numeric array assuming comma-delimited values
-	   var rarray =new Array();
-	   for(var j = 0; j < sarray.length; j += 2) {
-		  rarray[j]=Math.round(parseInt(sarray[j])*rescaleX);  // rescale the values
-		  rarray[j+1]=Math.round(parseInt(sarray[j+1])*rescaleY);  // rescale the values
-	   }
-	   arrayAreas[i].coords=rarray.join(",");    // put the values back into a string
-   }
-   if($("#mapa").width()>900) { 
-		$("#mapa").attr("usemap", "#m_mapa");
-	} else {
-		$("#mapa").attr("usemap", "");
-	}
-}
-
-$(window).bind('resize', function() {
-
-	scaleArea();
-	if($("#mapa").width()>900) { 
-		$("#mapa").attr("usemap", "#m_mapa");
-	} else {
-		$("#mapa").attr("usemap", "");
-	}
-});
-
 $(function() {
-	
 	var maxh= GLOBAL_HEIGHT;
 	var maxw= GLOBAL_WIDTH;
 	var inicial=-1;
@@ -120,10 +81,10 @@ $(function() {
 			
 			var letra= $(this).attr("target")[1];
 			var resultado= new Array();
-			var rutas= getRutasArray(m_pRutas);
+			var rutas= m_pRutas.m_vRutas;
 			for(var i=0; i<rutas.length; i++) {
 				var ruta= rutas[i];
-				if(getNombre(ruta)[0]==letra) {
+				if(ruta.m_szNombre[0]==letra) {
 					resultado.push(ruta);
 				}
 			}
@@ -132,7 +93,7 @@ $(function() {
 				for(var j=0;j<i; j++) {
 					var ruta= resultado[j+1];
 					var ruta2= resultado[j];
-					if(getNombre(ruta2).localeCompare(getNombre(ruta))>0) {
+					if(ruta2.m_szNombre.localeCompare(ruta.m_szNombre)>0) {
 						var temp= ruta2;
 						resultado[j]=ruta;
 						resultado[j+1]=temp;
@@ -143,7 +104,7 @@ $(function() {
 			// los agregamos
 			for(var i=0; i<resultado.length; i++) {
 			   var ruta= resultado[i];
-			   $('#trrutas').after("<tr class='delrut tdr'><td class='" + getNombre(ruta)[0] + " cruta'>" + getNombre(ruta) + "</td></tr>");
+			   $('#trrutas').after("<tr class='delrut tdr'><td class='" + ruta.m_szNombre[0] + " cruta'>" + ruta.m_szNombre + "</td></tr>");
 			}
 			$("#trutar").show();
 			$("#tresultados").show();
@@ -160,7 +121,7 @@ $(function() {
 			} else {
 				$("#texto").text($("#texto").text() + " - " + $(this).attr("alt"));
 				var destino=$(this).attr("target");
-				var temp= getRutaID(m_pRutas,inicial, destino);
+				var temp= m_pRutas.GetRutaID(inicial, destino);
 				if(temp.length==0) {
 					$('#trutasn').show();
 				} else {
@@ -168,10 +129,10 @@ $(function() {
 				}
 				for(var i=temp.length-1; i>=0; i--) {
 					var ruta= temp[i];
-					$('#trutasn').after("<tr class='delres tdr'><td class='" + getNombre(ruta)[0] + " cruta'>" + getNombre(ruta) + "</td><td class='tdr' style='text-align: right;'>" + getParadas(ruta) + "</td><td class='tdr'>" + getDescripcion(ruta) + "</td></tr>");
+					$('#trutasn').after("<tr class='delres tdr'><td class='" + ruta.m_szNombre[0] + " cruta'>" + ruta.m_szNombre + "</td><td class='tdr' style='text-align: right;'>" + ruta.m_nParadas + "</td><td class='tdr'>" + ruta.m_szDescripcion + "</td></tr>");
 				}
 				
-				temp= getTransbordos(m_pRutas);
+				temp= m_pRutas.GetTransbordos();
 				if(temp.length==0) {
 					$('#ttransbordosn').show();
 				} else {
@@ -179,7 +140,7 @@ $(function() {
 				}
 				for(var i=temp.length-1; i>=0; i--) {
 					var ruta= temp[i];
-					$('#ttransbordosn').after("<tr class='delres tdr'><td class='" + getNombre(ruta)[0]+ " cruta'>" + getNombre(ruta) + "</td><td class='tdr' style='text-align: right;'>" + getParadas(ruta) + "</td><td class='tdr'>" + getDescripcion(ruta) + "</td></tr>");
+					$('#ttransbordosn').after("<tr class='delres tdr'><td class='" + ruta.m_szNombre[0]+ " cruta'>" + ruta.m_szNombre + "</td><td class='tdr' style='text-align: right;'>" + ruta.m_nParadas + "</td><td class='tdr'>" + ruta.m_szDescripcion + "</td></tr>");
 				}
 				$("#ayuda").text("Resultados.");
 				$("#tresultados").show();
@@ -189,13 +150,13 @@ $(function() {
 			}
 		}
 		function GetRuta(szRuta) {
-			var ruta= getRuta(m_pRutas,szRuta);
+			var ruta= m_pRutas.GetRuta(szRuta);
 			if(ruta!=null) {
-				var estaciones = getEstaciones(ruta);
-				$("#nombreruta").html(getNombre(ruta) + "<br/>" + getDescripcion(ruta));
+				var estaciones = ruta.m_vEstaciones;
+				$("#nombreruta").html(ruta.m_szNombre + "<br/>" + ruta.m_szDescripcion);
 				
 				for(var j=0; j<estaciones.length; j++) {
-					$('#trrutas').after("<tr class='delrut tdr'><td class='" + getNombre(ruta)[0] + "'>" + estaciones[j] + "</td></tr>");
+					$('#trrutas').after("<tr class='delrut tdr'><td class='" + ruta.m_szNombre[0] + "'>" + estaciones[j] + "</td></tr>");
 				}
 			}
 			return ruta!=null;
@@ -222,10 +183,4 @@ $(function() {
 		$("#tabresultados").hide();
 		$("#ayuda").text("Por favor seleccione su origen o una zona.");
 	});
-	
-	var arrayAreas = document.body.getElementsByTagName("area");
-	for(var i = 0; i < arrayAreas.length; i++) {
-		GLOBAL_AREAS[i]= arrayAreas[i].coords;
-	}
-	scaleArea();
 });
