@@ -8,7 +8,7 @@ Aplicación histórica para consultar recorridos del transporte público y horar
 
 ### Esta revisión
 
-**2012-08-07 · Conservar la copia con ediciones de Android y Java.** Incorpora la edición Free, las páginas web móviles y el catálogo Java en la rama de respaldos. El lector puede comparar los puntos de entrada de las tres variantes en la misma copia histórica.
+**2012-08-07 · Reubicar la navegación web de los respaldos.** Mueve la entrada web a los recursos de Android y reorganiza las páginas de desarrollo de rutas. El respaldo identifica qué interfaz pertenece al cliente Android y cuál queda en el árbol web.
 
 ### Cómo explorar el código
 
@@ -25,7 +25,7 @@ A historical application for looking up public transport routes and schedules. T
 
 ### This revision
 
-**2012-08-07 · Archive Android and Java editions together.** Add the Free edition, mobile web pages, and Java catalog to the backup branch. Readers can compare entry points for the three variants in the same historical snapshot.
+**2012-08-07 · Relocate web navigation in the backup branch.** Move the web entry point into Android assets and reorganize route development pages. The backup identifies which interface belongs to the Android client and which remains in the web tree.
 
 ### How to explore the source
 
