@@ -38,7 +38,7 @@ Install a generated Full or Free APK on a test emulator to open its entry page. 
 - `demo/`. Build and validation script compilar.py.
 - `java/`. Java ME route sources. Build the MIDlet via the demo build script.
 - `vendor/`. Archived Android build inputs and their original notices.
-- `web/`. Browser route viewer, styles and data. Open `web/final/m.html` to view the route selector. The draft and expanded copies are in `web/desarrollo/` and `web/finalcompleto/`.
+- `web/`. Browser route viewer, styles and data. Open web/web/ to find its plain HTML entry.
 
 ### Verification
 
@@ -99,7 +99,7 @@ Instala un APK Full o Free en un emulador de prueba para abrir su página inicia
 - `demo/`. Script de compilación y validación compilar.py.
 - `java/`. Fuentes de rutas Java ME. Compila el MIDlet con el script de demostración.
 - `vendor/`. Insumos archivados para compilar Android y sus avisos originales.
-- `web/`. Visor de rutas para navegador, estilos y datos. Abre `web/final/m.html` para ver el selector de recorridos. El borrador y la copia ampliada están en `web/desarrollo/` y `web/finalcompleto/`.
+- `web/`. Visor de rutas para navegador, estilos y datos. En web/web/ está la entrada HTML.
 
 ### Verificación
 

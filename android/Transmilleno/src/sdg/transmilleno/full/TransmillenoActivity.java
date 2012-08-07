@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -17,7 +16,7 @@ public class TransmillenoActivity extends DroidGap {
     /** Called when the activity is first created. */
 	ProgressBar progreso;
 	boolean agregado=false;
-	LinearLayout content=null;
+	LinearLayout content;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState); 
@@ -28,14 +27,10 @@ public class TransmillenoActivity extends DroidGap {
     	super.init();
         super.appView.clearCache(true);
         super.appView.clearHistory();
-        
-        View viewt= findViewById(android.R.id.content);
-        
-        if(viewt instanceof FrameLayout) {
-        	FrameLayout frame= (FrameLayout)viewt;
-            content= (LinearLayout)frame.getChildAt(0);
-        }
-        
+          
+        ViewGroup view= (ViewGroup)getWindow().getDecorView();
+        FrameLayout frame= (FrameLayout)view.getChildAt(0);
+        content= (LinearLayout)frame.getChildAt(0);
         progreso.setLayoutParams(new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.FILL_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -53,14 +48,13 @@ public class TransmillenoActivity extends DroidGap {
     	
 	   try {
 	   	if(mensaje=="onPageFinished") {
-	   		if(content!=null && agregado) {
+	   		// spinnerStop();
+	   		if(agregado)
 	   			content.removeView(progreso);
-	   			spinnerStop();
-	   		}
 	   		agregado=false;
 	   	} else if(mensaje=="onPageStarted") {
 	   		// spinnerStart("Cargando", "Por favor espere");
-	   		if(content!=null && !agregado)
+	   		if(!agregado)
 	   			content.addView(progreso);
 	   		agregado=true;
 	   	}
