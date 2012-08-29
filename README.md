@@ -8,16 +8,16 @@ Aplicación histórica para consultar recorridos del transporte público y horar
 
 ### Esta revisión
 
-**2012-08-07 · Integrar las páginas de rutas en Android.** Mueve páginas y scripts de rutas a los recursos internos de Android y ajusta la actividad que los abre. Esto permite que la edición móvil use la interfaz web incluida con la aplicación.
+**2012-08-29 · Registrar una copia sin los clientes Android y web.** Retira árboles de la interfaz móvil y del sitio web presentes en la copia anterior. El historial permite identificar el respaldo que los conserva y distinguirlo de esta revisión.
 
 ### Cómo explorar el código
 
 El archivo combina Java y Android. Usa un JDK para explorar las utilidades de consola. Para las variantes móviles, revisa los manifiestos y dependencias del Android SDK de cada versión.
 
-- [java/transmilenio/Hilo.java](java/transmilenio/Hilo.java)
-- [java/transmilenio/Horarios.java](java/transmilenio/Horarios.java)
-- [java/transmilenio/Ruta.java](java/transmilenio/Ruta.java)
-- [java/transmilenio/Rutas.java](java/transmilenio/Rutas.java)
+- [transmilenio/Hilo.java](transmilenio/Hilo.java)
+- [transmilenio/Horarios.java](transmilenio/Horarios.java)
+- [transmilenio/Ruta.java](transmilenio/Ruta.java)
+- [transmilenio/Rutas.java](transmilenio/Rutas.java)
 
 ## English
 
@@ -25,13 +25,13 @@ A historical application for looking up public transport routes and schedules. T
 
 ### This revision
 
-**2012-08-07 · Bundle route pages with the Android client.** Move route pages and scripts into Android assets and adjust the activity that opens them. The mobile edition can use the web interface bundled with the application.
+**2012-08-29 · Record a copy without the Android and web clients.** Remove mobile and website interface trees present in the previous copy. The history identifies the snapshot that contains them and distinguishes it from this revision.
 
 ### How to explore the source
 
 The archive combines Java and Android. Use a JDK to explore the console utilities. For the mobile variants, check the manifest and Android SDK dependencies of each version.
 
-- [java/transmilenio/Hilo.java](java/transmilenio/Hilo.java)
-- [java/transmilenio/Horarios.java](java/transmilenio/Horarios.java)
-- [java/transmilenio/Ruta.java](java/transmilenio/Ruta.java)
-- [java/transmilenio/Rutas.java](java/transmilenio/Rutas.java)
+- [transmilenio/Hilo.java](transmilenio/Hilo.java)
+- [transmilenio/Horarios.java](transmilenio/Horarios.java)
+- [transmilenio/Ruta.java](transmilenio/Ruta.java)
+- [transmilenio/Rutas.java](transmilenio/Rutas.java)
