@@ -43,7 +43,7 @@ def android(project, output, sdk, java, modern_java, external):
     imports = b'\n'.join(source.read_bytes() for source in java_sources(project / 'src'))
     for marker, name in ((b'org.apache.cordova', 'cordova-2.0.0.jar'), (b'com.google.ads', 'GoogleAdMobAdsSdk-6.1.0.jar')):
         if marker in imports:
-            library = external / name
+            library = Path(__file__).resolve().parents[1] / "vendor" / "android" / name
             if not library.is_file():
                 raise FileNotFoundError(library)
             libs.append(library)
