@@ -77,6 +77,8 @@ public class transmilenio extends MIDlet implements CommandListener {
       menu_zonas.append("G - NQS Sur", null);
       menu_zonas.append("H - Caracas Sur", null);
       menu_zonas.append("J - Eje Ambiental", null);
+      menu_zonas.append("K - Calle 26", null);
+      menu_zonas.append("L - Carrera 10", null);
       
       if(m_nPosicion!=0)
         menu_zonas.addCommand(backCommand);
@@ -119,7 +121,7 @@ public class transmilenio extends MIDlet implements CommandListener {
        } else {
            cadena+=" AM";
        }*/
-       screen.append(new StringItem("Actualizado el 12/08/2010", ""));
+       screen.append(new StringItem("Actualizado el 27/08/2012", ""));
        if(img==null) {
            try {
                img= Image.createImage("/logo.png");
@@ -139,7 +141,7 @@ public class transmilenio extends MIDlet implements CommandListener {
     public void PutDescripcion(List lista, String descripcion) {
 
         int pos=0;
-        while((pos= descripcion.indexOf("\n"))!=-1){
+        while((pos= descripcion.indexOf("*"))!=-1){
             lista.append(descripcion.substring(0, pos), null);
             descripcion= descripcion.substring(pos+1);
         }
@@ -183,6 +185,7 @@ public class transmilenio extends MIDlet implements CommandListener {
            menu_resultados.append("No se encontraron rutas",null);
            menu_resultados.append("", null);
        }
+       menu_resultados.append("Rutas del 27/08/2012", null);
        menu_resultados.append("Desarrollado por SDG", null);
        menu_resultados.append("https://service.example.invalid", null);
        m_bResultados=true;
@@ -232,6 +235,7 @@ public class transmilenio extends MIDlet implements CommandListener {
   
     public void GetZonaB() {
     	
+    	menu_paradas.append("C.C. Santafe", null);
     	menu_paradas.append("Portal Norte", null);
     	menu_paradas.append("Toberin", null);
     	menu_paradas.append("Cardio infantil", null);
@@ -364,6 +368,37 @@ public class transmilenio extends MIDlet implements CommandListener {
         menu_paradas.append("Las Aguas", null);
     }
     
+    public void GetZonaK() {
+    	
+        menu_paradas.append("Portal Eldorado", null);
+        menu_paradas.append("Modelia", null);
+        menu_paradas.append("Normandia", null);
+        menu_paradas.append("Av. Rojas", null);
+        menu_paradas.append("El Tiempo", null);
+        menu_paradas.append("Salitre - El Greco", null);
+        menu_paradas.append("CAN", null);
+        menu_paradas.append("Gobernacion", null);
+        menu_paradas.append("Quinta paredes", null);
+        menu_paradas.append("Corferias", null);
+        menu_paradas.append("Ciudad universitaria", null);
+        menu_paradas.append("Plaza democratica", null);
+        menu_paradas.append("Centro Memoria", null);
+    }
+    
+    public void GetZonaL() {
+    	
+        menu_paradas.append("Portal del 20 de Julio", null);
+        menu_paradas.append("Country Sur", null);
+        menu_paradas.append("Av. 1a de Mayo", null);
+        menu_paradas.append("Ciudad jardin", null);
+        menu_paradas.append("Policarpa", null);
+        menu_paradas.append("Hospitales", null);
+        menu_paradas.append("Bicentenario", null);
+        menu_paradas.append("San Victorino", null);
+        menu_paradas.append("Las Nieves", null);
+        menu_paradas.append("San Diego", null);
+    }
+    
     public boolean GetRuta(String szRuta) {
 
         if(m_pRutas==null)
@@ -384,6 +419,7 @@ public class transmilenio extends MIDlet implements CommandListener {
             }
         }
         menu_resultados.append("", null);
+        menu_resultados.append("Rutas del 27/08/2012", null);
         menu_resultados.append("Desarrollado por SDG", null);
         menu_resultados.append("https://service.example.invalid", null);
        
@@ -425,6 +461,12 @@ public class transmilenio extends MIDlet implements CommandListener {
     	  		break;
     	  	case 8:
     	  		letra='J';
+    	  		break;
+    	  	case 9:
+    	  		letra='K';
+    	  		break;
+    	  	case 10:
+    	  		letra='L';
     	  		break;
     	  }
         menu_paradas = new List("Seleccione su ruta", Choice.IMPLICIT);
@@ -502,6 +544,12 @@ public class transmilenio extends MIDlet implements CommandListener {
     	  		break;
     	  	case 8:
     	  		GetZonaJ();
+    	  		break;
+    	  	case 9:
+    	  		GetZonaK();
+    	  		break;
+    	  	case 10:
+    	  		GetZonaL();
     	  		break;
     	  }
     	menu_paradas.addCommand(exitCommand);
@@ -586,10 +634,10 @@ public class transmilenio extends MIDlet implements CommandListener {
     	  m_szUbicacion= down.getString(down.getSelectedIndex());
           int index= down.getSelectedIndex()+1;
           m_nIDUbicacion+=index;
-          if(m_nIDUbicacion==518) {
+          if(m_nIDUbicacion==518) { // jimenez
               m_nIDUbicacion=13;
-          } else if(m_nIDUbicacion==515) {
-              m_nIDUbicacion=613;
+          } else if(m_nIDUbicacion==613) { // restrepo
+              m_nIDUbicacion=515;
           }
           GetZonas();
       } else if(m_nPosicion==3) { // seleccion destino
@@ -599,10 +647,10 @@ public class transmilenio extends MIDlet implements CommandListener {
           
           int index= down.getSelectedIndex()+1;
           m_nIDDestino+=index;
-          if(m_nIDDestino==518) {
+          if(m_nIDDestino==518) { // jimenez
               m_nIDDestino=13;
-          } else if(m_nIDDestino==515) {
-              m_nIDDestino=613;
+          } else if(m_nIDDestino==613) { // restrepo
+              m_nIDDestino=515;
           }
           GetResultado();
       }
