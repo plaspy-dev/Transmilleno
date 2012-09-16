@@ -8,14 +8,16 @@ Aplicación histórica para consultar recorridos del transporte público y horar
 
 ### Esta revisión
 
-**2012-09-04 · Recuperar las variantes Android Classic y Free.** Añade los manifiestos y pantallas de Android y deja fuera el árbol anterior de Java en esta copia. Así se identifican los proyectos que permiten explorar las variantes móviles.
+**2012-09-16 · Recuperar el cliente Java de rutas y horarios.** Restituye las clases Java de estaciones, rutas y horarios y retira los proyectos Android de la copia anterior. El lector puede volver a seguir la consulta en el cliente Java independiente.
 
 ### Cómo explorar el código
 
 El archivo combina Java y Android. Usa un JDK para explorar las utilidades de consola. Para las variantes móviles, revisa los manifiestos y dependencias del Android SDK de cada versión.
 
-- [Transmilleno Free/src/sdg/transmilleno/free/TransmillenoFreeActivity.java](Transmilleno%20Free/src/sdg/transmilleno/free/TransmillenoFreeActivity.java)
-- [transmilleno/src/sdg/transmilleno/full/TransmillenoActivity.java](transmilleno/src/sdg/transmilleno/full/TransmillenoActivity.java)
+- [transmilleno/src/transmilenio/Hilo.java](transmilleno/src/transmilenio/Hilo.java)
+- [transmilleno/src/transmilenio/Horarios.java](transmilleno/src/transmilenio/Horarios.java)
+- [transmilleno/src/transmilenio/Ruta.java](transmilleno/src/transmilenio/Ruta.java)
+- [transmilleno/src/transmilenio/Rutas.java](transmilleno/src/transmilenio/Rutas.java)
 
 ## English
 
@@ -23,11 +25,13 @@ A historical application for looking up public transport routes and schedules. T
 
 ### This revision
 
-**2012-09-04 · Recover the Classic and Free Android editions.** Add the Android manifests and screens and omit the earlier Java tree from this snapshot. This identifies the projects that contain the mobile variants.
+**2012-09-16 · Recover the Java route and timetable client.** Restore Java station, route, and timetable classes and remove the previous copy's Android projects. Readers can follow the workflow in the standalone Java client again.
 
 ### How to explore the source
 
 The archive combines Java and Android. Use a JDK to explore the console utilities. For the mobile variants, check the manifest and Android SDK dependencies of each version.
 
-- [Transmilleno Free/src/sdg/transmilleno/free/TransmillenoFreeActivity.java](Transmilleno%20Free/src/sdg/transmilleno/free/TransmillenoFreeActivity.java)
-- [transmilleno/src/sdg/transmilleno/full/TransmillenoActivity.java](transmilleno/src/sdg/transmilleno/full/TransmillenoActivity.java)
+- [transmilleno/src/transmilenio/Hilo.java](transmilleno/src/transmilenio/Hilo.java)
+- [transmilleno/src/transmilenio/Horarios.java](transmilleno/src/transmilenio/Horarios.java)
+- [transmilleno/src/transmilenio/Ruta.java](transmilleno/src/transmilenio/Ruta.java)
+- [transmilleno/src/transmilenio/Rutas.java](transmilleno/src/transmilenio/Rutas.java)
