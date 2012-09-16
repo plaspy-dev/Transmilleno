@@ -2,6 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+package sdg.transmilleno.classic;
 import java.util.Vector;
 /**
  *
@@ -51,7 +52,7 @@ public class Ruta {
             return m_F;
         }
         public String GetDescripcion() {
-            return m_szDescripcion;
+            return m_szDescripcion.replace("*", "\n");
         }
         public void AddEstacion(String estacion, int id) {
             m_vEstaciones.addElement(estacion);
