@@ -182,7 +182,7 @@ public class TransmillenoClassicActivity extends ListActivity {
     	   cursor.addRow(new Object[] { key++, "No se encontraron rutas", ""});
     	   cursor.addRow(new Object[] { key++, "", ""});
        }
-       cursor.addRow(new Object[] { key++, "Rutas del 27/08/2012", ""});
+       cursor.addRow(new Object[] { key++, "Rutas del " + Rutas.GetFechaRutas(), ""});
        cursor.addRow(new Object[] { key++, "Desarrollado por SDG", "https://transmilleno.example.invalid"});
        m_bResultados=true;
        
@@ -433,7 +433,7 @@ public class TransmillenoClassicActivity extends ListActivity {
              }
          }
          menu_resultados.add("");
-         menu_resultados.add("Rutas del 27/08/2012");
+         menu_resultados.add("Rutas del " + Rutas.GetFechaRutas());
          menu_resultados.add("Desarrollado por SDG");
          menu_resultados.add("https://transmilleno.example.invalid");
         

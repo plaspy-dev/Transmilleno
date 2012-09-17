@@ -37,11 +37,13 @@ Folders in this edition include `Transmilleno Classic/`, `Transmilleno Free/`, `
 
 ### Verification
 
-Built on 20 November 2026 on Windows 10.0.26300 from the source edition dated 2012-09-16. Classic opened the results after two selections in the offline Android 35 emulator. Full and Free build. On Android 35 some editions exit during startup and others lack a working local navigation page.
+The archived Android activities use fictional AdMob identifiers. The route trial runs offline.
+
+Built on 20 November 2026 on Windows 10.0.26300 from the source edition dated 2012-09-17. Classic opened the results after two selections in the offline Android 35 emulator. Full and Free build. On Android 35 some editions exit during startup and others lack a working local navigation page.
 
 ### History
 
-The source edition keeps its original date of 2012-09-16.
+The source edition keeps its original date of 2012-09-17.
 
 ### Support
 
@@ -93,11 +95,13 @@ Las carpetas de esta edición incluyen `Transmilleno Classic/`, `Transmilleno Fr
 
 ### Verificación
 
-Compilado el 20 de noviembre de 2026 en Windows 10.0.26300 desde la edición del 2012-09-16. Classic abrió los resultados después de elegir dos paradas en el emulador Android 35 sin conexión. Full y Free compilan. En Android 35 algunos cortes se cierran al iniciar y otros carecen de una página local que permita recorrer la aplicación.
+Las actividades archivadas de Android usan identificadores ficticios de AdMob. La prueba de rutas se ejecuta sin conexión.
+
+Compilado el 20 de noviembre de 2026 en Windows 10.0.26300 desde la edición del 2012-09-17. Classic abrió los resultados después de elegir dos paradas en el emulador Android 35 sin conexión. Full y Free compilan. En Android 35 algunos cortes se cierran al iniciar y otros carecen de una página local que permita recorrer la aplicación.
 
 ### Historial
 
-La edición conserva su fecha original del 2012-09-16.
+La edición conserva su fecha original del 2012-09-17.
 
 ### Soporte
 

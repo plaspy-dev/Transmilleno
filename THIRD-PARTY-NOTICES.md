@@ -2,6 +2,7 @@
 
 | Component / Componente | Author / Autor | Origin / Origen | Notice / Aviso | Path / Ruta | SHA-256 |
 | --- | --- | --- | --- | --- | --- |
+| Google AdMob Ads SDK 6.1.0 | Google | Original Android archive | Historical Google Ads SDK terms | `vendor/android/GoogleAdMobAdsSdk-6.1.0.jar` | a03f5ac6baf4df84cf8d0f27d19ca2d4d0a959f2d80076698b4383bc52d93b05 |
 | Apache Cordova for Android 2.0.0 | Apache Software Foundation | Original Android archive | Apache-2.0 | `vendor/android/cordova-2.0.0.jar` | 832974796d2a6d1d4bdb275ad82a5950c614810d029ad03b502cade40e204ec3 |
 
 The Java ME build uses [MicroEmulator 2.0.4](https://central.sonatype.com/artifact/org.microemu/microemulator/2.0.4). Place it in the directory supplied to `--external`.
