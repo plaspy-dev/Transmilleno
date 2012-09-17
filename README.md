@@ -8,7 +8,7 @@ Aplicación histórica para consultar recorridos del transporte público y horar
 
 ### Esta revisión
 
-**2012-09-16 · Adaptar las clases de rutas a Android Classic.** Recupera la estructura de Android Classic y traslada clases de recorridos y horarios a su código fuente. El cliente móvil puede usar el catálogo junto a la actividad que muestra las rutas.
+**2012-09-17 · Actualizar el catálogo Android y su página móvil.** Revisa rutas de la edición Classic y modifica la vista web y la actividad de la edición Free que la carga. Esto mantiene identificables los recorridos y las pantallas móviles de la revisión.
 
 ### Cómo explorar el código
 
@@ -25,7 +25,7 @@ A historical application for looking up public transport routes and schedules. T
 
 ### This revision
 
-**2012-09-16 · Adapt route classes for Android Classic.** Recover the Android Classic project and move route and timetable classes into its source. The mobile client can use the catalog alongside the activity that shows the routes.
+**2012-09-17 · Update the Android catalog and mobile page.** Update Classic route catalog entries along with the web view and Free activity that loads it. This ties each revision's mobile screens to its route data.
 
 ### How to explore the source
 

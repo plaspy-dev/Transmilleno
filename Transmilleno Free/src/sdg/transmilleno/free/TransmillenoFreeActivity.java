@@ -1,8 +1,6 @@
 package sdg.transmilleno.free;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,13 +9,16 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
+import com.google.ads.*;
 import org.apache.cordova.*;
 
 public class TransmillenoFreeActivity extends DroidGap {
     /** Called when the activity is first created. */
+	private AdView adView;
 	ProgressBar progreso;
 	boolean agregado=false;
 	LinearLayout content=null;
+	String MY_AD_UNIT_ID="a1505490bd52718";
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,9 +33,18 @@ public class TransmillenoFreeActivity extends DroidGap {
           
         View viewt= findViewById(android.R.id.content);
         
+        // Crear la adView    
+        adView = new AdView(this, AdSize.BANNER, MY_AD_UNIT_ID);      
+        
         if(viewt instanceof FrameLayout) {
         	FrameLayout frame= (FrameLayout)viewt;
             content= (LinearLayout)frame.getChildAt(0);
+        }
+        
+        if(content!=null) {
+        	content.addView(adView);    
+        	// Iniciar una solicitud genérica para cargarla con un anuncio    
+        	adView.loadAd(new AdRequest());
         }
         
         progreso.setLayoutParams(new ViewGroup.LayoutParams(
@@ -46,8 +56,8 @@ public class TransmillenoFreeActivity extends DroidGap {
         super.setStringProperty("loadingPageDialog", "Cargando,Por favor espere");
         super.setStringProperty("loadingDialog", "Cargando,Por favor espere");
         
-        // super.loadUrl("https://service.example.invalid/web/");
-        super.loadUrl("https://service.example.invalid/?f=a");
+        super.loadUrl("file:///android_asset/www/m.html");
+        // super.loadUrl("https://service.example.invalid/?f=a");
         // setContentView(R.layout.main);
     }
     
@@ -82,7 +92,8 @@ public class TransmillenoFreeActivity extends DroidGap {
     @Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		if(item.getTitle()=="Inicio") {
-			super.loadUrl("https://service.example.invalid/web/");
+			super.loadUrl("file:///android_asset/www/m.html");
+			// super.loadUrl("https://service.example.invalid/web/");
 	        // super.loadUrl("https://service.example.invalid/");
 			return true;
 		} else if(item.getTitle()=="Salir") {
@@ -91,4 +102,10 @@ public class TransmillenoFreeActivity extends DroidGap {
 		}
 	    return super.onOptionsItemSelected(item);
 	}
+    
+    @Override  
+    public void onDestroy() {    
+    	adView.destroy();    
+    	super.onDestroy();  
+    }
 }

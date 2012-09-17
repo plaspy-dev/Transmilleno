@@ -15,6 +15,7 @@ public class Rutas {
     public Vector GetRutas() {
         return m_vRutas;
     }
+    
 
     public Ruta GetRuta(String szRuta) {
 
@@ -1118,11 +1119,14 @@ public class Rutas {
     	this.AddRutaInvertida("F60", ruta, "Lunes a viernes 05:00-09:00*Lunes a viernes 17:00-20:00");
 
     	ruta= this.AddRuta("K10", "Lunes a sábado 05:00-23:00", true);
+    	ruta.AddEstacion("Portal del 20 de Julio", 1001);
+    	ruta.AddEstacion("AV. 1a de mayo", 1003);
     	ruta.AddEstacion("Tercer milenio", 14);
     	ruta.AddEstacion("Av. Jiménez", 13);
     	ruta.AddEstacion("Centro memoria", 913);
     	ruta.AddEstacion("Ciudad universitaria", 911);
     	ruta.AddEstacion("Gobernación", 908);
+    	ruta.AddEstacion("CAN", 907);
     	ruta.AddEstacion("Salite - El Greco", 906);
     	ruta.AddEstacion("Normandía", 903);
     	ruta.AddEstacion("Modelia", 902);
@@ -1278,16 +1282,33 @@ public class Rutas {
     	this.AddRutaInvertida("J95", ruta, "Domingos y festivos 06:00-22:00");
 
     	ruta= this.AddRuta("K97", "Domingos y festivos 06:00-22:00", false);
+    	ruta.AddEstacion("Portal del 20 de Julio", 1001);
+    	ruta.AddEstacion("AV. 1a de mayo", 1003);
     	ruta.AddEstacion("Tercer milenio", 14);
     	ruta.AddEstacion("Av. Jiménez", 13);
     	ruta.AddEstacion("Calle 22", 11);
     	ruta.AddEstacion("Centro memoria", 913);
     	ruta.AddEstacion("Ciudad universitaria", 911);
     	ruta.AddEstacion("Gobernación", 908);
+    	ruta.AddEstacion("CAN", 907);
     	ruta.AddEstacion("Salite - El Greco", 906);
     	ruta.AddEstacion("Normandía", 903);
     	ruta.AddEstacion("Modelia", 902);
     	ruta.AddEstacion("Portal Eldorado", 901);
     	this.AddRutaInvertida("L97", ruta, "Domingos y festivos 06:00-22:00");
+    	
+    	ruta= this.AddRuta("L7", "Lunes a sábado 05:00-23:00*Domingos y festivos 06:00-22:00", true);
+    	ruta.AddEstacion("San Diego", 1010);
+    	ruta.AddEstacion("Policarpa", 1005);
+    	ruta.AddEstacion("Ciudad Jardin", 1004);
+    	ruta.AddEstacion("AV. 1a de mayo", 1003);
+    	ruta.AddEstacion("Country Sur", 1002);
+    	ruta.AddEstacion("Portal del 20 de Julio", 1001);
+    	this.AddRutaInvertida("M7", ruta, "Lunes a sábado 05:00-23:00*Domingos y festivos 06:00-22:00");
     }
+    
+    public static String GetFechaRutas() {
+    	
+    	return "15/09/2012";
+    } 
 }

@@ -4,10 +4,10 @@
 	<title>Transmilleno</title>	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" href="css/jquery.mobile-1.0.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile-1.1.1.min.css" />
     <link rel="stylesheet" href="css/m.min.css" />
 	<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
-	<script type="text/javascript" src="js/jquery.mobile-1.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.1.1.min.js"></script>
     <script type="text/javascript" src="js/rutas.js"></script>
     <script type="text/javascript" src="js/m.js"></script>
     <style type="text/css">
@@ -24,24 +24,24 @@
         <a href="#prutas" id="hhome" onClick="OnHome();" data-transition="pop" data-back="true" data-role="button" data-icon="home" style="display:none" class="ui-btn-right">Inicio</a>
 	</div><!-- /header -->
 	<div data-role="content">
-    	<div class="adsense"></div>
 		<ul data-role="listview" data-inset="true">
-            <li><a id="ha" ti="ha" href="#pzonaa">A - Caracas</a></li>
-            <li><a id="hb" ti="hb" href="#pzonab">B - AutoNorte</a></li>
-            <li><a id="hc" ti="hc" href="#pzonac">C - Suba</a></li>
-            <li><a id="hd" ti="hd" href="#pzonad">D - Calle 80</a></li>
-            <li><a id="he" ti="he" href="#pzonae">E - NQS Central</a></li>
-            <li><a id="hf" ti="hf" href="#pzonaf">F - Américas</a></li>
-            <li><a id="hg" ti="hg" href="#pzonag">G - NQS Sur</a></li>
-            <li><a id="hh" ti="hh" href="#pzonah">H - Caracas Sur</a></li>
-            <li><a id="hj" ti="hj" href="#pzonaj">J - Eje Ambiental</a></li>
-            <li><a id="hk" ti="hk" href="#pzonak">K - Calle 26</a></li>
-            <li><a id="hl" ti="hl" href="#pzonal">L - Carrera 10&ordf;</a></li>
+            <li><a id="ha" ti="ha" href="#pzonaa" data-transition="slide">A - Caracas</a></li>
+            <li><a id="hb" ti="hb" href="#pzonab" data-transition="slide">B - AutoNorte</a></li>
+            <li><a id="hc" ti="hc" href="#pzonac" data-transition="slide">C - Suba</a></li>
+            <li><a id="hd" ti="hd" href="#pzonad" data-transition="slide">D - Calle 80</a></li>
+            <li><a id="he" ti="he" href="#pzonae" data-transition="slide">E - NQS Central</a></li>
+            <li><a id="hf" ti="hf" href="#pzonaf" data-transition="slide">F - Américas</a></li>
+            <li><a id="hg" ti="hg" href="#pzonag" data-transition="slide">G - NQS Sur</a></li>
+            <li><a id="hh" ti="hh" href="#pzonah" data-transition="slide">H - Caracas Sur</a></li>
+            <li><a id="hj" ti="hj" href="#pzonaj" data-transition="slide">J - Eje Ambiental</a></li>
+            <li><a id="hk" ti="hk" href="#pzonak" data-transition="slide">K - Calle 26</a></li>
+            <li><a id="hl" ti="hl" href="#pzonal" data-transition="slide">L - Carrera 10&ordf;</a></li>
         </ul>
 	</div><!-- /content -->
 	<div data-role="footer" data-theme="i" class="footer">
-		<p><a rel="external" href="mapa.html">Mapa completo</a><br/>
-        <a href="https://service.example.invalid">www.transmilleno.net.co (27/08/2012)</a></p>
+    	<a rel="external" href="mapa.html" data-role="button" data-icon="grid" class="ui-btn-left">Mapa completo</a>
+		<p><br/><a href="https://service.example.invalid">www.transmilleno.net.co (<span class="fecha"></span>)</a></p>
+        <a href="#iconos" data-rel="dialog" data-inline="true" data-transition="slideup" data-role="button" data-icon="arrow-u" class="ui-btn-right">Íconos</a>
 	</div><!-- /footer -->	
 </div><!-- /page -->
 <div data-role="page" id="presultados">
@@ -57,12 +57,13 @@
             <li data-role="list-divider">Transbordos</li>
             <li id="ltransbordos">No se encontraron rutas con transbordos</li>
             <li data-role="list-divider">Fecha de actualización</li>
-            <li id="ltransbordos">18 de enero del 2011</li>
+            <li id="ltransbordos" class="fecha"></li>
         </ul>
 	</div><!-- /content -->
 	<div data-role="footer" data-theme="i" class="footer">
-		<p><a rel="external" href="mapa.html">Mapa completo</a><br/>
-        <a href="https://service.example.invalid">www.transmilleno.net.co (27/08/2012)</a></p>
+    	<a rel="external" href="mapa.html" data-role="button" data-icon="grid" class="ui-btn-left">Mapa completo</a>
+		<p><br/><a href="https://service.example.invalid">www.transmilleno.net.co (<span class="fecha"></span>)</a></p>
+        <a href="#iconos" data-rel="dialog" data-inline="true" data-transition="slideup" data-role="button" data-icon="arrow-u" class="ui-btn-right">Íconos</a>
 	</div><!-- /footer -->	
 </div><!-- /page -->
 <div data-role="page" id="pruta">
@@ -77,8 +78,9 @@
         </ul>
 	</div><!-- /content -->
 	<div data-role="footer" data-theme="i" class="footer">
-		<p><a rel="external" href="mapa.html">Mapa completo</a><br/>
-        <a href="https://service.example.invalid">www.transmilleno.net.co (27/08/2012)</a></p>
+    	<a rel="external" href="mapa.html" data-role="button" data-icon="grid" class="ui-btn-left">Mapa completo</a>
+		<p><br/><a href="https://service.example.invalid">www.transmilleno.net.co (<span class="fecha"></span>)</a></p>
+        <a href="#iconos" data-rel="dialog" data-inline="true" data-transition="slideup" data-role="button" data-icon="arrow-u" class="ui-btn-right">Íconos</a>
 	</div><!-- /footer -->	
 </div><!-- /page -->
 <div data-role="page" id="pzonaa">
@@ -93,21 +95,22 @@
             <li><a href="#" alt="2">Calle 72</a></li>
             <li><a href="#" alt="3">Flores</a></li>
             <li><a href="#" alt="4">Calle 63</a></li>
-            <li><a href="#" alt="5">Calle 57</a></li>
-            <li><a href="#" alt="6">Marly</a></li>
+            <li><a href="#" alt="5">Calle 57<span class='ui-li-count'><img src="iconos/e.jpg" /></span></a></li>
+            <li><a href="#" alt="6">Marly<span class='ui-li-count'><img src="iconos/e.jpg" /></span></a></li>
             <li><a href="#" alt="7">Calle 45</a></li>
             <li><a href="#" alt="8">Avenida 39</a></li>
             <li><a href="#" alt="9">Profamilia</a></li>
             <li><a href="#" alt="10">Calle 26</a></li>
             <li><a href="#" alt="11">Calle 22</a></li>
             <li><a href="#" alt="12">Calle 19</a></li>
-            <li><a href="#" alt="13">Avenida Jiménez</a></li>
+            <li><a href="#" alt="13">Avenida Jiménez<span class='ui-li-count'><img src="iconos/t.jpg" /></span></a></li>
             <li><a href="#" alt="14">Tercer Milenio</a></li>
         </ul>
 	</div><!-- /content -->
 	<div data-role="footer" data-theme="a" class="footer">
-		<p><a rel="external" href="mapa.html">Mapa completo</a><br/>
-        <a href="https://service.example.invalid">www.transmilleno.net.co (27/08/2012)</a></p>
+    	<a rel="external" href="mapa.html" data-role="button" data-icon="grid" class="ui-btn-left">Mapa completo</a>
+		<p><br/><a href="https://service.example.invalid">www.transmilleno.net.co (<span class="fecha"></span>)</a></p>
+        <a href="#iconos" data-rel="dialog" data-inline="true" data-transition="slideup" data-role="button" data-icon="arrow-u" class="ui-btn-right">Íconos</a>
 	</div><!-- /footer -->	
 </div><!-- /page -->
 <div data-role="page" id="pzonab">
@@ -118,27 +121,28 @@
 	</div><!-- /header -->
 	<div data-role="content"><div class="adsense"></div>	
 		<ul data-role="listview" data-inset="true">
-        	<li><a href='#' alt='101'>C.C. Santafé</a></li>
-            <li><a href='#' alt='102'>Portal Norte</a></li>
-            <li><a href='#' alt='103'>Toberín</a></li>
-            <li><a href='#' alt='104'>Cardio infantil</a></li>
-            <li><a href='#' alt='105'>Mazurén</a></li>
-            <li><a href='#' alt='106'>Calle 146</a></li>
-            <li><a href='#' alt='107'>Calle 142</a></li>
-            <li><a href='#' alt='108'>Alcalá</a></li>
-            <li><a href='#' alt='109'>Prado</a></li>
-            <li><a href='#' alt='110'>Calle 127</a></li>
-            <li><a href='#' alt='111'>Pepe sierra</a></li>
-            <li><a href='#' alt='112'>Calle 106</a></li>
-            <li><a href='#' alt='113'>Calle 100</a></li>
-            <li><a href='#' alt='114'>Virrey</a></li>
-            <li><a href='#' alt='115'>Calle 85</a></li>
+        	<li><a href='#' alt='101'>C.C. Santafé<span class='ui-li-count'><img src="iconos/a.jpg" /></span></a></li>
+            <li><a href='#' alt='102'>Portal Norte<span class='ui-li-count'><img src="iconos/a.jpg" /><img src="iconos/i.jpg" /><img src="iconos/p.jpg" /></span></a></li>
+            <li><a href='#' alt='103'>Toberín<span class='ui-li-count'><img src="iconos/s.jpg" /><img src="iconos/c.jpg" /></span></a></li>
+            <li><a href='#' alt='104'>Cardio infantil<span class='ui-li-count'><img src="iconos/s.jpg" /><img src="iconos/c.jpg" /></span></a></li>
+            <li><a href='#' alt='105'>Mazurén<span class='ui-li-count'><img src="iconos/s.jpg" /><img src="iconos/c.jpg" /></span></a></li>
+            <li><a href='#' alt='106'>Calle 146<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
+            <li><a href='#' alt='107'>Calle 142<span class='ui-li-count'><img src="iconos/s.jpg" /><img src="iconos/c.jpg" /></span></a></li>
+            <li><a href='#' alt='108'>Alcalá<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
+            <li><a href='#' alt='109'>Prado<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
+            <li><a href='#' alt='110'>Calle 127<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
+            <li><a href='#' alt='111'>Pepe sierra<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
+            <li><a href='#' alt='112'>Calle 106<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
+            <li><a href='#' alt='113'>Calle 100<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
+            <li><a href='#' alt='114'>Virrey<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
+            <li><a href='#' alt='115'>Calle 85<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
             <li><a href='#' alt='116'>Héroes</a></li>
         </ul>
 	</div><!-- /content -->
 	<div data-role="footer" data-theme="b" class="footer">
-		<p><a rel="external" href="mapa.html">Mapa completo</a><br/>
-        <a href="https://service.example.invalid">www.transmilleno.net.co (27/08/2012)</a></p>
+    	<a rel="external" href="mapa.html" data-role="button" data-icon="grid" class="ui-btn-left">Mapa completo</a>
+		<p><br/><a href="https://service.example.invalid">www.transmilleno.net.co (<span class="fecha"></span>)</a></p>
+        <a href="#iconos" data-rel="dialog" data-inline="true" data-transition="slideup" data-role="button" data-icon="arrow-u" class="ui-btn-right">Íconos</a>
 	</div><!-- /footer -->	
 </div><!-- /page -->
 <div data-role="page" id="pzonac">
@@ -149,12 +153,12 @@
 	</div><!-- /header -->
 	<div data-role="content"><div class="adsense"></div>	
 		<ul data-role="listview" data-inset="true">
-        	<li><a href='#' alt='201'>Portal Suba</a></li>
+        	<li><a href='#' alt='201'>Portal Suba<span class='ui-li-count'><img src="iconos/a.jpg" /><img src="iconos/b.jpg" /><img src="iconos/p.jpg" /></span></a></li>
             <li><a href='#' alt='202'>La campina</a></li>
             <li><a href='#' alt='203'>Transversal 91</a></li>
             <li><a href='#' alt='204'>21 Angeles</a></li>
             <li><a href='#' alt='205'>Gratamira</a></li>
-            <li><a href='#' alt='206'>Avenida Boyacá</a></li>
+            <li><a href='#' alt='206'>Avenida Boyacá<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
             <li><a href='#' alt='207'>Niza Calle 127</a></li>
             <li><a href='#' alt='208'>Humedal Cordóba</a></li>
             <li><a href='#' alt='209'>Shaio</a></li>
@@ -166,8 +170,9 @@
         </ul>
 	</div><!-- /content -->
 	<div data-role="footer" data-theme="c" class="footer">
-		<p><a rel="external" href="mapa.html">Mapa completo</a><br/>
-        <a href="https://service.example.invalid">www.transmilleno.net.co (27/08/2012)</a></p>
+    	<a rel="external" href="mapa.html" data-role="button" data-icon="grid" class="ui-btn-left">Mapa completo</a>
+		<p><br/><a href="https://service.example.invalid">www.transmilleno.net.co (<span class="fecha"></span>)</a></p>
+        <a href="#iconos" data-rel="dialog" data-inline="true" data-transition="slideup" data-role="button" data-icon="arrow-u" class="ui-btn-right">Íconos</a>
 	</div><!-- /footer -->	
 </div><!-- /page -->
 <div data-role="page" id="pzonad">
@@ -178,11 +183,11 @@
 	</div><!-- /header -->
 	<div data-role="content"><div class="adsense"></div>	
 		<ul data-role="listview" data-inset="true">
-        	<li><a href='#' alt='301'>Portal de la 80</a></li>
+        	<li><a href='#' alt='301'>Portal de la 80<span class='ui-li-count'><img src="iconos/a.jpg" /><img src="iconos/i.jpg" /><img src="iconos/p.jpg" /></span></a></li>
             <li><a href='#' alt='302'>Quirigua</a></li>
             <li><a href='#' alt='303'>Carrera 90</a></li>
-            <li><a href='#' alt='304'>Avenida Cali</a></li>
-            <li><a href='#' alt='305'>Granja - Carrera 77</a></li>
+            <li><a href='#' alt='304'>Avenida Cali<span class='ui-li-count'><img src="iconos/a.jpg" /></span></a></li>
+            <li><a href='#' alt='305'>Granja - Carrera 77<span class='ui-li-count'><img src="iconos/a.jpg" /></span></a></li>
             <li><a href='#' alt='306'>Minuto de Dios</a></li>
             <li><a href='#' alt='307'>Boyacá</a></li>
             <li><a href='#' alt='308'>Ferias</a></li>
@@ -194,8 +199,9 @@
         </ul>
 	</div><!-- /content -->
 	<div data-role="footer" data-theme="d" class="footer">
-		<p><a rel="external" href="mapa.html">Mapa completo</a><br/>
-        <a href="https://service.example.invalid">www.transmilleno.net.co (27/08/2012)</a></p>
+    	<a rel="external" href="mapa.html" data-role="button" data-icon="grid" class="ui-btn-left">Mapa completo</a>
+		<p><br/><a href="https://service.example.invalid">www.transmilleno.net.co (<span class="fecha"></span>)</a></p>
+        <a href="#iconos" data-rel="dialog" data-inline="true" data-transition="slideup" data-role="button" data-icon="arrow-u" class="ui-btn-right">Íconos</a>
 	</div><!-- /footer -->	
 </div><!-- /page -->
 <div data-role="page" id="pzonae">
@@ -210,8 +216,8 @@
             <li><a href='#' alt='402'>NQS Calle 75</a></li>
             <li><a href='#' alt='403'>Avenida Chile</a></li>
             <li><a href='#' alt='404'>Simón Bolívar</a></li>
-            <li><a href='#' alt='405'>Coliseo</a></li>
-            <li><a href='#' alt='406'>El Campín</a></li>
+            <li><a href='#' alt='405'>Coliseo<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
+            <li><a href='#' alt='406'>El Campín<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
             <li><a href='#' alt='407'>U. Nacional</a></li>
             <li><a href='#' alt='408'>Avenida Dorado</a></li>
             <li><a href='#' alt='409'>CAD</a></li>
@@ -219,8 +225,9 @@
         </ul>
 	</div><!-- /content -->
 	<div data-role="footer" data-theme="e" class="footer">
-		<p><a rel="external" href="mapa.html">Mapa completo</a><br/>
-        <a href="https://service.example.invalid">www.transmilleno.net.co (27/08/2012)</a></p>
+    	<a rel="external" href="mapa.html" data-role="button" data-icon="grid" class="ui-btn-left">Mapa completo</a>
+		<p><br/><a href="https://service.example.invalid">www.transmilleno.net.co (<span class="fecha"></span>)</a></p>
+        <a href="#iconos" data-rel="dialog" data-inline="true" data-transition="slideup" data-role="button" data-icon="arrow-u" class="ui-btn-right">Íconos</a>
 	</div><!-- /footer -->	
 </div><!-- /page -->
 <div data-role="page" id="pzonaf">
@@ -231,29 +238,30 @@
 	</div><!-- /header -->
 	<div data-role="content"><div class="adsense"></div>	
 		<ul data-role="listview" data-inset="true">
-        	<li><a href='#' alt='501'>Portal Américas</a></li>
+        	<li><a href='#' alt='501'>Portal Américas<span class='ui-li-count'><img src="iconos/a.jpg" /><img src="iconos/p.jpg" /><img src="iconos/b.jpg" /></span></a></li>
             <li><a href='#' alt='502'>Patio Bonito</a></li>
-            <li><a href='#' alt='503'>Biblioteca el tintal</a></li>
+            <li><a href='#' alt='503'>Biblioteca el tintal<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
             <li><a href='#' alt='504'>Transversal 86</a></li>
-            <li><a href='#' alt='505'>Banderas</a></li>
+            <li><a href='#' alt='505'>Banderas<span class='ui-li-count'><img src="iconos/a.jpg" /><img src="iconos/b.jpg" /></span></a></li>
             <li><a href='#' alt='506'>Mandalay</a></li>
-            <li><a href='#' alt='507'>Mundo Aventura</a></li>
-            <li><a href='#' alt='508'>Marsella</a></li>
-            <li><a href='#' alt='509'>Pradera</a></li>
-            <li><a href='#' alt='510'>Américas Carrera 53A</a></li>
+            <li><a href='#' alt='507'>Mundo Aventura<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
+            <li><a href='#' alt='508'>Marsella<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
+            <li><a href='#' alt='509'>Pradera<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
+            <li><a href='#' alt='510'>Américas Carrera 53A<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
             <li><a href='#' alt='511'>Puente Aranda</a></li>
             <li><a href='#' alt='512'>Carrera 43</a></li>
             <li><a href='#' alt='513'>Zona Industrial</a></li>
             <li><a href='#' alt='514'>CDS Carrera 32</a></li>
-            <li><a href='#' alt='515'>Ricaute</a></li>
+            <li><a href='#' alt='515'>Ricaute<span class='ui-li-count'><img src="iconos/t.jpg" /><img src="iconos/b.jpg" /><img src="iconos/p.jpg" /></span></a></li>
             <li><a href='#' alt='516'>San Façon Carrera 22</a></li>
             <li><a href='#' alt='517'>De la Sabana</a></li>
-            <li><a href='#' alt='518'>Avenida Jiménez</a></li>
+            <li><a href='#' alt='518'>Avenida Jiménez<span class='ui-li-count'><img src="iconos/t.jpg" /></span></a></li>
         </ul>
 	</div><!-- /content -->
 	<div data-role="footer" data-theme="f" class="footer">
-		<p><a rel="external" href="mapa.html">Mapa completo</a><br/>
-        <a href="https://service.example.invalid">www.transmilleno.net.co (27/08/2012)</a></p>
+    	<a rel="external" href="mapa.html" data-role="button" data-icon="grid" class="ui-btn-left">Mapa completo</a>
+		<p><br/><a href="https://service.example.invalid">www.transmilleno.net.co (<span class="fecha"></span>)</a></p>
+        <a href="#iconos" data-rel="dialog" data-inline="true" data-transition="slideup" data-role="button" data-icon="arrow-u" class="ui-btn-right">Íconos</a>
 	</div><!-- /footer -->	
 </div><!-- /page -->
 <div data-role="page" id="pzonag">
@@ -264,24 +272,25 @@
 	</div><!-- /header -->
 	<div data-role="content"><div class="adsense"></div>	
 		<ul data-role="listview" data-inset="true">
-        	<li><a href='#' alt='601'>Portal Sur</a></li>
+        	<li><a href='#' alt='601'>Portal Sur<span class='ui-li-count'><img src="iconos/a.jpg" /><img src="iconos/p.jpg" /><img src="iconos/b.jpg" /></span></a></li>
             <li><a href='#' alt='602'>Perdomo</a></li>
-            <li><a href='#' alt='603'>Madelena</a></li>
+            <li><a href='#' alt='603'>Madelena<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
             <li><a href='#' alt='604'>Sevillana</a></li>
             <li><a href='#' alt='605'>Venecia</a></li>
             <li><a href='#' alt='606'>Alqueria</a></li>
-            <li><a href='#' alt='607'>General Santander</a></li>
-            <li><a href='#' alt='608'>NQS Calle 38A Sur</a></li>
+            <li><a href='#' alt='607'>General Santander<span class='ui-li-count'><img src="iconos/a.jpg" /><img src="iconos/b.jpg" /></span></a></li>
+            <li><a href='#' alt='608'>NQS Calle 38A Sur<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
             <li><a href='#' alt='609'>NQS Calle 30 Sur</a></li>
             <li><a href='#' alt='610'>SENA</a></li>
-            <li><a href='#' alt='611'>Santa isabel</a></li>
-            <li><a href='#' alt='612'>Comuneros</a></li>
-            <li><a href='#' alt='613'>Ricaute</a></li>
+            <li><a href='#' alt='611'>Santa isabel<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
+            <li><a href='#' alt='612'>Comuneros<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
+            <li><a href='#' alt='613'>Ricaute<span class='ui-li-count'><img src="iconos/t.jpg" /><img src="iconos/b.jpg" /><img src="iconos/p.jpg" /></span></a></a></li>
         </ul>
 	</div><!-- /content -->
 	<div data-role="footer" data-theme="g" class="footer">
-		<p><a rel="external" href="mapa.html">Mapa completo</a><br/>
-        <a href="https://service.example.invalid">www.transmilleno.net.co (27/08/2012)</a></p>
+    	<a rel="external" href="mapa.html" data-role="button" data-icon="grid" class="ui-btn-left">Mapa completo</a>
+		<p><br/><a href="https://service.example.invalid">www.transmilleno.net.co (<span class="fecha"></span>)</a></p>
+        <a href="#iconos" data-rel="dialog" data-inline="true" data-transition="slideup" data-role="button" data-icon="arrow-u" class="ui-btn-right">Íconos</a>
 	</div><!-- /footer -->	
 </div><!-- /page -->
 <div data-role="page" id="pzonah">
@@ -292,15 +301,15 @@
 	</div><!-- /header -->
 	<div data-role="content"><div class="adsense"></div>	
 		<ul data-role="listview" data-inset="true">
-        	<li><a href='#' alt='701'>Portal Usme</a></li>
-            <li><a href='#' alt='702'>Molinos</a></li>
+        	<li><a href='#' alt='701'>Portal Usme<span class='ui-li-count'><img src="iconos/a.jpg" /><img src="iconos/p.jpg" /></span></a></li>
+            <li><a href='#' alt='702'>Molinos<span class='ui-li-count'><img src="iconos/a.jpg" /></span></a></li>
             <li><a href='#' alt='703'>Consuelo</a></li>
             <li><a href='#' alt='704'>Socorro</a></li>
-            <li><a href='#' alt='705'>Portal Tunal</a></li>
-            <li><a href='#' alt='706'>Parque</a></li>
-            <li><a href='#' alt='707'>Biblioteca</a></li>
+            <li><a href='#' alt='705'>Portal Tunal<span class='ui-li-count'><img src="iconos/a.jpg" /><img src="iconos/p.jpg" /><img src="iconos/i.jpg" /></span></a></li>
+            <li><a href='#' alt='706'>Parque<span class='ui-li-count'><img src="iconos/s.jpg" /></span></a></li>
+            <li><a href='#' alt='707'>Biblioteca<span class='ui-li-count'><img src="iconos/s.jpg" /></span></a></li>
             <li><a href='#' alt='708'>Santa Lucía</a></li>
-            <li><a href='#' alt='709'>Calle 40 Sur</a></li>
+            <li><a href='#' alt='709'>Calle 40 Sur<span class='ui-li-count'><img src="iconos/a.jpg" /></span></a></li>
             <li><a href='#' alt='710'>Quiroga</a></li>
             <li><a href='#' alt='711'>Olaya</a></li>
             <li><a href='#' alt='712'>Restrepo</a></li>
@@ -311,8 +320,9 @@
         </ul>
 	</div><!-- /content -->
 	<div data-role="footer" data-theme="h" class="footer">
-		<p><a rel="external" href="mapa.html">Mapa completo</a><br/>
-        <a href="https://service.example.invalid">www.transmilleno.net.co (27/08/2012)</a></p>
+    	<a rel="external" href="mapa.html" data-role="button" data-icon="grid" class="ui-btn-left">Mapa completo</a>
+		<p><br/><a href="https://service.example.invalid">www.transmilleno.net.co (<span class="fecha"></span>)</a></p>
+        <a href="#iconos" data-rel="dialog" data-inline="true" data-transition="slideup" data-role="button" data-icon="arrow-u" class="ui-btn-right">Íconos</a>
 	</div><!-- /footer -->	
 </div><!-- /page -->
 <div data-role="page" id="pzonaj">
@@ -324,12 +334,13 @@
 	<div data-role="content"><div class="adsense"></div>	
 		<ul data-role="listview" data-inset="true">
         	<li><a href='#' alt='801'>Museo del oro</a></li>
-			<li><a href='#' alt='802'>Las Aguas</a></li>
+			<li><a href='#' alt='802'>Las Aguas<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
         </ul>
 	</div><!-- /content -->
 	<div data-role="footer" data-theme="j" class="footer">
-		<p><a rel="external" href="mapa.html">Mapa completo</a><br/>
-        <a href="https://service.example.invalid">www.transmilleno.net.co (27/08/2012)</a></p>
+    	<a rel="external" href="mapa.html" data-role="button" data-icon="grid" class="ui-btn-left">Mapa completo</a>
+		<p><br/><a href="https://service.example.invalid">www.transmilleno.net.co (<span class="fecha"></span>)</a></p>
+        <a href="#iconos" data-rel="dialog" data-inline="true" data-transition="slideup" data-role="button" data-icon="arrow-u" class="ui-btn-right">Íconos</a>
 	</div><!-- /footer -->	
 </div><!-- /page -->
 
@@ -341,13 +352,13 @@
 	</div><!-- /header -->
 	<div data-role="content"><div class="adsense"></div>	
 		<ul data-role="listview" data-inset="true">
-        	<li><a href='#' alt='901'>Portal Eldorado</a></li>
+        	<li><a href='#' alt='901'>Portal Eldorado<span class='ui-li-count'><img src="iconos/a.jpg" /><img src="iconos/p.jpg" /><img src="iconos/b.jpg" /></span></a></li>
         	<li><a href='#' alt='902'>Modelia</a></li>
         	<li><a href='#' alt='903'>Normandía</a></li>
-        	<li><a href='#' alt='904'>Av. Rojas</a></li>
+        	<li><a href='#' alt='904'>Av. Rojas<span class='ui-li-count'><img src="iconos/c.jpg" /><img src="iconos/b.jpg" /></span></a></li>
         	<li><a href='#' alt='905'>El Tiempo</a></li>
         	<li><a href='#' alt='906'>Salitre - El Greco</a></li>
-        	<li><a href='#' alt='907'>CAN</a></li>
+        	<li><a href='#' alt='907'>CAN<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
         	<li><a href='#' alt='908'>Gobernación</a></li>
         	<li><a href='#' alt='909'>Quinta paredes</a></li>
         	<li><a href='#' alt='910'>Corferias</a></li>
@@ -357,8 +368,9 @@
         </ul>
 	</div><!-- /content -->
 	<div data-role="footer" data-theme="k" class="footer">
-		<p><a rel="external" href="mapa.html">Mapa completo</a><br/>
-        <a href="https://service.example.invalid">www.transmilleno.net.co (27/08/2012)</a></p>
+    	<a rel="external" href="mapa.html" data-role="button" data-icon="grid" class="ui-btn-left">Mapa completo</a>
+		<p><br/><a href="https://service.example.invalid">www.transmilleno.net.co (<span class="fecha"></span>)</a></p>
+        <a href="#iconos" data-rel="dialog" data-inline="true" data-transition="slideup" data-role="button" data-icon="arrow-u" class="ui-btn-right">Íconos</a>
 	</div><!-- /footer -->	
 </div><!-- /page -->
 
@@ -370,22 +382,41 @@
 	</div><!-- /header -->
 	<div data-role="content"><div class="adsense"></div>	
 		<ul data-role="listview" data-inset="true">
-        	<li><a href='#' alt='1001'>Portal del 20 de Julio</a></li>
+        	<li><a href='#' alt='1001'>Portal del 20 de Julio<span class='ui-li-count'><img src="iconos/a.jpg" /><img src="iconos/p.jpg" /><img src="iconos/b.jpg" /></span></a></li>
         	<li><a href='#' alt='1002'>Country Sur</a></li>
-        	<li><a href='#' alt='1003'>Av. 1a de Mayo</a></li>
-        	<li><a href='#' alt='1004'>Ciudad jardín</a></li>
+        	<li><a href='#' alt='1003'>Av. 1a de Mayo<span class='ui-li-count'><img src="iconos/a.jpg" /></span></a></li>
+        	<li><a href='#' alt='1004'>Ciudad jardín<span class='ui-li-count'><img src="iconos/c.jpg" /></span></a></li>
         	<li><a href='#' alt='1005'>Policarpa</a></li>
         	<li><a href='#' alt='1006'>Hospitales</a></li>
-        	<li><a href='#' alt='1007'>Bicentenario</a></li>
+        	<li><a href='#' alt='1007'>Bicentenario<span class='ui-li-count'><img src="iconos/a.jpg" /><img src="iconos/e.jpg" /><img src="iconos/b.jpg" /></span></a></li>
         	<li><a href='#' alt='1008'>San Victorino</a></li>
         	<li><a href='#' alt='1009'>Las Nieves</a></li>
         	<li><a href='#' alt='1010'>San Diego</a></li>
         </ul>
 	</div><!-- /content -->
 	<div data-role="footer" data-theme="l" class="footer">
-		<p><a rel="external" href="mapa.html">Mapa completo</a><br/>
-        <a href="https://service.example.invalid">www.transmilleno.net.co (27/08/2012)</a></p>
+    	<a rel="external" href="mapa.html" data-role="button" data-icon="grid" class="ui-btn-left">Mapa completo</a>
+		<p><br/><a href="https://service.example.invalid">www.transmilleno.net.co (<span class="fecha"></span>)</a></p>
+        <a href="#iconos" data-rel="dialog" data-inline="true" data-transition="slideup" data-role="button" data-icon="arrow-u" class="ui-btn-right">Íconos</a>
 	</div><!-- /footer -->	
 </div><!-- /page -->
+<div data-role="page" id="iconos" data-theme="i">
+    <div data-role="header" data-theme="i">
+        <h1>Íconos</h1>
+    </div>
+    <div data-role="content" data-theme="i">
+        <ul data-role="listview" data-inset="true">
+            <li><img src="iconos/a.jpg" class="ui-li-icon"/>Buses alimentadores</li>
+            <li><img src="iconos/b.jpg" class="ui-li-icon"/>Cicloparqueaderos</li>
+            <li><img src="iconos/c.jpg" class="ui-li-icon"/>Buses complementarios</li>
+            <li><img src="iconos/e.jpg" class="ui-li-icon"/>Buses especiales</li>
+            <li><img src="iconos/i.jpg" class="ui-li-icon"/>Buses intermunicipales</li>
+            <li><img src="iconos/p.jpg" class="ui-li-icon"/>PAU (Puntos de antención al usuario)</li>
+            <li><img src="iconos/s.jpg" class="ui-li-icon"/>Estaciones sin intercambio</li>
+            <li><img src="iconos/t.jpg" class="ui-li-icon"/>Intercambio peatonal entre troncales</li>
+        </ul>
+		<a href="" data-role="button" data-back="true" data-rel="back">Cerrar</a> 
+    </div>
+</div>
 </body>
 </html>
