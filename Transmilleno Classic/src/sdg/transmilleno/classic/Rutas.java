@@ -936,7 +936,7 @@ public class Rutas {
     	ruta.AddEstacion("Portal Suba", 201);
     	this.AddRutaInvertida("G71", ruta, "Lunes a sábado 09:00-16:00*Lunes a sábado 20:00-23:00");
 
-    	ruta= this.AddRuta("C19", "Lunes a viernes 05:00-09:00", false);
+    	ruta= this.AddRuta("J73", "Lunes a viernes 05:00-09:00", false);
     	ruta.AddEstacion("Portal Suba", 201);
     	ruta.AddEstacion("La campiña", 202);
     	ruta.AddEstacion("Suba - TV. 91", 203);
@@ -947,7 +947,6 @@ public class Rutas {
     	ruta.AddEstacion("Av. Jiménez", 13);
     	ruta.AddEstacion("Museo del Oro", 801);
     	ruta.AddEstacion("Las aguas", 802);
-    	this.AddRutaInvertida("J73", ruta, "Lunes a viernes 05:00-09:00");
 
     	ruta= this.AddRuta("C73", "Lunes a viernes 16:00-20:00", false);
     	ruta.AddEstacion("Las aguas", 802);
