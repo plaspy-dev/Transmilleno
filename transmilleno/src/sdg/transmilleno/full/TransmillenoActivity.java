@@ -2,9 +2,7 @@ package sdg.transmilleno.full;
 
 import org.apache.cordova.*;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -55,8 +53,8 @@ public class TransmillenoActivity extends DroidGap {
 	   	if(mensaje=="onPageFinished") {
 	   		if(content!=null && agregado) {
 	   			content.removeView(progreso);
-	   			spinnerStop();
 	   		}
+	   		spinnerStop();
 	   		agregado=false;
 	   	} else if(mensaje=="onPageStarted") {
 	   		// spinnerStart("Cargando", "Por favor espere");

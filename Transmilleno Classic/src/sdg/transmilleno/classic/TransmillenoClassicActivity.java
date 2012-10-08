@@ -17,13 +17,20 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
+import android.widget.HeaderViewListAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
+import com.google.ads.*;
 
 public class TransmillenoClassicActivity extends ListActivity {
     
+	private AdView adView;
+	String MY_AD_UNIT_ID="a00000000000002";
+	
 	final String[] columns = { "Ruta", "Horario" };
 	final String[] matrix  = { "_id", "Ruta", "Horario" };
 	final int[] layouts = new int[] { android.R.id.text1, android.R.id.text2 };
@@ -66,14 +73,20 @@ public class TransmillenoClassicActivity extends ListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // setContentView(R.layout.main);
+        
+        // Crear la adView  
+        adView = new AdView(this, AdSize.BANNER, MY_AD_UNIT_ID);
+        
+        getListView().addHeaderView(adView);
+        adView.loadAd(new AdRequest());
+        
         getListView().setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 
             	if(m_nPosicion==0 && m_nRutas==0) {
             	
             		m_nRutas=1;
-                    m_nZona= position;
+                    m_nZona= position-1;
                     GetRutas(m_nZona);
                     return true;
             	}
@@ -567,12 +580,11 @@ public class TransmillenoClassicActivity extends ListActivity {
      }
      
      public void GetRuta(ListAdapter lista, int index) {
-
-    	 if (lista instanceof SimpleCursorAdapter) {
     	 
-	    	 SimpleCursorAdapter adaptador= (SimpleCursorAdapter)lista;
-	    	 Cursor cursor = (Cursor) adaptador.getItem(index);
-	    	 if(cursor.moveToFirst()) {
+    	 if (lista instanceof HeaderViewListAdapter) {
+    	 
+	    	 Cursor cursor = (Cursor) lista.getItem(index);
+	    	 if(cursor.moveToPosition(index-1)) {
 	             String texto= cursor.getString(1);
 	             if(texto.length()==0) {
 	                 return; 
@@ -634,18 +646,19 @@ public class TransmillenoClassicActivity extends ListActivity {
             GetRuta(l.getAdapter().getItem(position).toString());
         } else if(m_nPosicion==0) { // seleccion zona ubicacion
       	  m_nPosicion++;
-      	  m_nZona= position;
+      	  m_nZona= position-1;
       	  m_szZonaUbicacion= l.getAdapter().getItem(position).toString();
       	  GetZona();
         } else if(m_nPosicion==2) { // seleccion de zona destino
       	  m_nPosicion++;
-      	  m_nZona= position;
+      	  m_nZona= position-1;
       	  m_szZonaDestino= l.getAdapter().getItem(position).toString();
       	  GetZona();
         } else if(m_nPosicion==1) { // seleccion ubicacion
       	  	m_nPosicion++;
       	  	m_szUbicacion= l.getAdapter().getItem(position).toString();
-            int index= position+1;
+      	  	
+            int index= position;
             m_nIDUbicacion+=index;
             if(m_nIDUbicacion==518) { // jimenez
                 m_nIDUbicacion=13;
@@ -657,7 +670,7 @@ public class TransmillenoClassicActivity extends ListActivity {
             m_nPosicion++;
       	  	m_szDestino= l.getAdapter().getItem(position).toString();
             
-            int index= position+1;
+            int index= position;
             m_nIDDestino+=index;
             if(m_nIDDestino==518) { // jimenez
                 m_nIDDestino=13;
@@ -666,5 +679,11 @@ public class TransmillenoClassicActivity extends ListActivity {
             }
             GetResultado();
         }
+    }
+    
+    @Override  
+    public void onDestroy() {    
+    	adView.destroy();    
+    	super.onDestroy();  
     }
 }

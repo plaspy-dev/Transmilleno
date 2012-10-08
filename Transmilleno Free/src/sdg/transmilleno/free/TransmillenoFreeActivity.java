@@ -69,8 +69,8 @@ public class TransmillenoFreeActivity extends DroidGap {
 	   		// spinnerStop();
 	   		if(content!=null && agregado) {
 	   			content.removeView(progreso);
-	   			spinnerStop();
 	   		}
+	   		spinnerStop();
 	   		agregado=false;
 	   	} else if(mensaje=="onPageStarted") {
 	   		// spinnerStart("Cargando", "Por favor espere");
