@@ -37,13 +37,13 @@ public class TransmillenoActivity extends DroidGap {
         progreso.setLayoutParams(new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.FILL_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT));
-        
+
         // content.addView(progreso);
         
         super.setStringProperty("loadingPageDialog", "Cargando,Por favor espere");
         super.setStringProperty("loadingDialog", "Cargando,Por favor espere");
         
-        super.loadUrl("file:///android_asset/www/m.html");
+        super.loadUrl("file:///android_asset/www/m/m.html");
         // setContentView(R.layout.main);
     }
     @Override
@@ -74,7 +74,7 @@ public class TransmillenoActivity extends DroidGap {
     @Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		if(item.getTitle()=="Inicio") {
-			super.loadUrl("file:///android_asset/www/m.html");
+			super.loadUrl("file:///android_asset/www/m/m.html");
 			return true;
 		} else if(item.getTitle()=="Salir") {
 			finish();

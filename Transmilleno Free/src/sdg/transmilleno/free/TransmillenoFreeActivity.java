@@ -56,7 +56,7 @@ public class TransmillenoFreeActivity extends DroidGap {
         super.setStringProperty("loadingPageDialog", "Cargando,Por favor espere");
         super.setStringProperty("loadingDialog", "Cargando,Por favor espere");
         
-        super.loadUrl("file:///android_asset/www/m.html");
+        super.loadUrl("file:///android_asset/www/m/m.html");
         // super.loadUrl("https://transmilleno.example.invalid/?f=a");
         // setContentView(R.layout.main);
     }
@@ -92,7 +92,7 @@ public class TransmillenoFreeActivity extends DroidGap {
     @Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		if(item.getTitle()=="Inicio") {
-			super.loadUrl("file:///android_asset/www/m.html");
+			super.loadUrl("file:///android_asset/www/m/m.html");
 			// super.loadUrl("https://pruebas-transmilleno.example.invalid/web/");
 	        // super.loadUrl("https://transmilleno.example.invalid/");
 			return true;
