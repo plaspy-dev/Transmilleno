@@ -4,22 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-import android.R.string;
 import android.app.ListActivity;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.os.Bundle;
-import android.view.GestureDetector;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.FrameLayout;
 import android.widget.HeaderViewListAdapter;
-import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
@@ -125,7 +120,7 @@ public class TransmillenoClassicActivity extends ListActivity {
     @Override
     public boolean onPrepareOptionsMenu (Menu menu) {
 
-    	menu.getItem(0).setTitle((m_nPosicion==0 && m_nRutas==0) ? "Rutas" : "Inicio");
+    	menu.getItem(0).setTitle((m_nPosicion==0 && m_nRutas==0 && !m_bResultados) ? "Rutas" : "Inicio");
         return true;
     }
     

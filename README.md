@@ -8,7 +8,7 @@ Aplicación histórica para consultar recorridos del transporte público y horar
 
 ### Esta revisión
 
-**2012-10-08 · Actualizar la selección de zona en Android.** Ajusta la actividad Classic que mantiene la zona seleccionada y cambia la información de versión de los manifiestos. El flujo móvil puede trabajar con la zona elegida y reflejar la revisión instalada.
+**2012-10-08 · Organizar las páginas móviles de rutas.** Sustituye páginas móviles anteriores por una estructura de vistas dentro de los recursos de Android y actualiza la actividad que las abre. Las pantallas de ruta quedan agrupadas con el código que las usa.
 
 ### Cómo explorar el código
 
@@ -25,7 +25,7 @@ A historical application for looking up public transport routes and schedules. T
 
 ### This revision
 
-**2012-10-08 · Update Android zone selection.** Update the Classic activity that tracks the selected zone and revise manifest version information. The mobile workflow can use the selected zone and report its installed revision.
+**2012-10-08 · Organize the mobile route pages.** Replace older mobile pages with a view structure in Android assets and update the activity that opens them. Route screens live with the code that opens them.
 
 ### How to explore the source
 

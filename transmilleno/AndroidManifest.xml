@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="https://service.example.invalid/apk/res/android"
     package="sdg.transmilleno.full"
-    android:versionCode="4"
-    android:versionName="1.22" >
+    android:versionCode="6"
+    android:versionName="1.3"
+    android:installLocation="preferExternal" 
+    >
 
-    <uses-sdk android:minSdkVersion="7" />
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="15"/>
 	<supports-screens 
 	    android:largeScreens="true" 
-	    android:normalScreens="true" 
+	    android:normalScreens="true"
 	    android:smallScreens="true" 
 	    android:resizeable="true" 
 	    android:anyDensity="true" />
@@ -32,10 +34,10 @@
         android:label="@string/app_name" >
         <activity
             android:name=".TransmillenoActivity"
-            android:label="@string/app_name" android:configChanges="orientation|keyboardHidden|keyboard|locale">
+            android:label="@string/app_name" 
+            android:configChanges="orientation|screenSize|keyboardHidden|keyboard|locale|screenLayout">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
