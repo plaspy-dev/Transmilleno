@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -44,6 +45,10 @@ public class TransmillenoActivity extends DroidGap {
         super.setStringProperty("loadingDialog", "Cargando,Por favor espere");
         
         super.loadUrl("file:///android_asset/www/m/m.html");
+        
+        WebSettings ws = super.appView.getSettings();
+        ws.setSupportZoom(true);
+        ws.setBuiltInZoomControls(true);
         // setContentView(R.layout.main);
     }
     @Override

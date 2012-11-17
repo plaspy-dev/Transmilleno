@@ -193,7 +193,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 044", 103);
     	ruta.AddEstacion("Demo Parada 045", 102);
     	ruta.AddEstacion("Demo Parada 046", 101);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D02", "Recorrido ficticio D02", true);
     	ruta.AddEstacion("Demo Parada 047", 705);
@@ -235,7 +235,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 070", 303);
     	ruta.AddEstacion("Demo Parada 071", 302);
     	ruta.AddEstacion("Demo Parada 072", 301);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D03", "Recorrido ficticio D03", true);
     	ruta.AddEstacion("Demo Parada 073", 701);
@@ -281,7 +281,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 088", 203);
     	ruta.AddEstacion("Demo Parada 089", 202);
     	ruta.AddEstacion("Demo Parada 090", 201);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D04", "Recorrido ficticio D04", true);
     	ruta.AddEstacion("Demo Parada 091", 601);
@@ -323,7 +323,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 043", 104);
     	ruta.AddEstacion("Demo Parada 044", 103);
     	ruta.AddEstacion("Demo Parada 045", 102);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D05", "Recorrido ficticio D05", true);
     	ruta.AddEstacion("Demo Parada 072", 301);
@@ -342,7 +342,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 042", 105);
     	ruta.AddEstacion("Demo Parada 044", 103);
     	ruta.AddEstacion("Demo Parada 045", 102);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D06", "Recorrido ficticio D06", false);
     	ruta.AddEstacion("Demo Parada 072", 301);
@@ -383,7 +383,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 040", 107);
     	ruta.AddEstacion("Demo Parada 041", 106);
     	ruta.AddEstacion("Demo Parada 044", 103);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
 
     	ruta= this.AddRuta("D09", "Recorrido ficticio D09", false);
@@ -432,7 +432,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 041", 106);
     	ruta.AddEstacion("Demo Parada 044", 103);
     	ruta.AddEstacion("Demo Parada 045", 102);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D12", "Recorrido ficticio D12", true);
     	ruta.AddEstacion("Demo Parada 047", 705);
@@ -452,7 +452,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 042", 105);
     	ruta.AddEstacion("Demo Parada 043", 104);
     	ruta.AddEstacion("Demo Parada 045", 102);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D13", "Recorrido ficticio D13", false);
     	ruta.AddEstacion("Demo Parada 047", 705);
@@ -531,7 +531,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 032", 115);
     	ruta.AddEstacion("Demo Parada 033", 114);
     	ruta.AddEstacion("Demo Parada 045", 102);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D19", "Recorrido ficticio D19", false);
     	ruta.AddEstacion("Demo Parada 045", 102);
@@ -587,7 +587,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 040", 107);
     	ruta.AddEstacion("Demo Parada 044", 103);
     	ruta.AddEstacion("Demo Parada 045", 102);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
 
     	ruta= this.AddRuta("D23", "Recorrido ficticio D23", true);
@@ -609,7 +609,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 039", 108);
     	ruta.AddEstacion("Demo Parada 041", 106);
     	ruta.AddEstacion("Demo Parada 045", 102);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
 
     	ruta= this.AddRuta("D24", "Recorrido ficticio D24", false);
@@ -623,7 +623,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 033", 114);
     	ruta.AddEstacion("Demo Parada 039", 108);
     	ruta.AddEstacion("Demo Parada 045", 102);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D25", "Recorrido ficticio D25", true);
     	ruta.AddEstacion("Demo Parada 091", 601);
@@ -645,7 +645,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 042", 105);
     	ruta.AddEstacion("Demo Parada 044", 103);
     	ruta.AddEstacion("Demo Parada 045", 102);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D26", "Recorrido ficticio D26", false);
     	ruta.AddEstacion("Demo Parada 091", 601);
@@ -693,7 +693,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 040", 107);
     	ruta.AddEstacion("Demo Parada 044", 103);
     	ruta.AddEstacion("Demo Parada 045", 102);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D29", "Recorrido ficticio D29", false);
     	ruta.AddEstacion("Demo Parada 091", 601);
@@ -706,7 +706,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 030", 1);
     	ruta.AddEstacion("Demo Parada 029", 2);
     	ruta.AddEstacion("Demo Parada 028", 3);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D30", "Recorrido ficticio D30", false);
     	ruta.AddEstacion("Demo Parada 001", 501);
@@ -723,7 +723,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 036", 111);
     	ruta.AddEstacion("Demo Parada 038", 109);
     	ruta.AddEstacion("Demo Parada 045", 102);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D31", "Recorrido ficticio D31", false);
     	ruta.AddEstacion("Demo Parada 001", 501);
@@ -733,7 +733,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 109", 404);
     	ruta.AddEstacion("Demo Parada 110", 403);
     	ruta.AddEstacion("Demo Parada 111", 402);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D32", "Recorrido ficticio D32", false);
     	ruta.AddEstacion("Demo Parada 090", 201);
@@ -750,7 +750,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 040", 107);
     	ruta.AddEstacion("Demo Parada 043", 104);
     	ruta.AddEstacion("Demo Parada 045", 102);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D33", "Recorrido ficticio D33", false);
     	ruta.AddEstacion("Demo Parada 090", 201);
@@ -803,7 +803,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 083", 208);
     	ruta.AddEstacion("Demo Parada 084", 207);
     	ruta.AddEstacion("Demo Parada 090", 201);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D37", "Recorrido ficticio D37", false);
     	ruta.AddEstacion("Demo Parada 090", 201);
@@ -841,7 +841,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 085", 206);
     	ruta.AddEstacion("Demo Parada 089", 202);
     	ruta.AddEstacion("Demo Parada 090", 201);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D39", "Recorrido ficticio D39", false);
     	ruta.AddEstacion("Demo Parada 001", 501);
@@ -856,7 +856,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 088", 203);
     	ruta.AddEstacion("Demo Parada 089", 202);
     	ruta.AddEstacion("Demo Parada 090", 201);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D40", "Recorrido ficticio D40", true);
     	ruta.AddEstacion("Demo Parada 005", 505);
@@ -878,7 +878,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 088", 203);
     	ruta.AddEstacion("Demo Parada 089", 202);
     	ruta.AddEstacion("Demo Parada 090", 201);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D41", "Recorrido ficticio D41", false);
     	ruta.AddEstacion("Demo Parada 091", 601);
@@ -895,7 +895,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 088", 203);
     	ruta.AddEstacion("Demo Parada 089", 202);
     	ruta.AddEstacion("Demo Parada 090", 201);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D42", "Recorrido ficticio D42", false);
     	ruta.AddEstacion("Demo Parada 091", 601);
@@ -913,7 +913,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 088", 203);
     	ruta.AddEstacion("Demo Parada 089", 202);
     	ruta.AddEstacion("Demo Parada 090", 201);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D43", "Recorrido ficticio D43", true);
     	ruta.AddEstacion("Demo Parada 101", 611);
@@ -934,7 +934,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 088", 203);
     	ruta.AddEstacion("Demo Parada 089", 202);
     	ruta.AddEstacion("Demo Parada 090", 201);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D44", "Recorrido ficticio D44", false);
     	ruta.AddEstacion("Demo Parada 090", 201);
@@ -979,7 +979,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 068", 305);
     	ruta.AddEstacion("Demo Parada 069", 304);
     	ruta.AddEstacion("Demo Parada 072", 301);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D47", "Recorrido ficticio D47", false);
     	ruta.AddEstacion("Demo Parada 073", 701);
@@ -1005,7 +1005,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 068", 305);
     	ruta.AddEstacion("Demo Parada 070", 303);
     	ruta.AddEstacion("Demo Parada 072", 301);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D49", "Recorrido ficticio D49", false);
     	ruta.AddEstacion("Demo Parada 072", 301);
@@ -1028,7 +1028,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 067", 306);
     	ruta.AddEstacion("Demo Parada 068", 305);
     	ruta.AddEstacion("Demo Parada 072", 301);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D51", "Recorrido ficticio D51", true);
     	ruta.AddEstacion("Demo Parada 113", 802);
@@ -1041,7 +1041,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 064", 309);
     	ruta.AddEstacion("Demo Parada 068", 305);
     	ruta.AddEstacion("Demo Parada 072", 301);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D52", "Recorrido ficticio D52", true);
     	ruta.AddEstacion("Demo Parada 047", 705);
@@ -1061,7 +1061,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 069", 304);
     	ruta.AddEstacion("Demo Parada 071", 302);
     	ruta.AddEstacion("Demo Parada 072", 301);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D53", "Recorrido ficticio D53", false);
     	ruta.AddEstacion("Demo Parada 091", 601);
@@ -1079,7 +1079,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 067", 306);
     	ruta.AddEstacion("Demo Parada 068", 305);
     	ruta.AddEstacion("Demo Parada 072", 301);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D54", "Recorrido ficticio D54", true);
     	ruta.AddEstacion("Demo Parada 105", 408);
@@ -1091,7 +1091,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 067", 306);
     	ruta.AddEstacion("Demo Parada 068", 305);
     	ruta.AddEstacion("Demo Parada 072", 301);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D55", "Recorrido ficticio D55", true);
     	ruta.AddEstacion("Demo Parada 113", 802);
@@ -1103,7 +1103,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 005", 505);
     	ruta.AddEstacion("Demo Parada 002", 502);
     	ruta.AddEstacion("Demo Parada 001", 501);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D56", "Recorrido ficticio D56", false);
     	ruta.AddEstacion("Demo Parada 001", 501);
@@ -1115,7 +1115,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 015", 515);
     	ruta.AddEstacion("Demo Parada 017", 517);
     	ruta.AddEstacion("Demo Parada 018", 13);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D57", "Recorrido ficticio D57", true);
     	ruta.AddEstacion("Demo Parada 115", 1001);
@@ -1132,7 +1132,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 123", 903);
     	ruta.AddEstacion("Demo Parada 124", 902);
     	ruta.AddEstacion("Demo Parada 125", 901);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D58", "Recorrido ficticio D58", false);
     	ruta.AddEstacion("Demo Parada 072", 301);
@@ -1147,7 +1147,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 041", 106);
     	ruta.AddEstacion("Demo Parada 044", 103);
     	ruta.AddEstacion("Demo Parada 045", 102);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D59", "Recorrido ficticio D59", false);
     	ruta.AddEstacion("Demo Parada 073", 701);
@@ -1172,7 +1172,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 040", 107);
     	ruta.AddEstacion("Demo Parada 044", 103);
     	ruta.AddEstacion("Demo Parada 045", 102);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D60", "Recorrido ficticio D60", false);
     	ruta.AddEstacion("Demo Parada 047", 705);
@@ -1195,7 +1195,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 041", 106);
     	ruta.AddEstacion("Demo Parada 044", 103);
     	ruta.AddEstacion("Demo Parada 045", 102);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D61", "Recorrido ficticio D61", false);
     	ruta.AddEstacion("Demo Parada 091", 601);
@@ -1215,7 +1215,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 039", 108);
     	ruta.AddEstacion("Demo Parada 041", 106);
     	ruta.AddEstacion("Demo Parada 045", 102);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D62", "Recorrido ficticio D62", false);
     	ruta.AddEstacion("Demo Parada 001", 501);
@@ -1240,7 +1240,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 088", 203);
     	ruta.AddEstacion("Demo Parada 089", 202);
     	ruta.AddEstacion("Demo Parada 090", 201);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D63", "Recorrido ficticio D63", false);
     	ruta.AddEstacion("Demo Parada 091", 601);
@@ -1262,7 +1262,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 085", 206);
     	ruta.AddEstacion("Demo Parada 088", 203);
     	ruta.AddEstacion("Demo Parada 090", 201);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D64", "Recorrido ficticio D64", false);
     	ruta.AddEstacion("Demo Parada 113", 802);
@@ -1280,7 +1280,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 069", 304);
     	ruta.AddEstacion("Demo Parada 071", 302);
     	ruta.AddEstacion("Demo Parada 072", 301);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
 
     	ruta= this.AddRuta("D65", "Recorrido ficticio D65", false);
     	ruta.AddEstacion("Demo Parada 115", 1001);
@@ -1297,7 +1297,7 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 123", 903);
     	ruta.AddEstacion("Demo Parada 124", 902);
     	ruta.AddEstacion("Demo Parada 125", 901);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
     	
     	ruta= this.AddRuta("D66", "Recorrido ficticio D66", true);
     	ruta.AddEstacion("Demo Parada 126", 1010);
@@ -1308,8 +1308,8 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 116", 1003);
     	ruta.AddEstacion("Demo Parada 130", 1002);
     	ruta.AddEstacion("Demo Parada 115", 1001);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
-    	
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
+
     	ruta= this.AddRuta("D67", "Recorrido ficticio D67", true);
     	ruta.AddEstacion("Demo Parada 118", 913);
     	ruta.AddEstacion("Demo Parada 131", 912);
@@ -1324,11 +1324,26 @@ public class Rutas {
     	ruta.AddEstacion("Demo Parada 123", 903);
     	ruta.AddEstacion("Demo Parada 124", 902);
     	ruta.AddEstacion("Demo Parada 125", 901);
-    	this.AddRutaInvertida("D68R", ruta, "Recorrido ficticio inverso");
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
+
+    	ruta= this.AddRuta("D68", "Recorrido ficticio D68", true);
+    	ruta.AddEstacion("Demo Parada 039", 108);
+    	ruta.AddEstacion("Demo Parada 037", 110);
+    	ruta.AddEstacion("Demo Parada 036", 111);
+    	ruta.AddEstacion("Demo Parada 035", 112);
+    	ruta.AddEstacion("Demo Parada 033", 114);
+    	ruta.AddEstacion("Demo Parada 027", 4);
+    	ruta.AddEstacion("Demo Parada 026", 5);
+    	ruta.AddEstacion("Demo Parada 024", 7);
+    	ruta.AddEstacion("Demo Parada 022", 9);
+    	ruta.AddEstacion("Demo Parada 116", 1003);
+    	ruta.AddEstacion("Demo Parada 130", 1002);
+    	this.AddRutaInvertida("D69R", ruta, "Recorrido ficticio inverso");
+
     }
     
     public static String GetFechaRutas() {
     	
-    	return "07/10/2012";
+    	return "17/11/2012";
     } 
 }
