@@ -8,16 +8,16 @@ Aplicación histórica para consultar recorridos del transporte público y horar
 
 ### Esta revisión
 
-**2012-11-17 · Restituir el catálogo de rutas al cliente Java.** Traslada clases de recorridos y horarios de Classic al cliente Java y recupera su interfaz. La copia vuelve a presentar el catálogo desde el programa independiente.
+**2012-11-17 · Recuperar la consulta de paradas en Android Classic.** Restituye la aplicación Classic con la actividad que consulta paradas y sus clases de rutas. Esta copia permite seguir el recorrido desde la zona elegida hasta la lista de paradas.
 
 ### Cómo explorar el código
 
 El archivo combina Java y Android. Usa un JDK para explorar las utilidades de consola. Para las variantes móviles, revisa los manifiestos y dependencias del Android SDK de cada versión.
 
-- [transmilleno/src/transmilenio/Hilo.java](transmilleno/src/transmilenio/Hilo.java)
-- [transmilleno/src/transmilenio/Horarios.java](transmilleno/src/transmilenio/Horarios.java)
-- [transmilleno/src/transmilenio/Ruta.java](transmilleno/src/transmilenio/Ruta.java)
-- [transmilleno/src/transmilenio/Rutas.java](transmilleno/src/transmilenio/Rutas.java)
+- [Transmilleno Classic/src/sdg/transmilleno/classic/Horarios.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/Horarios.java)
+- [Transmilleno Classic/src/sdg/transmilleno/classic/Ruta.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/Ruta.java)
+- [Transmilleno Classic/src/sdg/transmilleno/classic/Rutas.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/Rutas.java)
+- [Transmilleno Classic/src/sdg/transmilleno/classic/TransmillenoClassicActivity.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/TransmillenoClassicActivity.java)
 
 ## English
 
@@ -25,13 +25,13 @@ A historical application for looking up public transport routes and schedules. T
 
 ### This revision
 
-**2012-11-17 · Restore the route catalog to the Java client.** Move route and timetable classes from Classic to the Java client and recover its interface. The snapshot presents the catalog through the standalone program again.
+**2012-11-17 · Recover stop browsing in Android Classic.** Restore the Classic application with its stop browsing activity and route classes. Readers can trace the selected area through to its stop list.
 
 ### How to explore the source
 
 The archive combines Java and Android. Use a JDK to explore the console utilities. For the mobile variants, check the manifest and Android SDK dependencies of each version.
 
-- [transmilleno/src/transmilenio/Hilo.java](transmilleno/src/transmilenio/Hilo.java)
-- [transmilleno/src/transmilenio/Horarios.java](transmilleno/src/transmilenio/Horarios.java)
-- [transmilleno/src/transmilenio/Ruta.java](transmilleno/src/transmilenio/Ruta.java)
-- [transmilleno/src/transmilenio/Rutas.java](transmilleno/src/transmilenio/Rutas.java)
+- [Transmilleno Classic/src/sdg/transmilleno/classic/Horarios.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/Horarios.java)
+- [Transmilleno Classic/src/sdg/transmilleno/classic/Ruta.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/Ruta.java)
+- [Transmilleno Classic/src/sdg/transmilleno/classic/Rutas.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/Rutas.java)
+- [Transmilleno Classic/src/sdg/transmilleno/classic/TransmillenoClassicActivity.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/TransmillenoClassicActivity.java)

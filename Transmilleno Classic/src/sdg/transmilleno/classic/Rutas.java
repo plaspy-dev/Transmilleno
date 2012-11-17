@@ -2,6 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+package sdg.transmilleno.classic;
 import java.util.Vector;
 /**
  *
@@ -14,6 +15,7 @@ public class Rutas {
     public Vector GetRutas() {
         return m_vRutas;
     }
+    
 
     public Ruta GetRuta(String szRuta) {
 
@@ -934,7 +936,7 @@ public class Rutas {
     	ruta.AddEstacion("Portal Suba", 201);
     	this.AddRutaInvertida("G71", ruta, "Lunes a sábado 09:00-16:00*Lunes a sábado 20:00-23:00");
 
-    	ruta= this.AddRuta("C19", "Lunes a viernes 05:00-09:00", false);
+    	ruta= this.AddRuta("J73", "Lunes a viernes 05:00-09:00", false);
     	ruta.AddEstacion("Portal Suba", 201);
     	ruta.AddEstacion("La campiña", 202);
     	ruta.AddEstacion("Suba - TV. 91", 203);
@@ -945,7 +947,6 @@ public class Rutas {
     	ruta.AddEstacion("Av. Jiménez", 13);
     	ruta.AddEstacion("Museo del Oro", 801);
     	ruta.AddEstacion("Las aguas", 802);
-    	this.AddRutaInvertida("J73", ruta, "Lunes a viernes 05:00-09:00");
 
     	ruta= this.AddRuta("C73", "Lunes a viernes 16:00-20:00", false);
     	ruta.AddEstacion("Las aguas", 802);
@@ -1119,8 +1120,10 @@ public class Rutas {
     	ruta= this.AddRuta("K10", "Lunes a sábado 05:00-23:00", true);
     	ruta.AddEstacion("Portal del 20 de Julio", 1001);
     	ruta.AddEstacion("AV. 1a de mayo", 1003);
+    	ruta.AddEstacion("Hospitales", 1006);
     	ruta.AddEstacion("Tercer milenio", 14);
     	ruta.AddEstacion("Av. Jiménez", 13);
+    	ruta.AddEstacion("Calle 22", 11);
     	ruta.AddEstacion("Centro memoria", 913);
     	ruta.AddEstacion("Ciudad universitaria", 911);
     	ruta.AddEstacion("Gobernación", 908);
@@ -1282,6 +1285,7 @@ public class Rutas {
     	ruta= this.AddRuta("K97", "Domingos y festivos 06:00-22:00", false);
     	ruta.AddEstacion("Portal del 20 de Julio", 1001);
     	ruta.AddEstacion("AV. 1a de mayo", 1003);
+    	ruta.AddEstacion("Hospitales", 1006);
     	ruta.AddEstacion("Tercer milenio", 14);
     	ruta.AddEstacion("Av. Jiménez", 13);
     	ruta.AddEstacion("Calle 22", 11);
@@ -1297,16 +1301,34 @@ public class Rutas {
     	
     	ruta= this.AddRuta("L7", "Lunes a sábado 05:00-23:00*Domingos y festivos 06:00-22:00", true);
     	ruta.AddEstacion("San Diego", 1010);
+    	ruta.AddEstacion("Las Nieves", 1009);
+    	ruta.AddEstacion("Hospitales", 1006);
     	ruta.AddEstacion("Policarpa", 1005);
     	ruta.AddEstacion("Ciudad Jardin", 1004);
     	ruta.AddEstacion("AV. 1a de mayo", 1003);
     	ruta.AddEstacion("Country Sur", 1002);
     	ruta.AddEstacion("Portal del 20 de Julio", 1001);
     	this.AddRutaInvertida("M7", ruta, "Lunes a sábado 05:00-23:00*Domingos y festivos 06:00-22:00");
+    	
+    	ruta= this.AddRuta("K6", "Lunes a sábado 05:00-23:00*Domingos y festivos 06:00-22:00", true);
+    	ruta.AddEstacion("Centro memoria", 913);
+    	ruta.AddEstacion("Plaza de la democracia", 912);
+    	ruta.AddEstacion("Ciudad universitaria", 911);
+    	ruta.AddEstacion("Corferias", 910);
+    	ruta.AddEstacion("Quinta paredes", 909);
+    	ruta.AddEstacion("Gobernación", 908);
+    	ruta.AddEstacion("CAN", 907);
+    	ruta.AddEstacion("Salite - El Greco", 906);
+    	ruta.AddEstacion("El tiempo", 905);
+    	ruta.AddEstacion("Av. Rojas", 904);
+    	ruta.AddEstacion("Normandía", 903);
+    	ruta.AddEstacion("Modelia", 902);
+    	ruta.AddEstacion("Portal Eldorado", 901);
+    	this.AddRutaInvertida("J6", ruta, "Lunes a sábado 05:00-23:00*Domingos y festivos 06:00-22:00");
     }
     
     public static String GetFechaRutas() {
     	
-    	return "15/09/2012";
-    }
+    	return "07/10/2012";
+    } 
 }
