@@ -141,6 +141,7 @@ public class Ruta {
                             break;
                         }
                     }
+                    break;
                 }
             }
             return resultado;

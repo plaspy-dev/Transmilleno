@@ -8,7 +8,7 @@ Aplicación histórica para consultar recorridos del transporte público y horar
 
 ### Esta revisión
 
-**2012-11-17 · Recuperar la consulta de paradas en Android Classic.** Restituye la aplicación Classic con la actividad que consulta paradas y sus clases de rutas. Esta copia permite seguir el recorrido desde la zona elegida hasta la lista de paradas.
+**2012-11-17 · Añadir páginas móviles y ajustar la reanudación.** Añade páginas auxiliares y ajusta la actividad Free al pausar y reanudar Android. Esto permite estudiar cómo vuelven a mostrarse las vistas al retomar el uso del cliente.
 
 ### Cómo explorar el código
 
@@ -25,7 +25,7 @@ A historical application for looking up public transport routes and schedules. T
 
 ### This revision
 
-**2012-11-17 · Recover stop browsing in Android Classic.** Restore the Classic application with its stop browsing activity and route classes. Readers can trace the selected area through to its stop list.
+**2012-11-17 · Add mobile pages and handle activity resumption.** Add supporting mobile pages and revise how the Free activity handles Android pause and resume events. Readers can see how the views return when people resume using the client.
 
 ### How to explore the source
 

@@ -1,6 +1,11 @@
 package sdg.transmilleno.free;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -8,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-
+import android.webkit.WebSettings;
 import com.google.ads.*;
 import org.apache.cordova.*;
 
@@ -20,6 +25,35 @@ public class TransmillenoFreeActivity extends DroidGap {
 	LinearLayout content=null;
 	String MY_AD_UNIT_ID="a1505490bd52718";
 	
+	protected Timer timer;
+	
+	// Define the Handler that receives messages from the thread and update the progress
+    final Handler handler = new Handler() {
+        public void handleMessage(Message msg) {
+        	adView.loadAd(new AdRequest());
+        }
+    };
+    
+    @Override
+    protected void onPause() {
+    	super.onPause();
+    	timer.cancel();
+    	timer.purge();
+    }
+    
+    @Override
+    protected void onResume() {
+    	super.onResume();
+    	TimerTask publicidad= new TimerTask() {
+			  public void run() {
+				Message msg = handler.obtainMessage();
+		        handler.sendMessage(msg);  
+			  }
+	      };
+	      timer= new Timer();
+	      timer.schedule(publicidad, 20000, 20000);
+    }
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +68,7 @@ public class TransmillenoFreeActivity extends DroidGap {
         View viewt= findViewById(android.R.id.content);
         
         // Crear la adView    
-        adView = new AdView(this, AdSize.BANNER, MY_AD_UNIT_ID);      
+        adView = new AdView(this, AdSize.BANNER, MY_AD_UNIT_ID);
         
         if(viewt instanceof FrameLayout) {
         	FrameLayout frame= (FrameLayout)viewt;
@@ -57,6 +91,10 @@ public class TransmillenoFreeActivity extends DroidGap {
         super.setStringProperty("loadingDialog", "Cargando,Por favor espere");
         
         super.loadUrl("file:///android_asset/www/m/m.html");
+        
+        WebSettings ws = super.appView.getSettings();
+        ws.setSupportZoom(true);
+        ws.setBuiltInZoomControls(true);
         // super.loadUrl("https://service.example.invalid/?f=a");
         // setContentView(R.layout.main);
     }
@@ -104,7 +142,7 @@ public class TransmillenoFreeActivity extends DroidGap {
 	}
     
     @Override  
-    public void onDestroy() {    
+    public void onDestroy() {
     	adView.destroy();    
     	super.onDestroy();  
     }

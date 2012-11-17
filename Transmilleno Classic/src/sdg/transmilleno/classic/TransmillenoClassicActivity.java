@@ -2,12 +2,16 @@ package sdg.transmilleno.classic;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.Vector;
 
 import android.app.ListActivity;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,6 +29,15 @@ public class TransmillenoClassicActivity extends ListActivity {
     
 	private AdView adView;
 	String MY_AD_UNIT_ID="a15057b4245f27c";
+	
+	protected Timer timer;
+	
+	// Define the Handler that receives messages from the thread and update the progress
+    final Handler handler = new Handler() {
+        public void handleMessage(Message msg) {
+        	adView.loadAd(new AdRequest());
+        }
+    };
 	
 	final String[] columns = { "Ruta", "Horario" };
 	final String[] matrix  = { "_id", "Ruta", "Horario" };
@@ -89,6 +102,26 @@ public class TransmillenoClassicActivity extends ListActivity {
             }
         });
         Inicio();
+    }
+    
+    @Override
+    protected void onPause() {
+    	super.onPause();
+    	timer.cancel();
+    	timer.purge();
+    }
+    
+    @Override
+    protected void onResume() {
+    	super.onResume();
+    	TimerTask publicidad= new TimerTask() {
+			  public void run() {
+				Message msg = handler.obtainMessage();
+		        handler.sendMessage(msg);  
+			  }
+	      };
+	      timer= new Timer();
+	      timer.schedule(publicidad, 20000, 20000);
     }
     
     public void GetZonas() {

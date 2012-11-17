@@ -1309,7 +1309,7 @@ public class Rutas {
     	ruta.AddEstacion("Country Sur", 1002);
     	ruta.AddEstacion("Portal del 20 de Julio", 1001);
     	this.AddRutaInvertida("M7", ruta, "Lunes a sábado 05:00-23:00*Domingos y festivos 06:00-22:00");
-    	
+
     	ruta= this.AddRuta("K6", "Lunes a sábado 05:00-23:00*Domingos y festivos 06:00-22:00", true);
     	ruta.AddEstacion("Centro memoria", 913);
     	ruta.AddEstacion("Plaza de la democracia", 912);
@@ -1325,10 +1325,25 @@ public class Rutas {
     	ruta.AddEstacion("Modelia", 902);
     	ruta.AddEstacion("Portal Eldorado", 901);
     	this.AddRutaInvertida("J6", ruta, "Lunes a sábado 05:00-23:00*Domingos y festivos 06:00-22:00");
+
+    	ruta= this.AddRuta("L18", "Lunes a viernes 05:00-22:00*Sábados 05:00-22:00", true);
+    	ruta.AddEstacion("Alcalá", 108);
+    	ruta.AddEstacion("Calle 127", 110);
+    	ruta.AddEstacion("Pepe sierra", 111);
+    	ruta.AddEstacion("Calle 106", 112);
+    	ruta.AddEstacion("Virrey", 114);
+    	ruta.AddEstacion("Calle 63", 4);
+    	ruta.AddEstacion("Calle 57", 5);
+    	ruta.AddEstacion("Calle 45", 7);
+    	ruta.AddEstacion("Profamilia", 9);
+    	ruta.AddEstacion("AV. 1a de mayo", 1003);
+    	ruta.AddEstacion("Country Sur", 1002);
+    	this.AddRutaInvertida("B18", ruta, "Lunes a viernes 05:00-22:00*Sábados 05:00-22:00");
+
     }
     
     public static String GetFechaRutas() {
     	
-    	return "07/10/2012";
+    	return "17/11/2012";
     } 
 }

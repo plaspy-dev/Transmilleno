@@ -2,10 +2,11 @@
 <html> 
 	<head> 
 	<title>Transmilleno</title>	
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" href="../css/jquery.mobile-1.1.1.min.css" />
+	<link rel="stylesheet" href="../css/jquery.mobile-1.2.0.min.css" />
     <link rel="stylesheet" href="../css/m.min.css" />
+    
     <style type="text/css">
 		.footer { font-size: 10px; text-align: center; }
 		.adsense { text-align: center; }
@@ -13,6 +14,7 @@
     </style>
     <script type="text/javascript">
 	window.onload = function(){
+		
 		var scripts= new Array();
 	
 		scripts.push("../js/cordova-2.0.0.js");
@@ -56,12 +58,25 @@
 	<div data-role="content">
     	<div id="adsense" class="adsense">
         </div>
-	    <div id="ayuda" align="center" style="display: none">Por favor seleccione una zona para ver las rutas</div>
+        
+        <div id="ayuda" class="ui-popup-container ui-popup-active" style="position: inherit; width: 100%; display:none; text-align: center">
+        	<div class="ui-content ui-popup ui-body-e ui-overlay-shadow ui-corner-all">
+	        Por favor seleccione una zona para ver las rutas de la zona
+		</div></div>
+        <div class="ui-popup-container ui-popup-active" style="position: inherit; width: 100%; text-align: center">
+        	<div class="ui-content ui-popup ui-body-e ui-overlay-shadow ui-corner-all">
+	        Puede ver las rutas de la zona manteniendo presionada la zona
+		</div></div>
+        
+        <div data-role="fieldcontain" class="ui-content ui-popup ui-body-e ui-overlay-shadow ui-corner-all" style="text-align:center;display:none">
+        
+    	</div>
 	    <input type="search" name="search" id="routesearch" value="" placeholder="Buscar estación o ruta" />
 	    <div style="display: none" id="dBuscar">
 	        <ul data-role="listview" data-inset="true" data-divider-theme="i">
 	            <li id="liestaciones" data-role="list-divider">Buscando estaciones</li>
 	            <li id="lirutas" data-role="list-divider">Buscando rutas</li>
+                <li id="lialimentadores" data-role="list-divider">Buscando alimentadores</li>
 	        </ul>
 	    </div>
         <ul id="liubicacion" data-role="listview" data-inset="true">
