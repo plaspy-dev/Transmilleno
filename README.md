@@ -8,16 +8,16 @@ Aplicación histórica para consultar recorridos del transporte público y horar
 
 ### Esta revisión
 
-**2012-10-08 · Organizar las páginas móviles de rutas.** Sustituye páginas móviles anteriores por una estructura de vistas dentro de los recursos de Android y actualiza la actividad que las abre. Las pantallas de ruta quedan agrupadas con el código que las usa.
+**2012-11-17 · Restituir el catálogo de rutas al cliente Java.** Traslada clases de recorridos y horarios de Classic al cliente Java y recupera su interfaz. La copia vuelve a presentar el catálogo desde el programa independiente.
 
 ### Cómo explorar el código
 
 El archivo combina Java y Android. Usa un JDK para explorar las utilidades de consola. Para las variantes móviles, revisa los manifiestos y dependencias del Android SDK de cada versión.
 
-- [Transmilleno Classic/src/sdg/transmilleno/classic/Horarios.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/Horarios.java)
-- [Transmilleno Classic/src/sdg/transmilleno/classic/Ruta.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/Ruta.java)
-- [Transmilleno Classic/src/sdg/transmilleno/classic/Rutas.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/Rutas.java)
-- [Transmilleno Classic/src/sdg/transmilleno/classic/TransmillenoClassicActivity.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/TransmillenoClassicActivity.java)
+- [transmilleno/src/transmilenio/Hilo.java](transmilleno/src/transmilenio/Hilo.java)
+- [transmilleno/src/transmilenio/Horarios.java](transmilleno/src/transmilenio/Horarios.java)
+- [transmilleno/src/transmilenio/Ruta.java](transmilleno/src/transmilenio/Ruta.java)
+- [transmilleno/src/transmilenio/Rutas.java](transmilleno/src/transmilenio/Rutas.java)
 
 ## English
 
@@ -25,13 +25,13 @@ A historical application for looking up public transport routes and schedules. T
 
 ### This revision
 
-**2012-10-08 · Organize the mobile route pages.** Replace older mobile pages with a view structure in Android assets and update the activity that opens them. Route screens live with the code that opens them.
+**2012-11-17 · Restore the route catalog to the Java client.** Move route and timetable classes from Classic to the Java client and recover its interface. The snapshot presents the catalog through the standalone program again.
 
 ### How to explore the source
 
 The archive combines Java and Android. Use a JDK to explore the console utilities. For the mobile variants, check the manifest and Android SDK dependencies of each version.
 
-- [Transmilleno Classic/src/sdg/transmilleno/classic/Horarios.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/Horarios.java)
-- [Transmilleno Classic/src/sdg/transmilleno/classic/Ruta.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/Ruta.java)
-- [Transmilleno Classic/src/sdg/transmilleno/classic/Rutas.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/Rutas.java)
-- [Transmilleno Classic/src/sdg/transmilleno/classic/TransmillenoClassicActivity.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/TransmillenoClassicActivity.java)
+- [transmilleno/src/transmilenio/Hilo.java](transmilleno/src/transmilenio/Hilo.java)
+- [transmilleno/src/transmilenio/Horarios.java](transmilleno/src/transmilenio/Horarios.java)
+- [transmilleno/src/transmilenio/Ruta.java](transmilleno/src/transmilenio/Ruta.java)
+- [transmilleno/src/transmilenio/Rutas.java](transmilleno/src/transmilenio/Rutas.java)
