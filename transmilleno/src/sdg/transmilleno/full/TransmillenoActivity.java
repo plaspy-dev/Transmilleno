@@ -19,7 +19,7 @@ public class TransmillenoActivity extends DroidGap {
 	LinearLayout content=null;
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState); 
+        super.onCreate(savedInstanceState);
         
         progreso= new ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal);
     	progreso.setIndeterminate(true);
