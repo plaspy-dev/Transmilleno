@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html> 
+<!DOCTYPE html> 
 <html> 
 	<head> 
 	<title>Transmilleno</title>	
@@ -10,11 +10,12 @@
     <style type="text/css">
 		.footer { font-size: 10px; text-align: center; }
 		.adsense { text-align: center; }
+		.desha { color: #888 !important; }
 		body,html { height: 100%; }
     </style>
     <script type="text/javascript">
 	window.onload = function(){
-		
+
 		var scripts= new Array();
 	
 		scripts.push("../js/cordova-2.0.0.js");
@@ -44,6 +45,20 @@
 		document.getElementById("m.html").style.display="none";
 		document.getElementById("dloading").style.display="";
 		loadScript();
+		
+		// quitamos las sombras del navegador
+		var ua = navigator.userAgent;
+		if( ua.indexOf("Android") >= 0 )
+		{
+		  var androidversion = parseInt(ua.slice(ua.indexOf("Android")+8));
+		  if (androidversion < 3) // quitamos las sombras
+		  {
+		     	// do whatever
+		        var sheet = document.createElement('style');
+				sheet.innerHTML = ".ui-shadow,.ui-btn-up-a,.ui-btn-hover-a,.ui-btn-down-a,.ui-body-b,.ui-btn-up-b,.ui-btn-hover-b,.ui-btn-down-b,.ui-bar-c,.ui-body-c,.ui-btn-up-c,.ui-btn-hover-c,.ui-btn-down-c,.ui-bar-c,.ui-body-d,.ui-btn-up-d,.ui-btn-hover-d,.ui-btn-down-d,.ui-bar-d,.ui-body-e,.ui-btn-up-e,.ui-btn-hover-e,.ui-btn-down-e,.ui-bar-e,.ui-overlay-shadow,.ui-shadow,.ui-btn-active,.ui-body-a,.ui-bar-a { text-shadow: none !important; box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important;}";
+				document.body.appendChild(sheet);
+		  }
+		}
 	};
 	</script>
 </head> 

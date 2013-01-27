@@ -8,16 +8,14 @@ Aplicación histórica para consultar recorridos del transporte público y horar
 
 ### Esta revisión
 
-**2012-11-17 · Añadir páginas móviles y ajustar la reanudación.** Añade páginas auxiliares y ajusta la actividad Free al pausar y reanudar Android. Esto permite estudiar cómo vuelven a mostrarse las vistas al retomar el uso del cliente.
+**2013-01-27 · Registrar la copia centrada en el cliente web móvil.** Retira el proyecto Classic y actualiza la actividad y los scripts de la edición que carga páginas web. Este respaldo permite localizar la variante que se apoya en la interfaz web interna.
 
 ### Cómo explorar el código
 
 El archivo combina Java y Android. Usa un JDK para explorar las utilidades de consola. Para las variantes móviles, revisa los manifiestos y dependencias del Android SDK de cada versión.
 
-- [Transmilleno Classic/src/sdg/transmilleno/classic/Horarios.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/Horarios.java)
-- [Transmilleno Classic/src/sdg/transmilleno/classic/Ruta.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/Ruta.java)
-- [Transmilleno Classic/src/sdg/transmilleno/classic/Rutas.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/Rutas.java)
-- [Transmilleno Classic/src/sdg/transmilleno/classic/TransmillenoClassicActivity.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/TransmillenoClassicActivity.java)
+- [Transmilleno Free/src/sdg/transmilleno/free/TransmillenoFreeActivity.java](Transmilleno%20Free/src/sdg/transmilleno/free/TransmillenoFreeActivity.java)
+- [transmilleno/src/sdg/transmilleno/full/TransmillenoActivity.java](transmilleno/src/sdg/transmilleno/full/TransmillenoActivity.java)
 
 ## English
 
@@ -25,13 +23,11 @@ A historical application for looking up public transport routes and schedules. T
 
 ### This revision
 
-**2012-11-17 · Add mobile pages and handle activity resumption.** Add supporting mobile pages and revise how the Free activity handles Android pause and resume events. Readers can see how the views return when people resume using the client.
+**2013-01-27 · Record the mobile web client snapshot.** Remove the Classic project and update the activity and scripts of the edition that loads web pages. This snapshot identifies the variant built around the bundled web interface.
 
 ### How to explore the source
 
 The archive combines Java and Android. Use a JDK to explore the console utilities. For the mobile variants, check the manifest and Android SDK dependencies of each version.
 
-- [Transmilleno Classic/src/sdg/transmilleno/classic/Horarios.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/Horarios.java)
-- [Transmilleno Classic/src/sdg/transmilleno/classic/Ruta.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/Ruta.java)
-- [Transmilleno Classic/src/sdg/transmilleno/classic/Rutas.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/Rutas.java)
-- [Transmilleno Classic/src/sdg/transmilleno/classic/TransmillenoClassicActivity.java](Transmilleno%20Classic/src/sdg/transmilleno/classic/TransmillenoClassicActivity.java)
+- [Transmilleno Free/src/sdg/transmilleno/free/TransmillenoFreeActivity.java](Transmilleno%20Free/src/sdg/transmilleno/free/TransmillenoFreeActivity.java)
+- [transmilleno/src/sdg/transmilleno/full/TransmillenoActivity.java](transmilleno/src/sdg/transmilleno/full/TransmillenoActivity.java)
