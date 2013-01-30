@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+﻿<!DOCTYPE html> 
 <html> 
 	<head> 
 	<title>Transmilleno</title>	
@@ -6,7 +6,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="../css/jquery.mobile-1.2.0.min.css" />
     <link rel="stylesheet" href="../css/m.min.css" />
-    
     <style type="text/css">
 		.footer { font-size: 10px; text-align: center; }
 		.adsense { text-align: center; }
@@ -14,20 +13,33 @@
 		body,html { height: 100%; }
     </style>
     <script type="text/javascript">
-	window.onload = function(){
-
 		var scripts= new Array();
-	
-		scripts.push("../js/cordova-2.0.0.js");
-		scripts.push("../js/jquery-1.8.2.min.js");
-		scripts.push("../js/jquery.mobile-1.2.0.min.js");
-		scripts.push("../js/rutas.js");
-		scripts.push("../js/m.js");
-		
+		var load= false;
+		function loadDatabase() {
+			load=true;
+			document.getElementById("m.html").style.display="none";
+			document.getElementById("dloading").style.display="";
+			scripts.push("../js/rutassql.js");
+			document.getElementById("sloading").innerHTML=" rutas";
+			loadScript();
+		}
+		function checkDatabase() {
+			if(load)
+				return;
+			db.readTransaction(function (tx) {
+				tx.executeSql("SELECT version FROM version"
+			  ,[]
+			  ,function(t, results) {
+				  if(getNoActualizacion()==-1 || results.rows.length==0 || getNoActualizacion()>results.rows.item(0).version) 
+					loadDatabase();
+				});
+			}, loadDatabase);
+		}
 		function loadScript() {
-			
+				
 			document.getElementById("sloading").innerHTML+=".";
 		   if(scripts.length==0) {
+			   checkDatabase();
 			   document.getElementById("m.html").style.display="";
 			   document.getElementById("dloading").style.display="none";
 			   return;
@@ -42,38 +54,47 @@
 		   script.src= scripts[0];
 		   head.appendChild(script);
 		}
-		document.getElementById("m.html").style.display="none";
-		document.getElementById("dloading").style.display="";
-		loadScript();
-		
-		// quitamos las sombras del navegador
-		var ua = navigator.userAgent;
-		if( ua.indexOf("Android") >= 0 )
-		{
-		  var androidversion = parseInt(ua.slice(ua.indexOf("Android")+8));
-		  if (androidversion < 3) // quitamos las sombras
-		  {
-		     	// do whatever
-		        var sheet = document.createElement('style');
+		function iniciar() {
+			// scripts.push("../js/cordova-2.0.0.js");
+			scripts.push("../js/jquery-1.8.2.min.js");
+			scripts.push("../js/jquery.mobile-1.2.0.min.js");
+			
+			if(typeof openDatabase==="function") {
+				scripts.push("../js/msql.js");
+			} else {
+				load=true;
+				scripts.push("../js/rutas.js");
+				scripts.push("../js/m.js");
+			}
+			
+			document.getElementById("m.html").style.display="none";
+			document.getElementById("dloading").style.display="";
+			loadScript();
+			
+			// quitamos las sombras del navegador
+			var ua = navigator.userAgent;
+			if( ua.indexOf("Android") >= 0 )
+			{
+				// do whatever
+				var sheet = document.createElement('style');
 				sheet.innerHTML = ".ui-shadow,.ui-btn-up-a,.ui-btn-hover-a,.ui-btn-down-a,.ui-body-b,.ui-btn-up-b,.ui-btn-hover-b,.ui-btn-down-b,.ui-bar-c,.ui-body-c,.ui-btn-up-c,.ui-btn-hover-c,.ui-btn-down-c,.ui-bar-c,.ui-body-d,.ui-btn-up-d,.ui-btn-hover-d,.ui-btn-down-d,.ui-bar-d,.ui-body-e,.ui-btn-up-e,.ui-btn-hover-e,.ui-btn-down-e,.ui-bar-e,.ui-overlay-shadow,.ui-shadow,.ui-btn-active,.ui-body-a,.ui-bar-a { text-shadow: none !important; box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important;}";
 				document.body.appendChild(sheet);
-		  }
+			}
 		}
-	};
 	</script>
 </head> 
-<body>
+<body onLoad="iniciar();">
 <div data-role="page" id="m.html">
 	<div data-role="header" data-theme="i">
 	    <a id="matras" href="#" style="display:none" data-transition="slide" data-rel="back" data-role="button" data-icon="arrow-l">Atrás</a>
 		<h1><span id="smensaje">Zona...</span></h1>
+        <a id="msitp" href="sitp.html" data-icon="rutas" style="display:none" class="ui-btn-right">SITP</a>
         <a id="mrutas" href="#" onClick="OnRutas();" data-icon="rutas" style="display:none" class="ui-btn-right">Rutas</a>
         <a id="minicio" href="m.html?p=0" style="display:none" data-transition="pop" data-role="button" data-icon="home" class="ui-btn-right">Inicio</a>
 	</div><!-- /header -->
 	<div data-role="content">
     	<div id="adsense" class="adsense">
         </div>
-        
         <div id="ayuda" class="ui-popup-container ui-popup-active" style="position: inherit; width: 100%; display:none; text-align: center">
         	<div class="ui-content ui-popup ui-body-e ui-overlay-shadow ui-corner-all">
 	        Por favor seleccione una zona para ver las rutas de la zona
@@ -92,6 +113,7 @@
 	            <li id="liestaciones" data-role="list-divider">Buscando estaciones</li>
 	            <li id="lirutas" data-role="list-divider">Buscando rutas</li>
                 <li id="lialimentadores" data-role="list-divider">Buscando alimentadores</li>
+                <li id="lisitp" data-role="list-divider">Buscando SITP</li>
 	        </ul>
 	    </div>
         <ul id="liubicacion" data-role="listview" data-inset="true">
@@ -108,6 +130,7 @@
             <li><a id="hj" ti="hj" href="j.html">J - Eje Ambiental</a></li>
             <li><a id="hk" ti="hk" href="k.html">K - Calle 26</a></li>
             <li><a id="hl" ti="hl" href="l.html">L - Carrera 10&ordf;</a></li>
+            <li id="lisitp"><a id="sitp" href="sitp.html">SITP</a></li>
         </ul>
 	</div><!-- /content -->
 	<div data-role="footer" data-theme="i" class="footer">
