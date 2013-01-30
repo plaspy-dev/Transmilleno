@@ -6,7 +6,7 @@
 Android application for finding bus routes between an origin stop and a destination
 
 > [!WARNING]
-> **Status: Archived.** Dated editions with local verification steps.
+> **Status: Archived.** The archived editions build with the listed tools. Android Full and Free still have runtime limitations.
 
 ### Overview
 
@@ -14,6 +14,7 @@ Android application for finding bus routes between an origin stop and a destinat
 
 ### Features
 
+- Pick an origin and destination in the native Android lists and compare the routes and stops shown in results.
 - Open the mobile route interface from a Cordova WebView in the Full and Free editions.
 
 ### Requirements
@@ -26,21 +27,29 @@ Run `python demo/compilar.py --output <new-folder> --jdk8 <jdk8> --jdk21 <jdk21>
 
 ### Usage
 
+Open the app, pick the origin zone and stop, choose a destination and read the routes in the results list.
+
 Install a generated Full or Free APK on a test emulator to open its entry page. See the verification limits for this edition.
 
 ### Project structure
 
-Folders in this edition include `Transmilleno Free/`, `demo/`, `transmilleno/`, `vendor/`.
+Folders in this edition include `Transmilleno Classic/`, `Transmilleno Free/`, `demo/`, `transmilleno/`, `vendor/`, `docs/`.
 
 ### Verification
 
 The archived Android activities use fictional AdMob identifiers. The route trial runs offline.
 
-Built on 20 November 2026 on Windows 10.0.26300 from the source edition dated 2013-01-27. Full and Free build. On Android 35 some editions exit during startup and others lack a working local navigation page.
+Built on 20 November 2026 on Windows 10.0.26300 from the source edition dated 2013-01-30. Classic opened the results after two selections in the offline Android 35 emulator. Full and Free build. On Android 35 some editions exit during startup and others lack a working local navigation page.
+
+The following Android Classic demo uses the 2012-09-04 source and a fictional catalogue in a temporary test build.
+
+![Results display fictional routes with their testing schedule](docs/media/classic-rutas.png)
+
+![Pick a zone and stop and open the routes](docs/media/classic-recorrido.gif)
 
 ### History
 
-The source edition keeps its original date of 2013-01-27.
+The source edition keeps its original date of 2013-01-30.
 
 ### Support
 
@@ -61,7 +70,7 @@ See the [MIT license](LICENSE) and the notices on the dependencies.
 Aplicación Android para consultar rutas de buses entre una parada de origen y un destino
 
 > [!WARNING]
-> **Estado: Archivado.** Ediciones por fecha con pasos de prueba local.
+> **Estado: Archivado.** Las ediciones archivadas compilan con las herramientas indicadas. Android Full y Free tienen limitaciones de ejecución.
 
 ### Descripción general
 
@@ -69,6 +78,7 @@ Aplicación Android para consultar rutas de buses entre una parada de origen y u
 
 ### Funciones
 
+- Elige origen y destino en las listas de Android y compara las rutas y el número de paradas que aparecen.
 - Abre la interfaz móvil de rutas en la vista web de Cordova de las ediciones Full y Free.
 
 ### Requisitos
@@ -81,21 +91,29 @@ Ejecuta `python demo/compilar.py --output <new-folder> --jdk8 <jdk8> --jdk21 <jd
 
 ### Uso
 
+Abre la aplicación, elige la zona y parada de origen, selecciona el destino y consulta la lista de recorridos.
+
 Instala un APK Full o Free en un emulador de prueba para abrir su página inicial. Consulta los límites de verificación de esta edición.
 
 ### Estructura del proyecto
 
-Las carpetas de esta edición incluyen `Transmilleno Free/`, `demo/`, `transmilleno/`, `vendor/`.
+Las carpetas de esta edición incluyen `Transmilleno Classic/`, `Transmilleno Free/`, `demo/`, `transmilleno/`, `vendor/`, `docs/`.
 
 ### Verificación
 
 Las actividades archivadas de Android usan identificadores ficticios de AdMob. La prueba de rutas se ejecuta sin conexión.
 
-Compilado el 20 de noviembre de 2026 en Windows 10.0.26300 desde la edición del 2013-01-27. Full y Free compilan. En Android 35 algunos cortes se cierran al iniciar y otros carecen de una página local que permita recorrer la aplicación.
+Compilado el 20 de noviembre de 2026 en Windows 10.0.26300 desde la edición del 2013-01-30. Classic abrió los resultados después de elegir dos paradas en el emulador Android 35 sin conexión. Full y Free compilan. En Android 35 algunos cortes se cierran al iniciar y otros carecen de una página local que permita recorrer la aplicación.
+
+La demostración de Android Classic usa el código del 2012-09-04 y un catálogo ficticio en una copia temporal de prueba.
+
+![Los resultados muestran rutas y horarios ficticios](docs/media/classic-rutas.png)
+
+![Selección de zona, parada y resultados](docs/media/classic-recorrido.gif)
 
 ### Historial
 
-La edición conserva su fecha original del 2013-01-27.
+La edición conserva su fecha original del 2013-01-30.
 
 ### Soporte
 
