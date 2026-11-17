@@ -46,7 +46,7 @@ Built on 20 November 2026 on Windows 10.0.26300 from the August 2012 sources and
 
 ### History
 
-These browser and Android sources date to the August 2012 archive.
+These browser and Android sources date to the August 2012 archive. The two August snapshots share browser route files, and the newer source places them under web/web.
 
 ### Support
 
@@ -107,7 +107,7 @@ Compilado el 20 de noviembre de 2026 en Windows 10.0.26300 a partir de las fuent
 
 ### Historial
 
-Estas fuentes de navegador y Android son del respaldo de agosto de 2012.
+Estas fuentes de navegador y Android son del respaldo de agosto de 2012. Los dos cortes de agosto comparten archivos de rutas, y el más reciente los ubica en web/web.
 
 ### Soporte
 
