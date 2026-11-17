@@ -8,7 +8,7 @@ Aplicación histórica para consultar recorridos del transporte público y horar
 
 ### Esta revisión
 
-**2012-08-07 · Reubicar la navegación web de los respaldos.** Mueve la entrada web a los recursos de Android y reorganiza las páginas de desarrollo de rutas. El respaldo identifica qué interfaz pertenece al cliente Android y cuál queda en el árbol web.
+**2026-11-17 · Preparar una ruta ficticia para la vista cartográfica.** Distingue las otras ediciones guardadas en la rama de respaldos e identifica los requisitos de una vista de mapas. Propone tres paradas inventadas para seguir el recorrido de demostración.
 
 ### Cómo explorar el código
 
@@ -25,7 +25,7 @@ A historical application for looking up public transport routes and schedules. T
 
 ### This revision
 
-**2012-08-07 · Relocate web navigation in the backup branch.** Move the web entry point into Android assets and reorganize route development pages. The backup identifies which interface belongs to the Android client and which remains in the web tree.
+**2026-11-17 · Prepare a fictional route for the map view.** Identify the other editions kept on the backup branch and document the map view requirements. Suggest three fictional stops to follow a demonstration route.
 
 ### How to explore the source
 
