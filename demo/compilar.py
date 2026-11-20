@@ -37,6 +37,38 @@ def midp(project, output, java, emulator):
     run([java / 'jar.exe', 'cfm', output / 'Transmilleno.jar', manifest, '-C', classes, '.', *parameters])
 
 
+def android_bundle(site, target):
+    import base64
+    import mimetypes
+    import re
+
+    page = (site / 'm.html').read_text(encoding='utf-8-sig')
+    zone_link = re.compile(r'(<a\b[^>]*href="#pzona([a-z])"[^>]*>)[^<]+(</a>)', re.I)
+    page = zone_link.sub(lambda link: link[1] + 'Zona Demo ' + link[2].upper() + link[3], page)
+    zone_heading = re.compile(r'(<div\b[^>]*id="pzona([a-z])"[^>]*>(?:(?!<div\b[^>]*id="pzona).)*?<h1\b[^>]*>)[^<]*(</h1>)', re.I | re.S)
+    page = zone_heading.sub(lambda heading: heading[1] + 'Zona Demo ' + heading[2].upper() + heading[3], page)
+
+    def script(match):
+        code = (site / match[1]).read_text(encoding='utf-8-sig')
+        return '<script>' + re.sub(r'</script', lambda _: r'<\/script', code, flags=re.I) + '</script>'
+
+    def stylesheet(match):
+        css = site / match[1]
+        def urls(url):
+            image = css.parent / url[1]
+            if not image.resolve().is_relative_to(site.resolve()) or not image.is_file():
+                return url[0]
+            mime = mimetypes.guess_type(image.name)[0] or 'application/octet-stream'
+            encoded = base64.b64encode(image.read_bytes()).decode('ascii')
+            return 'url(data:' + mime + ';base64,' + encoded + ')'
+        code = re.sub(r'url\(["\']?([a-zA-Z0-9_./-]+)["\']?\)', urls, css.read_text(encoding='utf-8-sig'))
+        return '<style>' + code + '</style>'
+
+    page = re.sub(r'<script\b[^>]*src="(js/[^"]+)"[^>]*>\s*</script>', script, page)
+    page = re.sub(r'<link\b[^>]*href="(css/[^"]+)"[^>]*/?>', stylesheet, page)
+    target.write_text(page, encoding='utf-8', newline='\n')
+
+
 def android(project, output, sdk, java, modern_java, external):
     output.mkdir(parents=True, exist_ok=True)
     libs = []
@@ -60,6 +92,11 @@ def android(project, output, sdk, java, modern_java, external):
     run([tools / 'aapt2.exe', 'compile', '--dir', project / 'res', '-o', output / 'resources.zip'])
     apk = output / 'Transmilleno-unsigned.apk'
     assets = project / 'assets'
+    if project.name in ('Transmilleno', 'Transmilleno Free'):
+        # Reuse the recovered route viewer and its fictional catalog offline.
+        assets = output / 'offline-assets'
+        assets.mkdir(parents=True)
+        android_bundle(project.parents[1] / 'web' / 'web', assets / 'offline.html')
     extra = ['-A', assets] if assets.is_dir() else []
     run([tools / 'aapt2.exe', 'link', '-I', android_jar, '--manifest', manifest, '--java', gen, '-o', apk,
          '-R', output / 'resources.zip', '--auto-add-overlay', *extra])

@@ -3,10 +3,10 @@
 
 ## English
 
-Find bus routes in Java ME, Android and the browser, with a PHP panel for managing buses and routes
+Archived bus route finder for Android, Java ME and the browser, with a PHP administration panel
 
 > [!WARNING]
-> **Status: Archived.** The archived editions build with the listed tools. Android Full and Free still have runtime limitations.
+> **Status: Archived.** Full and Free run offline in the 2026 Android revision. Older Android editions retain their original limitations.
 
 ### Overview
 
@@ -14,7 +14,7 @@ Mobile route finder and companion bus administration site preserved from the ori
 
 ### Features
 
-- Open the mobile route interface from a Cordova WebView in the Full and Free editions.
+- Find routes offline on Android Full and Free with the same navigator used by the browser edition.
 - Select stops on a Java ME phone and calculate available connections from the bundled catalogue.
 - Maintain buses, stations and routes through the password-protected PHP administration screens.
 - Open the desktop or mobile route page selected for the browser.
@@ -31,9 +31,9 @@ Run `python demo/compilar.py --output <new-folder> --jdk8 <jdk8> --jdk21 <jdk21>
 
 Open the app, pick the origin zone and stop, choose a destination and read the routes in the results list.
 
-Install a generated Full or Free APK on a test emulator to open its entry page. See the verification limits for this edition.
+Install the APK for Full or Free in a disposable Android emulator. Open Zona Demo A, choose Parada Demo 001 as the origin and Parada Demo 002 as the destination. Both editions show the direct routes from the fictional catalogue.
 
-The administration website under [transmilenio/htdocs/](transmilenio/htdocs/) gives dispatch staff forms for buses, drivers, stops, shifts and maintenance records. The November 2026 revision uses PHP's session array so the protected menu stays open after sign-in. It retains the 2005 website as a separate entry point from the mobile route search.
+The administration website under [transmilenio/htdocs/](transmilenio/htdocs/) gives dispatch staff forms for buses, drivers, stops, shifts and maintenance records. The November 2026 revision uses PHP's session array so the protected menu stays open after sign-in. The original PHP 2005 snapshot redirects back to sign-in after the login request. The 2026 edition loads the original stylesheet, four navigation corner images and four background assets at the routes used by the panel. It retains the 2005 website as a separate entry point from the mobile route search.
 
 Run the following commands in PowerShell 7 from the repository root. Docker runs PHP 5.6.40 with the original MySQL extension and MySQL 5.7.44 with a synthetic database. The demo listens on loopback.
 
@@ -56,7 +56,18 @@ Open http://127.0.0.1:33907/ and enter the user *demo_user*. Retrieve this run's
 
 ### Verification
 
-Built on 20 November 2026 on Windows 10.0.26300 from the August 2012 sources and the documented 2026 updates. Full and Free build. On Android 35 some editions exit during startup and others lack a working local navigation page. In Java ME, MicroEmulator opened the MIDlet lists, accepted both fictional stop selections and displayed route results. The authorized 2026 session fix opened the administration panel using fictional local MySQL records. The browser viewer opened the route list after both fictional stops were selected from its restored local menu.
+- The 6 dated Apache Cordova snapshots reachable from this commit build. The Full and Free editions did not finish the route lookup in 12 Android 35 trials. Full and Free in this 2026 repair finish the lookup offline with the fictional catalogue.
+- The 2026 PHP repair in this history issued the session cookie and opened the administration panel with fictional MySQL data.
+
+The separate 2026 revision gives both Android Full and Free an offline Android WebView. The build packages the existing browser navigator and fictional route catalog in both APKs. Choose an origin and destination to see available routes. The apps use no external service or account and require no Android permissions. Historical Full and Free revisions retain their Cordova and original navigation behavior. Tests on Android 35 found that the old APKs did not complete the same route search.
+
+Built on 20 November 2026 on Windows 10.0.26300 from the August 2012 sources and the documented 2026 updates. Android 35 emulator 36.6.11 ran both newly built APKs in airplane mode. Both displayed direct routes after selecting the two fictional stops. In Java ME, MicroEmulator opened the MIDlet lists, accepted both fictional stop selections and displayed route results. The authorized 2026 session fix opened the administration panel using fictional local MySQL records. The browser viewer opened the route list after both fictional stops were selected from its restored local menu.
+
+![Full shows direct routes between synthetic stops](docs/media/android-full-recorridos.png)
+
+![Select the zone and stops in Full](docs/media/android-full-demo.gif)
+
+![Free shows the same fictional direct routes](docs/media/android-free-recorridos.png)
 
 The following Android Classic demo uses the 2012-09-04 source and a fictional catalogue in a temporary test build.
 
@@ -66,7 +77,9 @@ The following Android Classic demo uses the 2012-09-04 source and a fictional ca
 
 ### History
 
-The archived routes in this working line date to August 2012. The documentation and separate PHP, browser and Android compatibility updates were added in November 2026.
+The archived routes in this working line date to August 2012. The documentation and separate PHP, browser and Android compatibility updates were added in November 2026. On November 20, 2026 Full and Free gained an offline launcher based on the recovered browser navigator.
+
+This working line preserves the Android Full and Free fixes and the offline browser viewer. Use Git history here to compare the editions already on this line.
 
 ### Support
 
@@ -96,10 +109,10 @@ From the repository root, start `python -m http.server 8080 --bind 127.0.0.1 --d
 
 ## Español
 
-Consulta rutas de bus en Java ME, Android y el navegador, con un panel PHP para administrar recorridos
+Archivado — buscador de rutas de bus para Android, Java ME y navegador, con panel PHP de administración
 
 > [!WARNING]
-> **Estado: Archivado.** Las ediciones archivadas compilan con las herramientas indicadas. Android Full y Free tienen limitaciones de ejecución.
+> **Estado: archivado.** Full y Free funcionan sin conexión en la revisión Android de 2026. Las ediciones antiguas conservan sus limitaciones originales.
 
 ### Descripción general
 
@@ -107,7 +120,7 @@ Consulta móvil de rutas y sitio de administración de buses conservados desde e
 
 ### Funciones
 
-- Abre la interfaz móvil de rutas en la vista web de Cordova de las ediciones Full y Free.
+- Consulta rutas sin conexión en Android Full y Free con el mismo visor de la edición de navegador.
 - Selecciona paradas en un teléfono Java ME y calcula las conexiones disponibles en el catálogo.
 - Gestiona buses, estaciones y rutas desde las pantallas de administración PHP con ingreso de usuario.
 - Abre la página de rutas de escritorio o móvil elegida para el navegador.
@@ -124,9 +137,9 @@ Ejecuta `python demo/compilar.py --output <new-folder> --jdk8 <jdk8> --jdk21 <jd
 
 Abre la aplicación, elige la zona y parada de origen, selecciona el destino y consulta la lista de recorridos.
 
-Instala un APK Full o Free en un emulador de prueba para abrir su página inicial. Consulta los límites de verificación de esta edición.
+Instala un APK Full o Free en un emulador Android desechable. Abre Zona Demo A y elige Parada Demo 001 como origen y Parada Demo 002 como destino. Ambas ediciones muestran las rutas directas del catálogo ficticio.
 
-El sitio de [transmilenio/htdocs/](transmilenio/htdocs/) reúne formularios para que el personal de despacho registre buses, conductores, paradas, turnos y mantenimiento. La revisión de noviembre de 2026 usa la sesión de PHP para mantener abierto el menú protegido después del acceso. El sitio de 2005 tiene su propia entrada y se conserva junto al buscador móvil de rutas.
+El sitio de [transmilenio/htdocs/](transmilenio/htdocs/) reúne formularios para que el personal de despacho registre buses, conductores, paradas, turnos y mantenimiento. La revisión de noviembre de 2026 usa la sesión de PHP para mantener abierto el menú protegido después del acceso. El corte PHP original de 2005 devuelve al ingreso tras enviar el formulario. La edición de 2026 carga la hoja de estilo original, cuatro imágenes de las esquinas y cuatro fondos en las rutas que usa el panel. El sitio de 2005 tiene su propia entrada y se conserva junto al buscador móvil de rutas.
 
 Ejecuta estos comandos en PowerShell 7 desde la raíz. Docker ejecuta PHP 5.6.40 con la extensión MySQL de la época y MySQL 5.7.44 con una base ficticia. La prueba escucha en la interfaz local.
 
@@ -149,7 +162,18 @@ Abre http://127.0.0.1:33907/ y escribe el usuario *demo_user*. Consulta la contr
 
 ### Verificación
 
-Compilado el 20 de noviembre de 2026 en Windows 10.0.26300 a partir de las fuentes de agosto de 2012 y los cambios de 2026 documentados para este corte. Full y Free compilan. En Android 35 algunos cortes se cierran al iniciar y otros carecen de una página local que permita recorrer la aplicación. MicroEmulator abrió las listas del MIDlet, recibió las dos paradas ficticias y mostró los recorridos de Java ME. La corrección de sesión autorizada en 2026 abrió el panel de administración con registros ficticios en MySQL local. El visor de navegador mostró resultados tras seleccionar dos paradas ficticias en su menú local restaurado.
+- Los 6 cortes fechados de Apache Cordova que se alcanzan desde este commit compilan. Las ediciones Full y Free no terminaron la consulta en 12 pruebas con Android 35. Full y Free de esta corrección de 2026 completan la consulta sin conexión con el catálogo ficticio.
+- La reparación PHP de 2026 de este historial emitió la cookie de sesión y abrió el panel de administración con datos ficticios de MySQL.
+
+La revisión separada de 2026 ofrece una WebView de Android sin conexión en las ediciones Full y Free. La compilación empaqueta el visor web existente y el catálogo ficticio de rutas en ambos APK. Elige origen y destino para consultar los recorridos. Estas ediciones no usan servicios ni cuentas externas ni solicitan permisos de Android. Los cortes históricos conservan Cordova y su navegación original. En Android 35 esos APK no completaron la misma consulta.
+
+Compilado el 20 de noviembre de 2026 en Windows 10.0.26300 a partir de las fuentes de agosto de 2012 y los cambios de 2026 documentados para este corte. El emulador 36.6.11 de Android 35 ejecutó ambos APK nuevos en modo avión. Ambos mostraron rutas directas tras elegir las dos paradas ficticias. MicroEmulator abrió las listas del MIDlet, recibió las dos paradas ficticias y mostró los recorridos de Java ME. La corrección de sesión autorizada en 2026 abrió el panel de administración con registros ficticios en MySQL local. El visor de navegador mostró resultados tras seleccionar dos paradas ficticias en su menú local restaurado.
+
+![Full muestra rutas directas entre paradas ficticias](docs/media/android-full-recorridos.png)
+
+![Selección de zona y paradas en Full](docs/media/android-full-demo.gif)
+
+![Free muestra las mismas rutas directas ficticias](docs/media/android-free-recorridos.png)
 
 La demostración de Android Classic usa el código del 2012-09-04 y un catálogo ficticio en una copia temporal de prueba.
 
@@ -159,7 +183,9 @@ La demostración de Android Classic usa el código del 2012-09-04 y un catálogo
 
 ### Historial
 
-Las rutas archivadas de esta línea son de agosto de 2012. La documentación y las actualizaciones separadas de PHP, navegador y Android se agregaron en noviembre de 2026.
+Las rutas archivadas de esta línea son de agosto de 2012. La documentación y las actualizaciones separadas de PHP, navegador y Android se agregaron en noviembre de 2026. El 20 de noviembre de 2026 Full y Free recibieron un lanzador sin conexión basado en el visor web recuperado.
+
+Esta línea de trabajo conserva las correcciones de Android Full y Free y el visor sin conexión. Consulta su historial de Git para comparar las ediciones de esta línea.
 
 ### Soporte
 

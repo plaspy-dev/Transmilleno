@@ -1,81 +1,80 @@
 package sdg.transmilleno.full;
 
-import org.apache.cordova.*;
-
-import android.content.Context;
+import android.app.Activity;
 import android.os.Bundle;
-import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-public class TransmillenoActivity extends DroidGap {
-    /** Called when the activity is first created. */
-	ProgressBar progreso;
-	boolean agregado=false;
-	LinearLayout content;
+public class TransmillenoActivity extends Activity {
+    private static final String ROOT = "https://transmilleno.example.invalid/";
+    private WebView viewer;
+
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState); 
-        
-        progreso= new ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal);
-    	progreso.setIndeterminate(true);
-        
-    	super.init();
-        super.appView.clearCache(true);
-        super.appView.clearHistory();
-          
-        ViewGroup view= (ViewGroup)getWindow().getDecorView();
-        FrameLayout frame= (FrameLayout)view.getChildAt(0);
-        content= (LinearLayout)frame.getChildAt(0);
-        progreso.setLayoutParams(new ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.FILL_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT));
-        
-        // content.addView(progreso);
-        
-        super.setStringProperty("loadingPageDialog", "Cargando,Por favor espere");
-        super.setStringProperty("loadingDialog", "Cargando,Por favor espere");
-        
-        super.loadUrl("file:///android_asset/www/m.html");
-        // setContentView(R.layout.main);
+    public void onCreate(Bundle state) {
+        super.onCreate(state);
+        viewer = new WebView(this);
+        viewer.getSettings().setJavaScriptEnabled(true);
+        viewer.getSettings().setDomStorageEnabled(true);
+        viewer.getSettings().setAllowFileAccess(false);
+        viewer.getSettings().setAllowContentAccess(false);
+        viewer.getSettings().setBlockNetworkLoads(true);
+        viewer.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return !url.startsWith(ROOT);
+            }
+
+        });
+        setContentView(viewer);
+        showHome();
     }
-    @Override
-    public Object onMessage(String mensaje, Object objeto) {
-    	
-	   try {
-	   	if(mensaje=="onPageFinished") {
-	   		// spinnerStop();
-	   		if(agregado)
-	   			content.removeView(progreso);
-	   		agregado=false;
-	   	} else if(mensaje=="onPageStarted") {
-	   		// spinnerStart("Cargando", "Por favor espere");
-	   		if(!agregado)
-	   			content.addView(progreso);
-	   		agregado=true;
-	   	}
-	   } catch(Exception ex) {}
-    	return super.onMessage(mensaje, objeto);
+
+    private void showHome() {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(
+                getAssets().open("offline.html"), "UTF-8"))) {
+            StringBuilder document = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                document.append(line).append('\n');
+            }
+            viewer.loadDataWithBaseURL(ROOT, document.toString(), "text/html", "UTF-8", null);
+        } catch (IOException missing) {
+            android.util.Log.e("Transmilleno", "Offline navigator is missing from the APK", missing);
+            viewer.loadData("No se pudo abrir el visor local.", "text/plain", "UTF-8");
+        }
     }
+
     @Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add("Inicio");
-		menu.add("Salir");
-	    return true;
-	}
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add(Menu.NONE, 1, Menu.NONE, "Inicio");
+        menu.add(Menu.NONE, 2, Menu.NONE, "Salir");
+        return true;
+    }
+
     @Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		if(item.getTitle()=="Inicio") {
-			super.loadUrl("file:///android_asset/www/m.html");
-			return true;
-		} else if(item.getTitle()=="Salir") {
-			finish();
-			return true;
-		}
-	    return super.onOptionsItemSelected(item);
-	}
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == 1) {
+            showHome();
+            return true;
+        }
+        if (item.getItemId() == 2) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (viewer.canGoBack()) {
+            viewer.goBack();
+        } else {
+            super.onBackPressed();
+        }
+    }
 }
