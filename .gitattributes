@@ -1,2 +1,13 @@
 
 vendor/android/** -text
+web/web/css/images/ajax-loader.gif -text
+web/web/css/images/icons-18-black.png -text
+web/web/css/images/icons-36-black.png -text
+web/web/css/images/icons-36-white.png -text
+web/web/css/jquery.mobile-1.0.min.css -text
+web/web/css/m.min.css -text
+web/web/js/images/ajax-loader.png -text
+web/web/js/images/icons-18-black.png -text
+web/web/js/images/icons-18-white.png -text
+web/web/js/jquery-1.6.2.min.js -text
+web/web/js/jquery.mobile-1.0.min.js -text

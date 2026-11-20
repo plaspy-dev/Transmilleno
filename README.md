@@ -3,10 +3,10 @@
 
 ## English
 
-Mobile route finder and companion bus administration site preserved from the original source
+Find bus routes in Java ME, Android and the browser, with a PHP panel for managing buses and routes
 
 > [!WARNING]
-> **Status: Archived.** Dated editions with local verification steps.
+> **Status: Archived.** The archived editions build with the listed tools. Android Full and Free still have runtime limitations.
 
 ### Overview
 
@@ -56,7 +56,7 @@ Open http://127.0.0.1:33907/ and enter the user *demo_user*. Retrieve this run's
 
 ### Verification
 
-Built on 20 November 2026 on Windows 10.0.26300 from the August 2012 sources and the documented 2026 updates. Full and Free build. On Android 35 some editions exit during startup and others lack a working local navigation page. The original Java ME route model returned an itinerary between fictional stops. The MIDlet interface remains to be fully exercised. The authorized 2026 session fix opened the administration panel using fictional local MySQL records. The browser route interface is preserved. Its end-to-end route selection remains unverified.
+Built on 20 November 2026 on Windows 10.0.26300 from the August 2012 sources and the documented 2026 updates. Full and Free build. On Android 35 some editions exit during startup and others lack a working local navigation page. In Java ME, MicroEmulator opened the MIDlet lists, accepted both fictional stop selections and displayed route results. The authorized 2026 session fix opened the administration panel using fictional local MySQL records. The browser viewer opened the route list after both fictional stops were selected from its restored local menu.
 
 The following Android Classic demo uses the 2012-09-04 source and a fictional catalogue in a temporary test build.
 
@@ -82,12 +82,24 @@ See the [MIT license](LICENSE) and the notices on the dependencies.
 
 ---
 
+### Offline browser viewer
+
+From the repository root, start `python -m http.server 8080 --bind 127.0.0.1 --directory web/web`. Open `http://127.0.0.1:8080/m.html`, choose a zone and one of its stops, then repeat for the destination. The restored menu and route engine show fictional direct routes and transfers. The recorded trial used a disposable Python container bound to loopback. The command above reproduces it with Python on your host. Advertising was omitted from this demonstration. Live advertising requires the provider account and was outside the test.
+
+![Results show fictional routes between two demo stops](docs/media/rutas-web.png)
+
+![The browser viewer opens a fictional stop list and displays its routes](docs/media/visor-web.gif)
+
+![Java ME displays fictional routes between two demo stops](docs/media/midlet-rutas.png)
+
+![The PHP administration panel shows the signed-in fictional user](docs/media/php-administracion.png)
+
 ## Español
 
-Consulta móvil de rutas y sitio de administración de buses conservados desde el código original
+Consulta rutas de bus en Java ME, Android y el navegador, con un panel PHP para administrar recorridos
 
 > [!WARNING]
-> **Estado: Archivado.** Ediciones por fecha con pasos de prueba local.
+> **Estado: Archivado.** Las ediciones archivadas compilan con las herramientas indicadas. Android Full y Free tienen limitaciones de ejecución.
 
 ### Descripción general
 
@@ -137,7 +149,7 @@ Abre http://127.0.0.1:33907/ y escribe el usuario *demo_user*. Consulta la contr
 
 ### Verificación
 
-Compilado el 20 de noviembre de 2026 en Windows 10.0.26300 a partir de las fuentes de agosto de 2012 y los cambios de 2026 documentados para este corte. Full y Free compilan. En Android 35 algunos cortes se cierran al iniciar y otros carecen de una página local que permita recorrer la aplicación. El modelo Java ME original devolvió un recorrido entre paradas ficticias. Queda por probar la interfaz completa del MIDlet. La corrección de sesión autorizada en 2026 abrió el panel de administración con registros ficticios en MySQL local. Se conserva la interfaz web de rutas. Falta comprobar la selección completa de un recorrido.
+Compilado el 20 de noviembre de 2026 en Windows 10.0.26300 a partir de las fuentes de agosto de 2012 y los cambios de 2026 documentados para este corte. Full y Free compilan. En Android 35 algunos cortes se cierran al iniciar y otros carecen de una página local que permita recorrer la aplicación. MicroEmulator abrió las listas del MIDlet, recibió las dos paradas ficticias y mostró los recorridos de Java ME. La corrección de sesión autorizada en 2026 abrió el panel de administración con registros ficticios en MySQL local. El visor de navegador mostró resultados tras seleccionar dos paradas ficticias en su menú local restaurado.
 
 La demostración de Android Classic usa el código del 2012-09-04 y un catálogo ficticio en una copia temporal de prueba.
 
@@ -160,3 +172,15 @@ Conserva los avisos originales y usa ejemplos ficticios en las pruebas.
 ### Licencia
 
 Consulta la [licencia MIT](LICENSE) y los avisos de las dependencias.
+
+### Visor de navegador sin conexión
+
+Desde la raíz ejecuta `python -m http.server 8080 --bind 127.0.0.1 --directory web/web`. Abre `http://127.0.0.1:8080/m.html`, elige una zona y una parada. Repite la selección para el destino. El menú y el motor recuperados muestran rutas directas y transbordos ficticios. La prueba registrada usó un contenedor Python desechable en loopback. El comando anterior permite repetirla con Python en tu equipo. En esta demostración se omitió la publicidad. La publicidad real requiere la cuenta del proveedor y quedó fuera de la prueba.
+
+![El resultado enumera rutas ficticias entre dos paradas de muestra](docs/media/rutas-web.png)
+
+![El visor abre la lista de paradas ficticias y muestra las rutas](docs/media/visor-web.gif)
+
+![Java ME muestra recorridos entre dos paradas ficticias](docs/media/midlet-rutas.png)
+
+![El panel PHP muestra el ingreso de la cuenta ficticia](docs/media/php-administracion.png)
